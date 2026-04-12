@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly Check-In Template | B. Morvay Coaching</title>
+  <meta name="description" content="A simple weekly check-in template to track training, sleep, energy, and mood. Track what matters without complicated spreadsheets." />
+  <meta name="author" content="Balazs Morvay" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.bmorvay.com/check-in-template.html" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230d0e10'/><text x='50' y='72' font-size='68' font-family='system-ui,-apple-system,sans-serif' font-weight='800' text-anchor='middle' fill='%23ffffff'>B</text><circle cx='78' cy='68' r='6' fill='%23c48a3f'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root{--black:#0d0e10;--near-black:#111316;--ink:#1c1f24;--mid:#3a3f48;--muted:#6a717c;--subtle:#9aa3ae;--rule:#e2e5e9;--surface:#f3f4f6;--white:#ffffff;--accent:#c48a3f;--accent-dim:#a06e2a;--accent-glow:rgba(196,138,63,0.14);--radius:10px;--radius-sm:5px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:var(--ink);background:var(--white);overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+    .sub-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 0;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--rule)}
+    .sub-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+    .sub-nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;text-transform:uppercase;letter-spacing:.04em;color:var(--black)}
+    .sub-nav-logo span{color:var(--accent)}
+    .sub-nav-back{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;transition:color .18s}
+    .sub-nav-back:hover{color:var(--black)}
+    .page-header{padding:6rem 0 2.5rem;text-align:center;margin-bottom:2rem}
+    .eyebrow{font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.7rem;margin-bottom:1.1rem;justify-content:center;line-height:1.2}
+    .eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--accent);flex-shrink:0}
+    .page-header h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;text-transform:uppercase;color:var(--black);line-height:1.05;margin-bottom:1rem}
+    .page-header p{font-size:1.1rem;font-weight:300;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
+    .template{max-width:680px;margin:0 auto;padding-bottom:4rem}
+    .template p{font-size:1rem;line-height:1.8;color:var(--mid);margin-bottom:1.5rem}
+    .template h2{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:800;text-transform:uppercase;color:var(--black);margin:2.5rem 0 1rem}
+    .check-section{border:1px solid var(--rule);border-radius:var(--radius);margin-bottom:1.5rem;overflow:hidden}
+    .check-section-header{background:var(--surface);padding:1rem 1.5rem;font-weight:700;font-size:.95rem;color:var(--black);border-bottom:1px solid var(--rule)}
+    .check-field{padding:1rem 1.5rem;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .check-field:last-child{border-bottom:none}
+    .check-label{font-size:.95rem;color:var(--mid)}
+    .check-input{font-size:.95rem;color:var(--subtle);text-align:right;font-style:italic}
+    .scale-row{display:flex;gap:.5rem;justify-content:flex-end}
+    .scale-num{width:28px;height:28px;border-radius:50%;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--muted)}
+    .note{font-size:.9rem;color:var(--muted);background:var(--surface);padding:1.25rem 1.75rem;border-radius:var(--radius);margin:2rem 0;line-height:1.7}
+    .note strong{color:var(--ink)}
+    .guide-cta{max-width:680px;margin:0 auto 4rem;padding:2.5rem;background:var(--surface);border-radius:var(--radius);text-align:center}
+    .guide-cta p{font-size:1rem;color:var(--mid);margin-bottom:1.25rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:600;letter-spacing:.02em;transition:transform .2s ease,box-shadow .2s ease,color .2s ease,background .2s ease,border-color .2s ease;white-space:nowrap;background:var(--black);color:var(--white);border:1.5px solid var(--black)}
+    .btn:hover{background:var(--accent);color:var(--white);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .footer{padding:3rem 0 2rem;background:var(--near-black);color:rgba(255,255,255,.7);text-align:center;font-size:.85rem}
+    .footer a{color:var(--accent);transition:color .2s}
+    .footer a:hover{color:var(--white)}
+  </style>
+</head>
+<body>
+
+<nav class="sub-nav">
+  <div class="container">
+    <div class="sub-nav-inner">
+      <a href="index.html" class="sub-nav-logo">B<span>.</span>Morvay</a>
+      <a href="index.html" class="sub-nav-back">← Back to Home</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="page-header">
+    <div class="eyebrow">Free Template</div>
+    <h1>Weekly Check-In Template</h1>
+    <p>A simple one-page tool to log training, sleep, energy, and mood. Track what matters without overcomplicated spreadsheets.</p>
+  </div>
+  <div class="template">
+    <p>Fill this out once a week — ideally on the same day each week (e.g., Sunday evening). It takes 5 minutes and gives you a clear picture of how the week went. Look for patterns over time, not individual data points.</p>
+
+    <h2>Training</h2>
+    <div class="check-section">
+      <div class="check-section-header">Sessions This Week</div>
+      <div class="check-field"><span class="check-label">Planned sessions</span><span class="check-input">___ / ___</span></div>
+      <div class="check-field"><span class="check-label">Completed sessions</span><span class="check-input">___ / ___</span></div>
+      <div class="check-field"><span class="check-label">Session quality (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
+      <div class="check-field"><span class="check-label">Any PBs or progressions?</span><span class="check-input">Yes / No — details:</span></div>
+    </div>
+
+    <h2>Recovery & Lifestyle</h2>
+    <div class="check-section">
+      <div class="check-section-header">How You Felt</div>
+      <div class="check-field"><span class="check-label">Average sleep (hours)</span><span class="check-input">___</span></div>
+      <div class="check-field"><span class="check-label">Sleep quality (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
+      <div class="check-field"><span class="check-label">Energy levels (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
+      <div class="check-field"><span class="check-label">Stress levels (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
+      <div class="check-field"><span class="check-label">Overall mood (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
+    </div>
+
+    <h2>Nutrition</h2>
+    <div class="check-section">
+      <div class="check-section-header">Eating Habits</div>
+      <div class="check-field"><span class="check-label">Protein target hit most days?</span><span class="check-input">Yes / No</span></div>
+      <div class="check-field"><span class="check-label">Water intake adequate?</span><span class="check-input">Yes / No</span></div>
+      <div class="check-field"><span class="check-label">Any notable changes?</span><span class="check-input">___</span></div>
+    </div>
+
+    <h2>Reflection</h2>
+    <div class="check-section">
+      <div class="check-section-header">Weekly Notes</div>
+      <div class="check-field" style="flex-direction:column;align-items:stretch;gap:.5rem"><span class="check-label">What went well this week?</span><span class="check-input" style="text-align:left">___</span></div>
+      <div class="check-field" style="flex-direction:column;align-items:stretch;gap:.5rem"><span class="check-label">What could improve?</span><span class="check-input" style="text-align:left">___</span></div>
+      <div class="check-field" style="flex-direction:column;align-items:stretch;gap:.5rem"><span class="check-label">Focus for next week?</span><span class="check-input" style="text-align:left">___</span></div>
+    </div>
+
+    <div class="note"><strong>Tip:</strong> Print this page or screenshot it and fill it in weekly. Don't overthink the numbers — they're just data points. The real value comes from looking at trends over 4-6 weeks.</div>
+  </div>
+  <div class="guide-cta">
+    <p>Want structured check-ins with professional feedback?</p>
+    <a href="index.html#consultation" class="btn">Book a Free Consultation</a>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <script>document.write(new Date().getFullYear())</script> Balazs Morvay Coaching · <a href="index.html">Back to Home</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
