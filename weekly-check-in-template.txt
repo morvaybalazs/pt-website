@@ -1,0 +1,39 @@
+Weekly Check-In Template
+
+Use this simple template to track your training, recovery, and overall progress. Fill it out once per week to spot patterns and make adjustments.
+
+Week of: __________
+
+Training:
+- Sessions completed: ___ / ___
+- Average session quality (1-10): ___
+- Any injuries or niggles? (Y/N) If yes, details: ____________________
+- Favourite session this week: ____________________
+- Least favourite: ____________________
+
+Sleep:
+- Average hours per night: ___
+- Quality (1-10): ___
+- Any disruptions? ____________________
+
+Energy & Mood:
+- Average daily energy (1-10): ___
+- Stress levels (1-10): ___
+- Mood overall: ____________________
+
+Nutrition:
+- Protein intake on track? (Y/N)
+- Any challenges? ____________________
+- Hydration good? (Y/N)
+
+Measurements (optional):
+- Weight: ___ kg
+- Waist: ___ cm
+- Other: ____________________
+
+Notes:
+- What went well this week?
+- What could be better?
+- Adjustments for next week?
+
+Remember: Progress isn't linear. Use this to understand trends, not judge individual days.

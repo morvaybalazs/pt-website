@@ -1,0 +1,37 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "text/plain; charset=utf-8"
+
+[[redirects]]
+  from = "/blog/consistency"
+  to = "/#post1"
+  status = 301
+
+[[redirects]]
+  from = "/blog/rest-days"
+  to = "/#post2"
+  status = 301
+
+[[redirects]]
+  from = "/blog/glp1-maintenance"
+  to = "/#post3"
+  status = 301
