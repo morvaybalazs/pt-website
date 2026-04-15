@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Trainer Edinburgh | B. Morvay Coaching - Online PT for Professionals</title>
+  <title>Online Personal Trainer | B. Morvay Coaching — Online PT for Professionals, Edinburgh Based</title>
   <meta name="description" content="Expert personal training for busy professionals. Physical Activity and Health BSc (Hons) qualified. Online coaching from £200/month with responsive messaging support and regular check-ins. No contracts, free consultation." />
   <meta name="keywords" content="personal trainer Edinburgh, online personal trainer Edinburgh, personal training for busy professionals, weight loss coach Edinburgh, strength training Edinburgh, fitness coaching Edinburgh, private personal trainer Scotland, online PT no contracts, BSc qualified personal trainer, Edinburgh fitness coach for professionals" />
   <meta name="author" content="Balazs Morvay" />
@@ -75,11 +75,6 @@
         "credentialCategory": "degree",
         "name": "Physical Activity and Health BSc (Hons)"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "12"
     }
   }
   </script>
@@ -160,28 +155,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root{--black:#0d0e10;--near-black:#111316;--ink:#1c1f24;--mid:#3a3f48;--muted:#6a717c;--subtle:#9aa3ae;--rule:#e2e5e9;--surface:#f3f4f6;--white:#ffffff;--accent:#c48a3f;--accent-dim:#a06e2a;--accent-glow:rgba(196,138,63,0.14);--radius:10px;--radius-sm:5px;--gap:clamp(4rem,9vw,8rem)}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    *{-webkit-tap-highlight-color:transparent}
-    body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:var(--ink);background:var(--white);overflow-x:hidden;transform:translateZ(0);backface-visibility:hidden}
-    img,video{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    ul{list-style:none}
-    button{cursor:pointer;border:none;background:none;font:inherit}
+    :root{--gap:clamp(4rem,9vw,8rem)}
+    body{transform:translateZ(0);backface-visibility:hidden}
     .display{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;line-height:.93;letter-spacing:-.01em}
-    .container{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
     .eyebrow{font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.7rem;margin-bottom:1.1rem;line-height:1.2}
     .eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--accent);flex-shrink:0}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:600;letter-spacing:.02em;transition:transform .2s ease,box-shadow .2s ease,color .2s ease,background .2s ease,border-color .2s ease;white-space:nowrap;will-change:transform;background:var(--black);color:var(--white);border:1.5px solid var(--black)}
-    .btn:hover{background:var(--accent);color:var(--white);border-color:var(--accent);transform:translateY(-2px) translateZ(0);box-shadow:0 8px 24px rgba(0,0,0,.25)}
-    .btn-primary{background:var(--black);color:var(--white);border:1.5px solid var(--black)}
-    .btn-primary:hover{background:var(--accent);color:var(--white);border-color:var(--accent);transform:translateY(-2px) translateZ(0);box-shadow:0 8px 24px rgba(0,0,0,.25)}
-    .btn-ghost{background:var(--black);color:var(--white);border:1.5px solid var(--black)}
-    .btn-ghost:hover{background:var(--accent);color:var(--white);border-color:var(--accent);transform:translateY(-2px) translateZ(0);box-shadow:0 8px 24px rgba(0,0,0,.25)}
-    .btn-accent{background:var(--black);color:var(--white);border:1.5px solid var(--black)}
-    .btn-accent:hover{background:var(--accent);color:var(--white);border-color:var(--accent);transform:translateY(-2px) translateZ(0);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .btn{will-change:transform}
     .js-ready .reveal{opacity:0;transform:translateY(20px) translateZ(0);transition:opacity .6s ease,transform .6s ease;will-change:transform,opacity}
     .reveal.in{opacity:1;transform:none}
     .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
@@ -198,14 +179,16 @@
     .hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .22s}
     .nav-mobile{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--rule);padding-bottom:1.5rem}
     .nav-mobile.open{display:flex}
-    .nav-mobile a{padding:.8rem clamp(1.25rem,5vw,3rem);font-size:.95rem;font-weight:500;color:var(--mid);border-bottom:1px solid var(--rule)}
-    .nav-mobile .btn{margin:1rem clamp(1.25rem,5vw,3rem) 0}
+    .nav-mobile a:not(.btn){padding:.8rem clamp(1.25rem,5vw,3rem);font-size:.95rem;font-weight:500;color:var(--mid);border-bottom:1px solid var(--rule)}
+    .nav-mobile a:not(.btn):hover{color:var(--accent)}
+    .nav-mobile a.btn{margin:1rem clamp(1.25rem,5vw,3rem) 0;color:var(--white);background:var(--black);border:1.5px solid var(--black)}
+    .nav-mobile a.btn:hover{background:var(--accent);color:var(--white);border-color:var(--accent)}
     @media(max-width:820px){.nav-links,.nav>.container>.nav-inner>.btn-primary{display:none}.hamburger{display:flex}}
 
     /* HERO */
     .hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;padding-top:76px}
     .hero-left{display:flex;flex-direction:column;justify-content:center;padding:clamp(2.5rem,7vw,5rem) clamp(1.25rem,4vw,4rem) clamp(2.5rem,7vw,5rem) clamp(1.25rem,6vw,5rem);background:var(--white)}
-    .hero-h1{font-size:clamp(4rem,8.5vw,7.5rem);font-weight:800;color:var(--black);margin-bottom:1.75rem}
+    .hero-h1{font-size:clamp(3.1rem,8.5vw,7.5rem);font-weight:800;color:var(--black);margin-bottom:1.75rem;word-break:break-word}
     .hero-h1 em{font-style:italic;color:var(--accent)}
     .hero-sub{font-size:1.12rem;font-weight:300;color:var(--mid);max-width:460px;line-height:1.75;margin-bottom:2.5rem}
     .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3.5rem}
@@ -401,8 +384,9 @@
     @media(max-width:768px){.who-stagger-row,.who-stagger-row:nth-child(even){grid-template-columns:1fr;direction:ltr}.who-stagger-img{aspect-ratio:16/9;max-height:300px}}
 
     /* BACK TO TOP */
-    .back-to-top{position:fixed;bottom:2rem;right:2rem;z-index:150;width:44px;height:44px;border-radius:50%;background:var(--black);color:var(--white);border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease,background .3s ease;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+    .back-to-top{position:fixed;bottom:1.5rem;right:1.5rem;z-index:150;width:44px;height:44px;border-radius:50%;background:var(--black);color:var(--white);border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease,background .3s ease;box-shadow:0 4px 16px rgba(0,0,0,.25)}
     .back-to-top.visible{opacity:1;visibility:visible;transform:none}
+    .nav-mobile.open ~ .back-to-top,body:has(.nav-mobile.open) .back-to-top{opacity:0;visibility:hidden}
     .back-to-top:hover{background:var(--accent);border-color:var(--accent)}
     .back-to-top svg{width:18px;height:18px}
 
@@ -449,7 +433,7 @@
     <p class="hero-sub reveal reveal-d1">Physical Activity and Health BSc (Hons) qualified personal trainer for busy professionals. Online coaching that fits your life, wherever you are. £200/month includes direct messaging support and regular check-ins. Free consultation, no contracts.</p>
     <div class="hero-actions reveal reveal-d2">
       <a href="#consultation" class="btn btn-primary">Book Free Consultation</a>
-      <a href="tel:+447914390913" class="btn btn-ghost">Text Me: 07914 390913</a>
+      <a href="sms:+447914390913" class="btn btn-ghost">Text Me: 07914 390913</a>
     </div>
     <div class="hero-stats reveal reveal-d3">
       <div class="hero-stat"><div class="hero-stat-n display">10+</div><div class="hero-stat-l">Years in the Industry</div></div>
@@ -466,7 +450,7 @@
 <!-- CREDENTIAL STRIP -->
 <div class="strip" aria-hidden="true">
   <div class="container">
-    <p class="strip-text">Physical Activity &amp; Health BSc (Hons)<span>·</span>10+ Years in the Industry<span>·</span>Edinburgh Based<span>·</span>Online &amp; In-Person</p>
+    <p class="strip-text">Online Coaching Worldwide<span>·</span>Physical Activity &amp; Health BSc (Hons)<span>·</span>10+ Years in the Industry<span>·</span>In-Person Available in Edinburgh</p>
   </div>
 </div>
 
@@ -490,7 +474,7 @@
           </div>
           <div class="about-badge">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            Edinburgh
+            Online Worldwide · Edinburgh Based
           </div>
         </div>
       </div>
@@ -686,16 +670,16 @@
       <h2 class="display reveal" style="margin-bottom:0">Real transformations</h2>
       <div class="testimonial-slider reveal reveal-d1">
         <div class="testimonial-slide active">
-          <blockquote class="testimonial-quote">Balazs helped me lose 12kg sustainably while travelling for work. Knowing I could message him whenever I had a question meant I never felt alone in the process.</blockquote>
-          <cite class="testimonial-cite">Sarah · 35 · Marketing Director</cite>
+          <blockquote class="testimonial-quote">I travel a lot for work and had written off training as impossible. Having a programme I could actually follow from hotel gyms — and someone to message when I wasn't sure — made the difference.</blockquote>
+          <cite class="testimonial-cite">Sarah · Marketing</cite>
         </div>
         <div class="testimonial-slide">
-          <blockquote class="testimonial-quote">After 10 years of inconsistent training, I finally built habits that stick. The weekly check-ins kept me accountable without pressure.</blockquote>
-          <cite class="testimonial-cite">Mike · 42 · Software Engineer</cite>
+          <blockquote class="testimonial-quote">I'd done the start-stop thing for years. What worked this time was having a plan that bent when my week got messy, instead of one I had to abandon.</blockquote>
+          <cite class="testimonial-cite">Mike · Software</cite>
         </div>
         <div class="testimonial-slide">
-          <blockquote class="testimonial-quote">As a busy parent, I needed flexibility. Balazs adjusted my programme around my schedule perfectly. I can't recommend him highly enough.</blockquote>
-          <cite class="testimonial-cite">Emma · 38 · Doctor</cite>
+          <blockquote class="testimonial-quote">Two kids and long shifts mean I can't commit to a fixed schedule. Balazs built the programme around that rather than against it, which is why I've actually stuck with it.</blockquote>
+          <cite class="testimonial-cite">Emma · Healthcare</cite>
         </div>
       </div>
       <div class="testimonial-dots" role="tablist" aria-label="Testimonials">
@@ -919,7 +903,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">B<span>.</span>Morvay</div>
-        <p class="footer-tagline">Online coaching · In-person in Edinburgh · No contracts</p>
+        <p class="footer-tagline">Online coaching worldwide · In-person available in Edinburgh · No contracts</p>
       </div>
       <div>
         <div class="footer-col-h">Navigate</div>

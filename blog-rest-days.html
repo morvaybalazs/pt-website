@@ -12,38 +12,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root{--black:#0d0e10;--near-black:#111316;--ink:#1c1f24;--mid:#3a3f48;--muted:#6a717c;--subtle:#9aa3ae;--rule:#e2e5e9;--surface:#f3f4f6;--white:#ffffff;--accent:#c48a3f;--accent-dim:#a06e2a;--accent-glow:rgba(196,138,63,0.14);--radius:10px;--radius-sm:5px}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:var(--ink);background:var(--white);overflow-x:hidden}
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
-    .sub-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 0;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--rule)}
-    .sub-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem}
-    .sub-nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;text-transform:uppercase;letter-spacing:.04em;color:var(--black)}
-    .sub-nav-logo span{color:var(--accent)}
-    .sub-nav-back{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;transition:color .18s}
-    .sub-nav-back:hover{color:var(--black)}
     .blog-header{padding:6rem 0 2.5rem;border-bottom:1px solid var(--rule);margin-bottom:3rem}
     .blog-cat{font-size:.95rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;line-height:1.2}
     .blog-header h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;text-transform:uppercase;color:var(--black);line-height:.97;max-width:800px;margin-bottom:1rem}
     .blog-meta{font-size:.8rem;color:var(--subtle)}
     .blog-body{max-width:680px;padding-bottom:6rem}
-    .blog-body p{font-size:1rem;line-height:1.8;color:var(--mid);margin-bottom:1.5rem}
+    .blog-body p{font-size:1.05rem;line-height:1.8;color:var(--mid);margin-bottom:1.5rem}
     .blog-body h2{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:800;text-transform:uppercase;color:var(--black);margin:2.5rem 0 1rem}
     .blog-body ul{list-style:none;padding:0;margin-bottom:1.5rem}
-    .blog-body li{font-size:1rem;line-height:1.7;color:var(--mid);padding:.5rem 0 .5rem 1.25rem;border-bottom:1px solid var(--rule);position:relative}
+    .blog-body li{font-size:1.05rem;line-height:1.75;color:var(--mid);padding:.5rem 0 .5rem 1.25rem;border-bottom:1px solid var(--rule);position:relative}
     .blog-body li::before{content:'';position:absolute;left:0;top:1.1rem;width:6px;height:1.5px;background:var(--accent)}
     .blog-body li strong{color:var(--ink);font-weight:600}
     .blog-cta{max-width:680px;padding:2.5rem;background:var(--surface);border-radius:var(--radius);text-align:center;margin-bottom:4rem}
     .blog-cta p{font-size:1rem;color:var(--mid);margin-bottom:1.25rem}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:600;letter-spacing:.02em;transition:transform .2s ease,box-shadow .2s ease,color .2s ease,background .2s ease,border-color .2s ease;white-space:nowrap;background:var(--black);color:var(--white);border:1.5px solid var(--black)}
-    .btn:hover{background:var(--accent);color:var(--white);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
-    .footer{padding:3rem 0 2rem;background:var(--near-black);color:rgba(255,255,255,.7);text-align:center;font-size:.85rem}
-    .footer a{color:var(--accent);transition:color .2s}
-    .footer a:hover{color:var(--white)}
   </style>
 </head>
 <body>
@@ -52,7 +35,7 @@
   <div class="container">
     <div class="sub-nav-inner">
       <a href="index.html" class="sub-nav-logo">B<span>.</span>Morvay</a>
-      <a href="index.html" class="sub-nav-back">← Back to Home</a>
+      <a href="index.html" class="sub-nav-back" onclick="if(document.referrer&&history.length>1){history.back();return false;}">← Back</a>
     </div>
   </div>
 </nav>
@@ -85,7 +68,7 @@
   </div>
 </main>
 
-<footer class="footer">
+<footer class="footer-simple">
   <div class="container">
     <p>© <script>document.write(new Date().getFullYear())</script> Balazs Morvay Coaching · <a href="index.html">Back to Home</a></p>
   </div>

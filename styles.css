@@ -1,0 +1,32 @@
+/* Shared base styles — single source of truth for tokens, reset, layout, buttons, sub-page nav.
+   Page-specific styles remain inline in each HTML file. */
+
+:root{--black:#0d0e10;--near-black:#111316;--ink:#1c1f24;--mid:#3a3f48;--muted:#6a717c;--subtle:#9aa3ae;--rule:#e2e5e9;--surface:#f3f4f6;--white:#ffffff;--accent:#c48a3f;--accent-dim:#a06e2a;--accent-glow:rgba(196,138,63,0.14);--radius:10px;--radius-sm:5px}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*{-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:var(--ink);background:var(--white);overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font:inherit}
+
+.container{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:600;letter-spacing:.02em;transition:transform .2s ease,box-shadow .2s ease,color .2s ease,background .2s ease,border-color .2s ease;white-space:nowrap;background:var(--black);color:var(--white);border:1.5px solid var(--black)}
+.btn:hover{background:var(--accent);color:var(--white);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Sub-page nav — used by every page except index.html */
+.sub-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 0;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--rule)}
+.sub-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.sub-nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;text-transform:uppercase;letter-spacing:.04em;color:var(--black)}
+.sub-nav-logo span{color:var(--accent)}
+.sub-nav-back{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;transition:color .18s}
+.sub-nav-back:hover{color:var(--black)}
+
+/* Simple centered footer — used by every sub-page. index.html has its own multi-column footer. */
+.footer-simple{padding:3rem 0 2rem;background:var(--near-black);color:rgba(255,255,255,.7);text-align:center;font-size:.85rem}
+.footer-simple a{color:var(--accent);transition:color .2s}
+.footer-simple a:hover{color:var(--white)}
