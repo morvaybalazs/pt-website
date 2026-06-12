@@ -21,17 +21,27 @@
     Cache-Control = "public, max-age=3600"
     Content-Type = "text/plain; charset=utf-8"
 
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 [[redirects]]
   from = "/blog/consistency"
-  to = "/#post1"
+  to = "/blog-consistency.html"
   status = 301
 
 [[redirects]]
   from = "/blog/rest-days"
-  to = "/#post2"
+  to = "/blog-rest-days.html"
   status = 301
 
 [[redirects]]
   from = "/blog/glp1-maintenance"
-  to = "/#post3"
+  to = "/blog-glp1.html"
   status = 301
