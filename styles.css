@@ -17,6 +17,8 @@ button{cursor:pointer;border:none;background:none;font:inherit}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:600;letter-spacing:.02em;transition:transform .2s ease,box-shadow .2s ease,color .2s ease,background .2s ease,border-color .2s ease;white-space:nowrap;background:var(--black);color:var(--white);border:1.5px solid var(--black)}
 .btn:hover{background:var(--accent);color:var(--white);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.btn-ghost{background:transparent;color:var(--black);border-color:rgba(13,14,16,.3)}
+.btn-ghost:hover{background:var(--black);color:var(--white);border-color:var(--black);box-shadow:0 8px 24px rgba(0,0,0,.15)}
 
 /* Sub-page nav — used by every page except index.html */
 .sub-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 0;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--rule)}

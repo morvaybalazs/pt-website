@@ -1,0 +1,3 @@
+# Raw video originals stay local; only the compressed hero-loop.mp4 deploys
+videos/IMG_*.mov
+.DS_Store
