@@ -212,7 +212,7 @@
     .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%;filter:grayscale(.7) brightness(.9) contrast(1.02);opacity:0;transition:opacity .9s ease}
     .hero-video.on{opacity:1}
     .hero-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(243,244,246,0.18) 0%,transparent 40%),linear-gradient(rgba(13,14,16,.16),rgba(13,14,16,.16))}
-    @media(max-width:860px){.hero{grid-template-columns:1fr}.hero-right{min-height:300px;order:-1}.hero-left{padding:2rem clamp(1.25rem,5vw,3rem)}}
+    @media(max-width:860px){.hero{grid-template-columns:1fr}.hero-right{min-height:430px;order:-1}.hero-left{padding:2rem clamp(1.25rem,5vw,3rem)}}
 
     /* CREDENTIAL STRIP - slow infinite marquee */
     .strip{background:var(--black);padding:1.5rem 0;overflow:hidden}
@@ -235,7 +235,7 @@
     .about-image{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--surface)}
     .about-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
     .about-image::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.15));pointer-events:none}
-    @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2.5rem}.about-image{aspect-ratio:5/4;max-height:520px}}
+    @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2.5rem}.about-image{aspect-ratio:4/5;max-height:560px;max-width:440px;margin:0 auto;width:100%}}
 
     /* GLP-1 SUPPORT (FLAGSHIP) */
     .glp1{padding:var(--gap) 0;background:var(--black)}
@@ -440,7 +440,7 @@
     .who-stagger-text .who-num{font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:800;color:var(--accent-dim);letter-spacing:.18em;margin-bottom:.5rem}
     .who-stagger-text .who-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.6rem,2.5vw,1.95rem);font-weight:700;text-transform:uppercase;color:var(--black);margin-bottom:.65rem;line-height:1.05}
     .who-stagger-text .who-text{font-size:1.05rem;color:var(--mid);line-height:1.85;max-width:520px}
-    @media(max-width:768px){.who-stagger-row,.who-stagger-row:nth-child(even){grid-template-columns:1fr;direction:ltr}.who-stagger-img{aspect-ratio:16/9;max-height:300px}}
+    @media(max-width:768px){.who-stagger-row,.who-stagger-row:nth-child(even){grid-template-columns:1fr;direction:ltr}.who-stagger-img{aspect-ratio:4/3;max-height:400px}}
 
     /* BACK TO TOP */
     .back-to-top{position:fixed;bottom:1.5rem;right:1.5rem;z-index:150;width:44px;height:44px;border-radius:50%;background:var(--black);color:var(--white);border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease,background .3s ease;box-shadow:0 4px 16px rgba(0,0,0,.25)}
@@ -1157,23 +1157,25 @@
     }
   }
 
-  // Hero video: drop a short loop at videos/hero-loop.mp4 and it plays automatically.
-  // If the file is missing or the user prefers reduced motion, the poster image stays.
+  // Hero video: videos/hero-loop.mp4 plays over the poster image.
+  // Attached to the DOM immediately (iOS Safari won't load detached videos),
+  // retries on first touch (covers Low Power Mode), poster stays if anything fails.
   (function() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var img = document.querySelector('.hero-right img');
     if (!img) return;
     var v = document.createElement('video');
-    v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true;
-    v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
     v.className = 'hero-video';
+    v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
+    v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('autoplay', '');
+    v.preload = 'auto';
     v.src = 'videos/hero-loop.mp4';
-    v.addEventListener('canplay', function() {
-      img.insertAdjacentElement('afterend', v);
-      requestAnimationFrame(function() { v.classList.add('on'); });
-      v.play().catch(function() {});
-    }, { once: true });
-    v.load();
+    v.addEventListener('error', function() { v.remove(); });
+    v.addEventListener('playing', function() { v.classList.add('on'); }, { once: true });
+    img.insertAdjacentElement('afterend', v);
+    var tryPlay = function() { var p = v.play(); if (p && p.catch) p.catch(function() {}); };
+    tryPlay();
+    window.addEventListener('touchstart', tryPlay, { once: true, passive: true });
   })();
 
   // Back to top button
