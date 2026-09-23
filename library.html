@@ -1,89 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Library - Free Guides, Programmes & Articles | B. Morvay Coaching</title>
-  <meta name="description" content="Free training programmes, nutrition guides, check-in templates, and articles on sustainable fitness. No sign-up required." />
+  <script>document.documentElement.className='js';</script>
+  <title>Free Guides, Programmes and Templates | B. Morvay Coaching</title>
+  <meta name="description" content="Free training programmes, nutrition guides, a printable check-in template and articles on training that fits a busy week. No sign-up." />
   <meta name="author" content="Balazs Morvay" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://bmorvay.com/library.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Free Guides, Programmes &amp; Articles | B. Morvay Coaching" />
-  <meta property="og:description" content="Free training programmes, nutrition guides, check-in templates, and articles on sustainable fitness. No sign-up required." />
+  <meta property="og:title" content="Free guides, programmes and templates | B. Morvay Coaching" />
+  <meta property="og:description" content="Free training programmes, nutrition guides, a printable check-in template and articles on training that fits a busy week. No sign-up." />
   <meta property="og:url" content="https://bmorvay.com/library.html" />
-  <meta property="og:image" content="https://bmorvay.com/images/hero-poster.jpg" />
+  <meta property="og:image" content="https://bmorvay.com/images/og-coaching.jpg" />
   <meta property="og:site_name" content="B. Morvay Coaching" />
   <meta property="og:locale" content="en_GB" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230d0e10'/><text x='50' y='72' font-size='68' font-family='system-ui,-apple-system,sans-serif' font-weight='800' text-anchor='middle' fill='%23ffffff'>B</text><circle cx='78' cy='68' r='6' fill='%23c48a3f'/></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .eyebrow{font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dim);display:flex;align-items:center;gap:.7rem;margin-bottom:1.1rem;justify-content:center;line-height:1.2}
-    .eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--accent);flex-shrink:0}
-    .page-header{padding:6rem 0 2.5rem;text-align:center;margin-bottom:2rem}
-    .page-header h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;text-transform:uppercase;color:var(--black);line-height:1.05;margin-bottom:1rem}
-    .page-header p{font-size:1.1rem;font-weight:300;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
-
-    .section-label{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;text-transform:uppercase;color:var(--black);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--accent);letter-spacing:.02em}
-
-    .lib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3.5rem}
-    .lib-card{border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;cursor:pointer;will-change:transform;text-decoration:none;display:block}
-    .lib-card:hover{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow);transform:translateY(-2px) translateZ(0)}
+    .section-label{max-width:1180px;margin:2.5rem 0 1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--accent);font-family:var(--display);font-size:1.5rem;font-weight:800;text-transform:uppercase;color:var(--black)}
+    .lib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
+    .lib-card{display:block;overflow:hidden;border:1px solid var(--rule);border-radius:var(--radius);background:var(--white);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+    .lib-card:hover{border-color:var(--accent-dim);box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateY(-2px)}
     .lib-card-img{aspect-ratio:16/10;overflow:hidden;background:var(--surface)}
-    .lib-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
-    .lib-card:hover .lib-card-img img{transform:scale(1.04)}
-    .lib-card-body{padding:1.75rem}
-    .lib-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dim);background:var(--accent-glow);padding:.3rem .6rem;border-radius:3px;margin-bottom:1.25rem}
-    .lib-title{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;text-transform:uppercase;color:var(--black);margin-bottom:.6rem;line-height:1.1}
-    .lib-desc{font-size:.92rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
-    .lib-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:var(--ink);letter-spacing:.04em;transition:color .18s,gap .18s}
-    .lib-card:hover .lib-link{color:var(--accent);gap:.65rem}
-    @media(max-width:900px){.lib-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:580px){.lib-grid{grid-template-columns:1fr}}
-
-    .lib-cta{padding:2.5rem;background:var(--surface);border-radius:var(--radius);text-align:center;margin-bottom:4rem}
-    .lib-cta p{font-size:1rem;color:var(--mid);margin-bottom:1.25rem}
+    .lib-card-img img{width:100%;height:100%;object-fit:cover}
+    .lib-card-body{padding:1.5rem}
+    .lib-tag{display:inline-block;margin-bottom:1rem;padding:.3rem .65rem;border-radius:3px;background:var(--accent-glow);color:var(--accent-dim);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    .lib-title{font-family:var(--display);font-size:1.4rem;font-weight:700;line-height:1.1;text-transform:uppercase;color:var(--black);margin-bottom:.6rem}
+    .lib-desc{font-size:.95rem;line-height:1.7;color:var(--mid);margin-bottom:1.25rem}
+    .lib-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;font-weight:600;color:var(--ink)}
+    .lib-card:hover .lib-link{color:var(--accent-dim)}
+    @media (max-width:900px){.lib-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:580px){.lib-grid{grid-template-columns:1fr}}
   </style>
+  <script src="site.js" defer></script>
 </head>
 <body>
 
-<nav class="sub-nav">
-  <div class="container">
-    <div class="sub-nav-inner">
-      <a href="index.html" class="sub-nav-logo">B<span>.</span>Morvay</a>
-      <a href="index.html" class="sub-nav-back" onclick="if(document.referrer&&history.length>1){history.back();return false;}">&larr; Back</a>
-    </div>
-  </div>
-</nav>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<main class="container">
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a href="index.html" class="logo" aria-label="B. Morvay Coaching, home">B<span>.</span>Morvay</a>
+    <nav class="site-nav" aria-label="Main">
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-bars" aria-hidden="true"></span></button>
+      <ul class="site-menu" id="site-menu">
+        <li><a href="index.html#how-it-works">How it works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="library.html" aria-current="page">Free guides</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#consultation" class="btn header-cta">Free consultation</a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1" class="container">
+  <p class="crumb"><a href="index.html">Home</a></p>
+
   <div class="page-header">
     <div class="eyebrow">Library</div>
-    <h1>Resources &amp; Articles</h1>
-    <p>Free guides, templates, and articles on training, nutrition, and sustainable fitness. No sign-up required.</p>
+    <h1>Free guides and articles</h1>
+    <p class="lead">Training programmes, nutrition guides, a printable check-in and a few articles. All free, with no sign-up.</p>
   </div>
 
   <!-- GUIDES & TEMPLATES -->
-  <h2 class="section-label">Guides &amp; Templates</h2>
+  <h2 class="section-label">Guides and templates</h2>
   <div class="lib-grid">
     <a href="training-plan.html" class="lib-card">
       <div class="lib-card-img">
-        <img src="https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Kettlebell training - foundational strength work from the 3-day full-body programme" width="800" height="500" loading="lazy" decoding="async" />
+        <img src="images/guides/training-plan.jpg" alt="A kettlebell on a gym floor" width="640" height="400" loading="lazy" decoding="async" />
       </div>
       <div class="lib-card-body">
         <div class="lib-tag">Programme</div>
         <div class="lib-title">3-Day Full-Body Programme</div>
-        <p class="lib-desc">A complete training programme for beginners to intermediates. Three sessions per week covering strength, muscle building, and conditioning.</p>
+        <p class="lib-desc">Three full-body sessions a week for beginners and intermediates, with home swaps for every gym-only exercise.</p>
         <span class="lib-link">View programme &rarr;</span>
       </div>
     </a>
     <a href="protein-guide.html" class="lib-card">
       <div class="lib-card-img">
-        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="High-protein meal - practical protein sources from real food" width="800" height="500" loading="lazy" decoding="async" />
+        <img src="images/guides/protein-guide.jpg" alt="A high-protein meal on a plate" width="640" height="400" loading="lazy" decoding="async" />
       </div>
       <div class="lib-card-body">
         <div class="lib-tag">Nutrition</div>
@@ -94,7 +95,7 @@
     </a>
     <a href="home-gym-guide.html" class="lib-card">
       <div class="lib-card-img">
-        <img src="https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Dumbbells on a rack - choosing the right home gym equipment" width="800" height="500" loading="lazy" decoding="async" />
+        <img src="images/guides/home-gym-guide.jpg" alt="Dumbbells on a rack" width="640" height="400" loading="lazy" decoding="async" />
       </div>
       <div class="lib-card-body">
         <div class="lib-tag">Equipment</div>
@@ -105,12 +106,12 @@
     </a>
     <a href="check-in-template.html" class="lib-card">
       <div class="lib-card-img">
-        <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Weekly planner and notebook - tracking training, sleep, and mood" width="800" height="500" loading="lazy" decoding="async" />
+        <img src="images/guides/check-in-template.jpg" alt="A notebook and planner on a desk" width="640" height="400" loading="lazy" decoding="async" />
       </div>
       <div class="lib-card-body">
-        <div class="lib-tag">Tracker</div>
-        <div class="lib-title">Weekly Check-In Template</div>
-        <p class="lib-desc">Log training, sleep, energy, and mood. Track what matters without complicated spreadsheets.</p>
+        <div class="lib-tag">Printable</div>
+        <div class="lib-title">Training check-in</div>
+        <p class="lib-desc">Review your training, food, recovery and progress in about 3 minutes. The same questions my coaching clients answer.</p>
         <span class="lib-link">View template &rarr;</span>
       </div>
     </a>
@@ -121,34 +122,34 @@
   <div class="lib-grid">
     <a href="blog-glp1.html" class="lib-card">
       <div class="lib-card-img">
-        <img src="https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Weight-loss medication and healthy habits - sustaining results after GLP-1 treatment" width="800" height="500" loading="lazy" decoding="async" />
+        <img src="images/guides/glp1.jpg" alt="A person preparing a healthy meal" width="640" height="400" loading="lazy" decoding="async" />
       </div>
       <div class="lib-card-body">
         <div class="lib-tag">GLP-1 · Nutrition</div>
-        <div class="lib-title">Maintaining Weight Loss After GLP-1 Medications</div>
-        <p class="lib-desc">Ozempic, Wegovy, Mounjaro - the real work starts when you stop. Here's how to maintain your progress.</p>
+        <div class="lib-title">GLP-1 medicines and keeping the weight off</div>
+        <p class="lib-desc">What the research says about muscle and lean mass on these medicines, and how to keep your results when you come off.</p>
         <span class="lib-link">Read article &rarr;</span>
       </div>
     </a>
     <a href="blog-consistency.html" class="lib-card">
       <div class="lib-card-img">
-        <img src="https://images.pexels.com/photos/3621168/pexels-photo-3621168.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Calendar and routine - reframing what consistency actually means" width="800" height="500" loading="lazy" decoding="async" />
+        <img src="images/guides/consistency.jpg" alt="A calendar on a wall" width="640" height="400" loading="lazy" decoding="async" />
       </div>
       <div class="lib-card-body">
         <div class="lib-tag">Mindset</div>
         <div class="lib-title">Why Consistency Is the Wrong Goal</div>
-        <p class="lib-desc">People say they want to be consistent. What they usually mean is they want to stop feeling like they're failing.</p>
+        <p class="lib-desc">Consistency is the result of a system that fits your week, not something you can decide to be.</p>
         <span class="lib-link">Read article &rarr;</span>
       </div>
     </a>
     <a href="blog-rest-days.html" class="lib-card">
       <div class="lib-card-img">
-        <img src="https://images.pexels.com/photos/3822868/pexels-photo-3822868.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Rest and recovery - an essential part of any training programme" width="800" height="500" loading="lazy" decoding="async" />
+        <img src="images/guides/rest-days.jpg" alt="A person resting after training" width="640" height="400" loading="lazy" decoding="async" />
       </div>
       <div class="lib-card-body">
         <div class="lib-tag">Training</div>
         <div class="lib-title">The Honest Truth About Rest Days</div>
-        <p class="lib-desc">Rest days aren't something you earn. Neither guilt nor reward - just recovery.</p>
+        <p class="lib-desc">Rest days are not a reward you earn. What recovery does, and how to read your own readiness.</p>
         <span class="lib-link">Read article &rarr;</span>
       </div>
     </a>
@@ -161,21 +162,51 @@
       <div class="lib-card-body" style="text-align:center">
         <div class="lib-tag">Support</div>
         <div class="lib-title">Frequently Asked Questions</div>
-        <p class="lib-desc">Qualifications, pricing, check-ins, nutrition guidance, contracts - everything you need to know about working together.</p>
+        <p class="lib-desc">What coaching includes, how check-ins work, nutrition, injuries, in-person sessions, payment and cancelling.</p>
         <span class="lib-link">View FAQ &rarr;</span>
       </div>
     </a>
   </div>
 
-  <div class="lib-cta">
-    <p>Want personalised guidance instead of self-serve resources?</p>
-    <a href="index.html#consultation" class="btn">Book a Free Consultation</a>
+  <div class="cta-box">
+    <h2>Want a plan built for you?</h2>
+    <p>These guides are the general version. Coaching is the version built around your week, your equipment and your goals.</p>
+    <a href="index.html#consultation" class="btn">Request a free consultation</a>
   </div>
 </main>
 
-<footer class="footer-simple">
+<footer class="site-footer on-dark">
   <div class="container">
-    <p>&copy; <script>document.write(new Date().getFullYear())</script> Balazs Morvay Coaching &middot; <a href="index.html">Back to Home</a></p>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">B<span>.</span>Morvay</p>
+        <p class="footer-tagline">Online coaching for busy professionals. Based in Edinburgh, Scotland.</p>
+      </div>
+      <nav aria-label="Footer">
+        <p class="footer-h">Explore</p>
+        <ul class="footer-links">
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="personal-training-edinburgh.html">Personal training in Edinburgh</a></li>
+          <li><a href="library.html">Free guides</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="footer-h">Contact</p>
+        <ul class="footer-links">
+          <li><a href="index.html#consultation">Request a consultation</a></li>
+          <li><a href="mailto:morvaybalazs@gmail.com">morvaybalazs@gmail.com</a></li>
+          <li><a href="tel:+447914390913">07914 390913</a></li>
+          <li>Edinburgh, Scotland</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year>2026</span> Balazs Morvay Coaching</p>
+      <p class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p>
+    </div>
   </div>
 </footer>
 

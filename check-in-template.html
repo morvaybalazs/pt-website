@@ -1,115 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weekly Check-In Template | B. Morvay Coaching</title>
-  <meta name="description" content="A simple weekly check-in template to track training, sleep, energy, and mood. Track what matters without complicated spreadsheets." />
+  <script>document.documentElement.className='js';</script>
+  <title>Training Check-In Template (Printable) | B. Morvay Coaching</title>
+  <meta name="description" content="A free printable check-in to review your training, food, sleep, energy, stress and progress in about 3 minutes. The same questions my coaching clients answer." />
   <meta name="author" content="Balazs Morvay" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://bmorvay.com/check-in-template.html" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Weekly Check-In Template" />
-  <meta property="og:description" content="A simple weekly check-in template to track training, sleep, energy, and mood. Track what matters without complicated spreadsheets." />
+  <meta property="og:title" content="Training check-in template (printable)" />
+  <meta property="og:description" content="Review your training, food, sleep, energy, stress and progress in about 3 minutes. The same questions my coaching clients answer." />
   <meta property="og:url" content="https://bmorvay.com/check-in-template.html" />
-  <meta property="og:image" content="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop" />
+  <meta property="og:image" content="https://bmorvay.com/images/og-coaching.jpg" />
   <meta property="og:site_name" content="B. Morvay Coaching" />
   <meta property="og:locale" content="en_GB" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230d0e10'/><text x='50' y='72' font-size='68' font-family='system-ui,-apple-system,sans-serif' font-weight='800' text-anchor='middle' fill='%23ffffff'>B</text><circle cx='78' cy='68' r='6' fill='%23c48a3f'/></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .page-header{padding:6rem 0 2.5rem;text-align:center;margin-bottom:2rem}
-    .eyebrow{font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dim);display:flex;align-items:center;gap:.7rem;margin-bottom:1.1rem;justify-content:center;line-height:1.2}
-    .eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--accent);flex-shrink:0}
-    .page-header h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;text-transform:uppercase;color:var(--black);line-height:1.05;margin-bottom:1rem}
-    .page-header p{font-size:1.1rem;font-weight:300;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
-    .template{max-width:680px;margin:0 auto;padding-bottom:4rem}
-    .template p{font-size:1rem;line-height:1.8;color:var(--mid);margin-bottom:1.5rem}
-    .template h2{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:800;text-transform:uppercase;color:var(--black);margin:2.5rem 0 1rem}
-    .check-section{border:1px solid var(--rule);border-radius:var(--radius);margin-bottom:1.5rem;overflow:hidden}
-    .check-section-header{background:var(--surface);padding:1rem 1.5rem;font-weight:700;font-size:.95rem;color:var(--black);border-bottom:1px solid var(--rule)}
-    .check-field{padding:1rem 1.5rem;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;gap:1rem}
-    .check-field:last-child{border-bottom:none}
-    .check-label{font-size:.95rem;color:var(--mid)}
-    .check-input{font-size:.95rem;color:var(--subtle);text-align:right;font-style:italic}
-    .scale-row{display:flex;gap:.5rem;justify-content:flex-end}
-    .scale-num{width:28px;height:28px;border-radius:50%;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--muted)}
-    .note{font-size:.9rem;color:var(--muted);background:var(--surface);padding:1.25rem 1.75rem;border-radius:var(--radius);margin:2rem 0;line-height:1.7}
-    .note strong{color:var(--ink)}
-    .guide-cta{max-width:680px;margin:0 auto 4rem;padding:2.5rem;background:var(--surface);border-radius:var(--radius);text-align:center}
-    .guide-cta p{font-size:1rem;color:var(--mid);margin-bottom:1.25rem}
+    .sheet-actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.5rem}
+    .printable-tag{display:inline-block;margin-bottom:.9rem;padding:.3rem .75rem;border-radius:99px;background:var(--surface);color:var(--mid);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .sheet{max-width:760px;margin:0 auto 2rem}
+    .sheet-meta{display:flex;flex-wrap:wrap;gap:1rem 2rem;margin:0 0 1.5rem;font-weight:600;color:var(--ink)}
+    .sheet-meta span{flex:1 1 220px;border-bottom:1.5px solid var(--subtle);padding-bottom:.35rem}
+    .sheet-section{border:1px solid var(--rule);border-radius:var(--radius);margin-bottom:1.25rem;overflow:hidden;break-inside:avoid}
+    .sheet-section h2{margin:0;padding:.85rem 1.25rem;background:var(--surface);border-bottom:1px solid var(--rule);font-family:var(--display);font-size:1.3rem;font-weight:800;text-transform:uppercase;color:var(--black)}
+    .q{padding:1rem 1.25rem;border-bottom:1px solid var(--rule);break-inside:avoid}
+    .q:last-child{border-bottom:none}
+    .q-label{display:block;font-size:1rem;font-weight:600;line-height:1.5;color:var(--ink);margin-bottom:.6rem}
+    .q-hint{display:block;font-size:.92rem;font-weight:400;color:var(--muted);margin-top:.15rem}
+    .options{display:flex;flex-wrap:wrap;gap:.5rem}
+    .options li{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .75rem .35rem .5rem;border:1px solid #b9bfc7;border-radius:99px;font-size:.95rem;color:var(--mid);line-height:1.3}
+    .options li::before{content:'';width:14px;height:14px;border:1.5px solid var(--mid);border-radius:50%;flex-shrink:0}
+    .lines{height:4.2rem;background:repeating-linear-gradient(to bottom,transparent 0,transparent 1.35rem,#b9bfc7 1.35rem,#b9bfc7 calc(1.35rem + 1px))}
+    .blank{display:inline-block;min-width:5rem;border-bottom:1.5px solid var(--subtle);margin:0 .3rem}
+    .sheet .note{margin:1.25rem 0}
+    @media print{
+      @page{size:A4;margin:12mm}
+      .page-header .lead,.sheet-actions,.how-to,.after-sheet{display:none!important}
+      .page-header{padding:0 0 .5rem}
+      .page-header h1{font-size:18pt;margin-bottom:.1rem}
+      .page-header .eyebrow{display:none}
+      .printable-tag{display:none}
+      .container{padding:0;max-width:none}
+      .sheet{max-width:none;margin:0}
+      .sheet-section{margin-bottom:5px;border-color:#999}
+      .sheet-section h2{padding:3px 10px;font-size:11pt;background:#eee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .q{padding:3px 10px;border-color:#bbb}
+      .q-label{font-size:10pt;margin-bottom:2px;line-height:1.35}
+      .q-hint{font-size:9pt}
+      .options li{font-size:9pt;padding:1px 7px 1px 4px;border-color:#999}
+      .lines{height:1rem}
+      .sheet-meta{margin-bottom:8px;gap:.5rem 1.5rem}
+      .sheet .note{font-size:8.5pt;padding:5px 10px;margin:4px 0;background:#f2f2f2!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    }
   </style>
+  <script src="site.js" defer></script>
 </head>
 <body>
 
-<nav class="sub-nav">
-  <div class="container">
-    <div class="sub-nav-inner">
-      <a href="index.html" class="sub-nav-logo">B<span>.</span>Morvay</a>
-      <a href="index.html" class="sub-nav-back" onclick="if(document.referrer&&history.length>1){history.back();return false;}">← Back</a>
-    </div>
-  </div>
-</nav>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<main class="container">
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a href="index.html" class="logo" aria-label="B. Morvay Coaching, home">B<span>.</span>Morvay</a>
+    <nav class="site-nav" aria-label="Main">
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-bars" aria-hidden="true"></span></button>
+      <ul class="site-menu" id="site-menu">
+        <li><a href="index.html#how-it-works">How it works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="library.html">Free guides</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#consultation" class="btn header-cta">Free consultation</a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1" class="container">
+  <p class="crumb"><a href="library.html">All free guides</a></p>
   <div class="page-header">
-    <div class="eyebrow">Free Template</div>
-    <h1>Weekly Check-In Template</h1>
-    <p>A simple one-page tool to log training, sleep, energy, and mood. Track what matters without overcomplicated spreadsheets.</p>
+    <p class="eyebrow">Free template</p>
+    <span class="printable-tag">Printable</span>
+    <h1>Training check-in</h1>
+    <p class="lead">Review your training, food, recovery and progress in about 3 minutes. These are the same questions my coaching clients answer at each check-in.</p>
+    <div class="sheet-actions no-print">
+      <button type="button" class="btn" data-print>Print or save as PDF</button>
+    </div>
   </div>
-  <div class="template">
-    <p>Fill this out once a week - ideally on the same day each week (e.g., Sunday evening). It takes 5 minutes and gives you a clear picture of how the week went. Look for patterns over time, not individual data points.</p>
 
-    <h2>Training</h2>
-    <div class="check-section">
-      <div class="check-section-header">Sessions This Week</div>
-      <div class="check-field"><span class="check-label">Planned sessions</span><span class="check-input">___ / ___</span></div>
-      <div class="check-field"><span class="check-label">Completed sessions</span><span class="check-input">___ / ___</span></div>
-      <div class="check-field"><span class="check-label">Session quality (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
-      <div class="check-field"><span class="check-label">Any PBs or progressions?</span><span class="check-input">Yes / No - details:</span></div>
-    </div>
+  <div class="sheet">
+    <div class="note how-to"><strong>How to use it:</strong> fill it in on the same day every week, or every two weeks. Tick one answer for each question. Nothing you write here is sent anywhere: print it, or save it as a PDF and write on it. Look for patterns over 4 to 6 weeks, not single weeks.</div>
 
-    <h2>Recovery & Lifestyle</h2>
-    <div class="check-section">
-      <div class="check-section-header">How You Felt</div>
-      <div class="check-field"><span class="check-label">Average sleep (hours)</span><span class="check-input">___</span></div>
-      <div class="check-field"><span class="check-label">Sleep quality (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
-      <div class="check-field"><span class="check-label">Energy levels (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
-      <div class="check-field"><span class="check-label">Stress levels (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
-      <div class="check-field"><span class="check-label">Overall mood (1-10)</span><div class="scale-row"><span class="scale-num">1</span><span class="scale-num">2</span><span class="scale-num">3</span><span class="scale-num">4</span><span class="scale-num">5</span><span class="scale-num">6</span><span class="scale-num">7</span><span class="scale-num">8</span><span class="scale-num">9</span><span class="scale-num">10</span></div></div>
-    </div>
+    <p class="sheet-meta"><span>Name:</span><span>Date:</span></p>
 
-    <h2>Nutrition</h2>
-    <div class="check-section">
-      <div class="check-section-header">Eating Habits</div>
-      <div class="check-field"><span class="check-label">Protein target hit most days?</span><span class="check-input">Yes / No</span></div>
-      <div class="check-field"><span class="check-label">Water intake adequate?</span><span class="check-input">Yes / No</span></div>
-      <div class="check-field"><span class="check-label">Any notable changes?</span><span class="check-input">___</span></div>
-    </div>
+    <section class="sheet-section" aria-labelledby="s-training">
+      <h2 id="s-training">Training</h2>
+      <div class="q">
+        <span class="q-label">Since your last check-in, how much of your planned training did you complete?</span>
+        <ul class="options"><li>All of it</li><li>Most of it</li><li>Some of it</li><li>None of it</li><li>No training was planned</li></ul>
+      </div>
+      <div class="q">
+        <span class="q-label">How hard did your workouts feel?<span class="q-hint">Think about how the sets felt overall, not the hardest single set.</span></span>
+        <ul class="options"><li>Too easy</li><li>About right</li><li>Hard but manageable</li><li>Too hard</li><li>No workouts</li></ul>
+      </div>
+      <div class="q">
+        <span class="q-label">Did you skip or swap any exercises? Which ones, and why?</span>
+        <div class="lines" aria-hidden="true"></div>
+      </div>
+    </section>
 
-    <h2>Reflection</h2>
-    <div class="check-section">
-      <div class="check-section-header">Weekly Notes</div>
-      <div class="check-field" style="flex-direction:column;align-items:stretch;gap:.5rem"><span class="check-label">What went well this week?</span><span class="check-input" style="text-align:left">___</span></div>
-      <div class="check-field" style="flex-direction:column;align-items:stretch;gap:.5rem"><span class="check-label">What could improve?</span><span class="check-input" style="text-align:left">___</span></div>
-      <div class="check-field" style="flex-direction:column;align-items:stretch;gap:.5rem"><span class="check-label">Focus for next week?</span><span class="check-input" style="text-align:left">___</span></div>
-    </div>
+    <section class="sheet-section" aria-labelledby="s-food">
+      <h2 id="s-food">Food</h2>
+      <div class="q">
+        <span class="q-label">How manageable was your food plan?</span>
+        <ul class="options"><li>Easy to follow</li><li>Mostly manageable</li><li>Difficult to follow</li><li>I did not follow it</li><li>No food plan</li></ul>
+      </div>
+      <div class="q">
+        <span class="q-label">Your weekly average weight (optional)<span class="q-hint">Weigh yourself first thing in the morning and compare weekly averages, not single days.</span></span>
+        <p style="margin:0;color:var(--mid)">This week:<span class="blank"></span>kg &nbsp; Last time:<span class="blank"></span>kg</p>
+      </div>
+    </section>
 
-    <div class="note"><strong>Tip:</strong> Print this page or screenshot it and fill it in weekly. Don't overthink the numbers - they're just data points. The real value comes from looking at trends over 4-6 weeks.</div>
+    <section class="sheet-section" aria-labelledby="s-recovery">
+      <h2 id="s-recovery">Recovery</h2>
+      <div class="q">
+        <span class="q-label">How has your energy been?</span>
+        <ul class="options"><li>Good</li><li>Okay</li><li>Low</li></ul>
+      </div>
+      <div class="q">
+        <span class="q-label">How have you been sleeping?</span>
+        <ul class="options"><li>Well</li><li>Mixed</li><li>Poorly</li></ul>
+      </div>
+      <div class="q">
+        <span class="q-label">How stressed have you felt?<span class="q-hint">Life outside the gym, such as work, family or money.</span></span>
+        <ul class="options"><li>Low</li><li>Medium</li><li>High</li></ul>
+      </div>
+    </section>
+
+    <section class="sheet-section" aria-labelledby="s-health">
+      <h2 id="s-health">Health</h2>
+      <div class="q">
+        <span class="q-label">Have you had new or worsening pain, an injury, or a change in your health or medicines?</span>
+        <ul class="options"><li>No</li><li>Yes</li><li>Not sure</li></ul>
+      </div>
+      <div class="q">
+        <span class="q-label">If yes or not sure, what has changed?</span>
+        <div class="lines" aria-hidden="true"></div>
+      </div>
+      <div class="q">
+        <p class="note" style="margin:0"><strong>Pain rule:</strong> pain up to about 3 out of 10 that settles afterwards is usually fine. If pain reaches 4 out of 10, gets worse or lingers, ease off and get it checked. Don't wait for a check-in to report an urgent concern.</p>
+      </div>
+    </section>
+
+    <section class="sheet-section" aria-labelledby="s-progress">
+      <h2 id="s-progress">Progress</h2>
+      <div class="q">
+        <span class="q-label">How do you feel about your progress?</span>
+        <ul class="options"><li>Happy with it</li><li>Okay</li><li>Not happy</li></ul>
+      </div>
+      <div class="q">
+        <span class="q-label">What went well, or made the plan difficult?</span>
+        <div class="lines" aria-hidden="true"></div>
+      </div>
+      <div class="q">
+        <span class="q-label">What will you change before your next check-in?</span>
+        <div class="lines" aria-hidden="true"></div>
+      </div>
+    </section>
   </div>
-  <div class="guide-cta">
-    <p>Want structured check-ins with professional feedback?</p>
-    <a href="index.html#consultation" class="btn">Book a Free Consultation</a>
+
+  <div class="cta-box after-sheet">
+    <h2>Want someone to read your check-ins?</h2>
+    <p>Coaching clients send this check-in after their first week, then every two weeks. I reply within two working days and change the plan when it needs to.</p>
+    <a href="index.html#consultation" class="btn">Request a free consultation</a>
   </div>
 </main>
 
-<footer class="footer-simple">
+<footer class="site-footer on-dark">
   <div class="container">
-    <p>© <script>document.write(new Date().getFullYear())</script> Balazs Morvay Coaching · <a href="index.html">Back to Home</a></p>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">B<span>.</span>Morvay</p>
+        <p class="footer-tagline">Online coaching for busy professionals. Based in Edinburgh, Scotland.</p>
+      </div>
+      <nav aria-label="Footer">
+        <p class="footer-h">Explore</p>
+        <ul class="footer-links">
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="personal-training-edinburgh.html">Personal training in Edinburgh</a></li>
+          <li><a href="library.html">Free guides</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="footer-h">Contact</p>
+        <ul class="footer-links">
+          <li><a href="index.html#consultation">Request a consultation</a></li>
+          <li><a href="mailto:morvaybalazs@gmail.com">morvaybalazs@gmail.com</a></li>
+          <li><a href="tel:+447914390913">07914 390913</a></li>
+          <li>Edinburgh, Scotland</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year>2026</span> Balazs Morvay Coaching</p>
+      <p class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p>
+    </div>
   </div>
 </footer>
 
