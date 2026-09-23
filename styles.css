@@ -34,6 +34,7 @@
   --radius-sm:5px;
   --header-h:68px;
   --container-max:1180px;
+  --gut:clamp(1.25rem,5vw,3rem);
   --reading:690px;
   --display:'Barlow Condensed','Arial Narrow',sans-serif;
   --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -59,7 +60,7 @@ strong,b,th{font-weight:600}
 .skip-link{position:absolute;left:1rem;top:-200px;z-index:1000;background:var(--black);color:var(--white);padding:.75rem 1.1rem;border-radius:var(--radius-sm);font-weight:600}
 .skip-link:focus{top:.75rem}
 
-.container{max-width:var(--container-max);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+.container{max-width:var(--container-max);margin:0 auto;padding:0 var(--gut)}
 @media (min-width:1700px){:root{--container-max:1400px}}
 
 /* Buttons */
@@ -101,7 +102,7 @@ strong,b,th{font-weight:600}
   .js .menu-toggle{display:inline-flex}
   .js .site-menu{display:none;position:absolute;left:0;right:0;top:100%;max-height:calc(100svh - var(--header-h));overflow-y:auto;flex-direction:column;align-items:stretch;gap:0;background:var(--white);border-top:1px solid var(--rule);box-shadow:0 14px 28px rgba(0,0,0,.1);padding:.25rem 0 .75rem}
   .js .site-header.menu-open .site-menu{display:flex}
-  .js .site-menu a{padding:.95rem clamp(1.25rem,5vw,3rem);border-radius:0;font-weight:500;border-bottom:1px solid var(--rule)}
+  .js .site-menu a{padding:.95rem var(--gut);border-radius:0;font-weight:500;border-bottom:1px solid var(--rule)}
   /* Without JavaScript the links stay visible as a row under the logo */
   .no-js .site-header-inner{flex-wrap:wrap}
   .no-js .site-nav{order:4;width:100%}
@@ -195,15 +196,31 @@ strong,b,th{font-weight:600}
 .footer-legal a{display:inline-block;padding:.3rem 0}
 @media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
 
+/* Blocks rise into place as you scroll. The starting state is only applied once the script
+   has an observer running (.reveal-on), so without JavaScript, or if anything fails,
+   everything is simply visible. */
+[data-reveal]{transition:opacity .55s ease,transform .55s cubic-bezier(.22,.7,.3,1)}
+.reveal-on [data-reveal]{opacity:0;transform:translateY(16px)}
+.reveal-on [data-reveal].is-in{opacity:1;transform:none}
+
+/* Answers slide open where the browser supports it */
+@supports (interpolate-size:allow-keywords){
+  :root{interpolate-size:allow-keywords}
+  .faq-item::details-content{block-size:0;overflow:hidden;content-visibility:hidden;transition:block-size .32s ease,content-visibility .32s allow-discrete}
+  .faq-item[open]::details-content{block-size:auto;content-visibility:visible}
+}
+
 /* Motion: nothing moves for people who ask for less motion */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+  .reveal-on [data-reveal]{opacity:1;transform:none}
 }
 
 /* Print: page content only */
 @media print{
   .site-header,.site-footer,.skip-link,.cta-box,.crumb,.no-print{display:none!important}
+  .reveal-on [data-reveal]{opacity:1!important;transform:none!important}
   body{color:#000;background:#fff}
   .prose p,.prose li{color:#000}
 }

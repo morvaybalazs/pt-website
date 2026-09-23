@@ -35,6 +35,27 @@
     });
   }
 
+  // Blocks rise into place as they come into view. The starting state only exists while this
+  // observer is running, so if anything here fails the page is simply all visible. Nothing
+  // moves for people who ask for less motion, and a safety timer reveals anything left over.
+  var reveals = document.querySelectorAll('[data-reveal]');
+  if (reveals.length && !reduceMotion.matches && 'IntersectionObserver' in window) {
+    var showAll = function () {
+      reveals.forEach(function (el) { el.classList.add('is-in'); });
+    };
+    document.documentElement.classList.add('reveal-on');
+    var revealer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        revealer.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
+    reveals.forEach(function (el) { revealer.observe(el); });
+    setTimeout(showAll, 4000);
+    window.addEventListener('beforeprint', showAll);
+  }
+
   // Back to top: appears after the first screen, then hands keyboard focus to the page start
   var toTop = document.getElementById('back-to-top');
   if (toTop) {
