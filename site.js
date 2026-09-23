@@ -48,42 +48,64 @@
     });
   }
 
-  // Hero video: desktop only, never with reduced motion or data saver, always with a pause button.
-  // Phones keep the still image, so they never download the video.
+  // Hero video. Phones get a small version (about 800 KB) and desktops the full one.
+  // It is skipped for reduced motion and for data saver, and it only loads once the picture
+  // is near the screen, so nobody downloads it without seeing it. The still image stays
+  // underneath, which is what shows if playing is blocked (iOS Low Power Mode, for example).
   var media = document.querySelector('[data-hero-video]');
   if (media) {
-    var wide = window.matchMedia('(min-width: 861px)').matches;
     var saveData = navigator.connection && navigator.connection.saveData;
-    if (wide && !reduceMotion.matches && !saveData) {
-      var video = document.createElement('video');
-      video.className = 'hero-video';
-      video.muted = true; video.loop = true; video.playsInline = true;
-      video.setAttribute('muted', ''); video.setAttribute('playsinline', '');
-      video.setAttribute('aria-hidden', 'true');
-      video.preload = 'auto';
-      video.src = media.getAttribute('data-hero-video');
-      var button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'video-toggle';
-      button.hidden = true;
-      var pauseIcon = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>';
-      var playIcon = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
-      var showState = function () {
-        var paused = video.paused;
-        button.innerHTML = paused ? playIcon : pauseIcon;
-        button.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
+    if (!reduceMotion.matches && !saveData) {
+      var startVideo = function () {
+        var wide = window.matchMedia('(min-width: 861px)').matches;
+        var src = wide ? media.getAttribute('data-hero-video') : media.getAttribute('data-hero-video-small');
+        if (!src || media.querySelector('video')) return;
+        var video = document.createElement('video');
+        video.className = 'hero-video';
+        video.muted = true; video.loop = true; video.playsInline = true; video.autoplay = true;
+        video.setAttribute('muted', ''); video.setAttribute('playsinline', ''); video.setAttribute('autoplay', '');
+        video.setAttribute('aria-hidden', 'true');
+        video.preload = 'auto';
+        video.src = src;
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'video-toggle';
+        button.hidden = true;
+        var pauseIcon = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>';
+        var playIcon = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
+        var showState = function () {
+          var paused = video.paused;
+          button.innerHTML = paused ? playIcon : pauseIcon;
+          button.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
+        };
+        var tryPlay = function () {
+          var played = video.play();
+          if (played && played.catch) played.catch(function () {});
+        };
+        button.addEventListener('click', function () {
+          if (video.paused) { tryPlay(); } else { video.pause(); }
+        });
+        video.addEventListener('play', showState);
+        video.addEventListener('pause', showState);
+        video.addEventListener('playing', function () { video.classList.add('on'); button.hidden = false; showState(); }, { once: true });
+        video.addEventListener('error', function () { video.remove(); button.remove(); });
+        media.appendChild(video);
+        media.appendChild(button);
+        tryPlay();
+        // Some phones refuse to start until the person touches the screen (Low Power Mode)
+        window.addEventListener('touchstart', tryPlay, { once: true, passive: true });
       };
-      button.addEventListener('click', function () {
-        if (video.paused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); } else { video.pause(); }
-      });
-      video.addEventListener('play', showState);
-      video.addEventListener('pause', showState);
-      video.addEventListener('playing', function () { video.classList.add('on'); button.hidden = false; showState(); }, { once: true });
-      video.addEventListener('error', function () { video.remove(); button.remove(); });
-      media.appendChild(video);
-      media.appendChild(button);
-      var started = video.play();
-      if (started && started.catch) started.catch(function () {});
+      // Wait until the page has finished loading, so the video never competes with the
+      // text and the picture people see first.
+      var watchForVideo = function () {
+        if (!('IntersectionObserver' in window)) { startVideo(); return; }
+        var watcher = new IntersectionObserver(function (entries) {
+          if (entries.some(function (e) { return e.isIntersecting; })) { watcher.disconnect(); startVideo(); }
+        }, { rootMargin: '250px' });
+        watcher.observe(media);
+      };
+      if (document.readyState === 'complete') watchForVideo();
+      else window.addEventListener('load', watchForVideo, { once: true });
     }
   }
 

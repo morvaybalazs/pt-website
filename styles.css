@@ -99,7 +99,7 @@ strong,b,th{font-weight:600}
 @media (max-width:900px){
   .site-nav{order:3}
   .js .menu-toggle{display:inline-flex}
-  .js .site-menu{display:none;position:absolute;left:calc(-1 * clamp(1.25rem,5vw,3rem));right:calc(-1 * clamp(1.25rem,5vw,3rem));top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--white);border-top:1px solid var(--rule);box-shadow:0 14px 28px rgba(0,0,0,.1);padding:.25rem 0 .75rem}
+  .js .site-menu{display:none;position:absolute;left:0;right:0;top:100%;max-height:calc(100svh - var(--header-h));overflow-y:auto;flex-direction:column;align-items:stretch;gap:0;background:var(--white);border-top:1px solid var(--rule);box-shadow:0 14px 28px rgba(0,0,0,.1);padding:.25rem 0 .75rem}
   .js .site-header.menu-open .site-menu{display:flex}
   .js .site-menu a{padding:.95rem clamp(1.25rem,5vw,3rem);border-radius:0;font-weight:500;border-bottom:1px solid var(--rule)}
   /* Without JavaScript the links stay visible as a row under the logo */

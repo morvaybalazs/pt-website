@@ -131,6 +131,10 @@
     .steps h3{font-size:1.15rem;font-weight:600;color:var(--black);margin:.45rem 0 .4rem}
     .steps p{font-size:1rem;line-height:1.75;color:var(--mid)}
 
+    /* Photograph between sections */
+    .photo-band{height:clamp(180px,42vw,340px);overflow:hidden;background:#e6e7ea}
+    .photo-band img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:grayscale(.55) contrast(1.02)}
+
     /* Pricing */
     .price-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:1.5rem;max-width:1000px;margin:2.5rem auto 0;align-items:start}
     .price-card{display:flex;flex-direction:column;padding:clamp(1.5rem,4vw,2.25rem);background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
@@ -141,6 +145,7 @@
     .price{font-size:1.05rem;color:var(--mid)}
     .price strong{font-family:var(--display);font-size:3.2rem;font-weight:800;line-height:1;color:var(--black);margin-right:.2rem}
     .price-desc{font-size:1rem;color:var(--mid);margin-top:.75rem}
+    .ticks-head{margin:1.25rem 0 .1rem;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
     .ticks{display:flex;flex-direction:column;gap:.7rem;margin:1.25rem 0 1.5rem}
     .ticks li{position:relative;padding-left:1.7rem;font-size:.98rem;line-height:1.6;color:var(--mid)}
     .ticks li::before{content:'';position:absolute;left:.1rem;top:.38rem;width:.9rem;height:.5rem;border-left:2.5px solid var(--accent-dim);border-bottom:2.5px solid var(--accent-dim);transform:rotate(-45deg)}
@@ -232,7 +237,7 @@
     <div class="hero-text">
       <p class="eyebrow">Online coaching · Edinburgh</p>
       <h1 id="hero-title" class="display hero-title">Strength training that fits <em>your working week.</em></h1>
-      <p class="hero-lead">Online coaching for busy professionals who want to get stronger and stop starting over. I build your plan around the time you really have, check in with you regularly and change the plan when work gets busy.</p>
+      <p class="hero-lead">Online coaching for busy professionals who want to get stronger and stop starting over. I build your plan around the time you really have, and change it when work gets busy.</p>
       <p class="hero-price"><strong>£200 a month</strong><span class="facts">No minimum term <span class="dot" aria-hidden="true">·</span> Free first call</span></p>
       <div class="hero-actions">
         <a class="btn" href="#consultation">Request a free consultation</a>
@@ -240,7 +245,7 @@
       </div>
       <p class="hero-creds">BSc (Hons) Physical Activity and Health · Sports massage therapist · 10+ years in the industry</p>
     </div>
-    <div class="hero-media" data-hero-video="videos/hero-loop.mp4">
+    <div class="hero-media" data-hero-video="videos/hero-loop.mp4" data-hero-video-small="videos/hero-loop-480.mp4">
       <picture>
         <source type="image/avif" srcset="images/hero-600.avif 600w, images/hero-1094.avif 1094w" sizes="(min-width: 861px) 50vw, 100vw" />
         <img src="images/hero-1094.jpg" srcset="images/hero-600.jpg 600w, images/hero-1094.jpg 1094w" sizes="(min-width: 861px) 50vw, 100vw" width="1094" height="1250" alt="Balazs Morvay setting up a heavy deadlift in the gym" fetchpriority="high" />
@@ -266,7 +271,7 @@
           <figcaption>Emma, healthcare</figcaption>
         </figure>
       </div>
-      <p class="quotes-note">Sarah, Mike and Emma took part in a free pilot of the coaching. They are quoted with their permission.</p>
+      <p class="quotes-note">All three took part in a free pilot of the coaching, and are quoted with their permission.</p>
     </div>
   </section>
 
@@ -274,30 +279,37 @@
     <div class="container">
       <p class="eyebrow">Who it's for</p>
       <h2 id="who-title" class="display h2">Coaching for real working weeks</h2>
-      <p class="lead">For adults at any level who want a clear plan and someone checking in. You might recognise one of these.</p>
+      <p class="lead">For adults at any level who want a clear plan and someone checking in.</p>
       <div class="who-grid">
         <article class="who-card">
           <h3>Your week keeps changing</h3>
-          <p>Meetings run over, travel comes up, a week goes missing. Your plan uses the days and session length you really have. Short on time? Sessions of 45 minutes or less pair exercises so you fit more in. Miss a session and you simply do the next one.</p>
+          <p>Meetings run over, travel comes up, a week disappears. Your plan uses the days and the time you really have. Miss a session and you do the next one in order.</p>
         </article>
         <article class="who-card">
           <h3>Getting back into it</h3>
-          <p>You trained before, then work, family or an injury got in the way. We start at a level you can recover from and build back steadily. If something hurts, the plan works around it, and I'll tell you if you should see a physio or GP first.</p>
+          <p>You trained before, then work, family or an injury got in the way. We start where you can recover and build back steadily. If something hurts, the plan works around it.</p>
         </article>
         <article class="who-card">
           <h3>Ready to get stronger</h3>
-          <p>You already train, but progress has stalled or you want a plan with a purpose. You log every set, aim to beat last week's numbers and get planned easier weeks, so you keep progressing.</p>
+          <p>You already train, but progress has stalled. You log every set, aim to beat last week's numbers, and get planned easier weeks so you keep going.</p>
         </article>
       </div>
       <div class="glp1-band on-dark">
         <div>
           <h3>On a weight-loss medicine like a GLP-1? You're welcome here.</h3>
-          <p>Many people on these medicines worry about starting with a trainer. You don't need to. Strength training and enough protein are the best-supported ways to hold on to muscle and strength while you lose weight. I plan both around your appetite and check that you're eating enough. Your prescriber stays in charge of the medicine: I don't advise on starting, changing or stopping it.</p>
+          <p>You don't need to worry about starting with a trainer. Strength training and enough protein are the best-supported ways to keep muscle and strength while you lose weight, so your plan puts both first and checks you're eating enough. Your prescriber stays in charge of the medicine.</p>
         </div>
         <a class="btn btn-light" href="blog-glp1.html">Read the GLP-1 guide</a>
       </div>
     </div>
   </section>
+
+  <div class="photo-band">
+    <picture>
+      <source type="image/avif" srcset="images/band2-640.avif 640w, images/band2-1200.avif 1200w" sizes="100vw" />
+      <img src="images/band2-1200.jpg" srcset="images/band2-640.jpg 640w, images/band2-1200.jpg 1200w" sizes="100vw" width="1200" height="500" alt="Balazs Morvay rowing a heavy dumbbell in the gym" loading="lazy" decoding="async" />
+    </picture>
+  </div>
 
   <section class="section section-alt" id="how-it-works" aria-labelledby="how-title">
     <div class="container">
@@ -306,19 +318,19 @@
       <ol class="steps">
         <li>
           <h3>A free call</h3>
-          <p>30 minutes. We talk about your goals, your week and what has got in the way before. I explain the coaching and the price, and we decide together if it's a good fit. No obligation.</p>
+          <p>30 minutes. Your goals, your week, and what has got in the way before. I explain the coaching and the price, and we decide together. No obligation.</p>
         </li>
         <li>
           <h3>A private questionnaire</h3>
-          <p>You tell me about your health, training, equipment and schedule. Your answers are private and used only for your coaching. If anything needs a doctor's OK first, I'll tell you before we start.</p>
+          <p>Your health, training, equipment and schedule. Your answers stay private. If anything needs a doctor's OK first, I'll tell you before we start.</p>
         </li>
         <li>
           <h3>Your plan, explained</h3>
-          <p>You see the agreement and the price before you pay. I build your training plan, and your nutrition plan if you want one. Then we go through it on a call and agree your starting weights.</p>
+          <p>You see the agreement and price before you pay. I build your plan, then we walk through it on a call and agree your starting weights.</p>
         </li>
         <li>
           <h3>Train and check in</h3>
-          <p>Your plan is a Google Sheet on your phone: each session, your sets, your rest times and last week's numbers to beat. You send a short check-in after your first week, then every two weeks. You can message me any time.</p>
+          <p>Your plan is a Google Sheet on your phone: your sets, rest times and last week's numbers to beat. Send a short check-in after your first week, then every two weeks, and message me any time.</p>
         </li>
         <li>
           <h3>Review, then your next block</h3>
@@ -328,25 +340,35 @@
     </div>
   </section>
 
+  <div class="photo-band">
+    <picture>
+      <source type="image/avif" srcset="images/band-640.avif 640w, images/band-1200.avif 1200w" sizes="100vw" />
+      <img src="images/band-1200.jpg" srcset="images/band-640.jpg 640w, images/band-1200.jpg 1200w" sizes="100vw" width="1200" height="486" alt="Balazs Morvay holding a loaded barbell at the top of a deadlift" loading="lazy" decoding="async" />
+    </picture>
+  </div>
+
   <section class="section" id="pricing" aria-labelledby="pricing-title">
     <div class="container">
       <p class="eyebrow center">Pricing</p>
       <h2 id="pricing-title" class="display h2 center">What you get</h2>
-      <p class="lead center">Monthly coaching is the main service. If you'd rather follow a plan on your own, there's a one-off programme.</p>
+      <p class="lead center">Coaching is the main service. If you'd rather train on your own, there's a one-off programme.</p>
       <div class="price-grid">
         <article class="price-card featured" aria-labelledby="coaching-title">
           <p class="price-tag">Ongoing coaching</p>
           <h3 id="coaching-title">Coaching</h3>
           <p class="price"><strong>£200</strong> a month</p>
+          <p class="ticks-head">Your plan</p>
           <ul class="ticks">
-            <li>A training plan built around your goals, equipment and schedule, and adjusted when your check-ins show it should change</li>
-            <li>A nutrition plan: daily calorie and protein targets, a meal pattern that suits your routine and simple rules for adjusting. No meal plans: log your food in any app you like, or use hand portions</li>
+            <li>A training plan built around your goals, equipment and schedule</li>
+            <li>Daily calorie and protein targets, with simple rules for adjusting them (not a meal plan)</li>
+            <li>Home gym planning if you need it</li>
+          </ul>
+          <p class="ticks-head">Your support</p>
+          <ul class="ticks">
             <li>A check-in after your first week, then every two weeks, with a video or phone call when it helps</li>
-            <li>Message me any time on WhatsApp or iMessage</li>
-            <li>Replies to messages and check-ins within two working days (Monday to Friday)</li>
+            <li>Messages any time on WhatsApp or iMessage, answered within two working days (Monday to Friday)</li>
             <li>Feedback on videos of your lifts</li>
             <li>A review at the end of each block, and your next block built from it</li>
-            <li>Home gym planning if you need it</li>
           </ul>
           <p class="price-terms">Paid monthly in advance. No minimum term: cancel before your next payment date. Full refund if you're not happy within your first 14 days.</p>
           <a class="btn btn-block" href="#consultation">Request a free consultation</a>
@@ -357,7 +379,7 @@
           <p class="price"><strong>£100</strong> one-off</p>
           <p class="price-desc">For people who want a plan to follow on their own.</p>
           <ul class="ticks">
-            <li>A personal 4 to 12 week training plan, built from your questionnaire, goals, equipment and schedule</li>
+            <li>A personal 4 to 12 week training plan</li>
             <li>In a Google Sheet you log on your phone</li>
             <li>One round of changes within 14 days if something doesn't fit</li>
             <li>No check-ins, messaging or nutrition plan</li>
@@ -375,7 +397,7 @@
         <p class="eyebrow">About</p>
         <h2 id="about-title" class="display h2">Hi, I'm Balazs</h2>
         <p>I'm a personal trainer and sports massage therapist based in Edinburgh. I have a BSc (Hons) in Physical Activity and Health and more than 10 years in the industry.</p>
-        <p>I coach people with full lives: careers, families, travel. My job is to give you a plan you can keep doing, check how it's going and change it when your life changes. Most of my coaching is online. If you're near Edinburgh, <a class="text-link" href="personal-training-edinburgh.html">I also train people in person</a>.</p>
+        <p>I coach people with full lives: careers, families, travel. My job is to give you a plan you can keep doing, and change it when your life changes. Most of my coaching is online. If you're near Edinburgh, <a class="text-link" href="personal-training-edinburgh.html">I also train people in person</a>.</p>
         <ul class="badges">
           <li>Physical Activity &amp; Health BSc (Hons)</li>
           <li>Sports massage qualified</li>
@@ -424,7 +446,7 @@
     <div class="container">
       <p class="eyebrow center">Get started</p>
       <h2 id="consult-title" class="display h2 center">Request a free consultation</h2>
-      <p class="lead center">Tell me a little about what you'd like help with. I'll reply within one working day to arrange a 30-minute call. We'll talk about your goals, I'll explain the coaching and the price, and we'll decide together whether it's a fit. No obligation.</p>
+      <p class="lead center">Tell me what you'd like help with. I'll reply within one working day to arrange a 30-minute call. No obligation.</p>
       <div class="consult-grid">
         <div class="consult-box">
           <form id="enquiry-form" name="consultation" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
@@ -477,8 +499,7 @@
           <h3>What happens next</h3>
           <ol class="next-steps">
             <li>I reply within one working day with times for a call.</li>
-            <li>We talk for 30 minutes.</li>
-            <li>If it's a fit, I send you the questionnaire and the agreement.</li>
+            <li>We talk for 30 minutes, and if it's a fit I send the questionnaire and agreement.</li>
           </ol>
           <p style="margin-top:1.5rem">Based in Edinburgh, coaching online wherever you train. <a class="text-link" href="https://share.google/cJ5u14vFF04bbxpgY">Find me on Google</a></p>
         </div>
