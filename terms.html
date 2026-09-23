@@ -1,107 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms &amp; Conditions | B. Morvay Coaching</title>
-  <meta name="description" content="Terms and conditions for B. Morvay Coaching services including online personal training and in-person sessions." />
+  <script>document.documentElement.className='js';</script>
+  <title>Coaching Terms | B. Morvay Coaching</title>
+  <meta name="description" content="The terms for coaching, programme blocks, in-person sessions and sports massage with B. Morvay Coaching: what's included, payment, cancelling, refunds and your rights." />
   <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://bmorvay.com/terms.html" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230d0e10'/><text x='50' y='72' font-size='68' font-family='system-ui,-apple-system,sans-serif' font-weight='800' text-anchor='middle' fill='%23ffffff'>B</text><circle cx='78' cy='68' r='6' fill='%23c48a3f'/></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .legal a{color:var(--accent)}
-    .legal a:hover{text-decoration:underline}
-    .legal{max-width:720px;margin:0 auto;padding:6rem 0 4rem}
-    .legal h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;text-transform:uppercase;color:var(--black);margin-bottom:.5rem}
-    .legal .updated{font-size:.85rem;color:var(--muted);margin-bottom:3rem}
-    .legal h2{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;text-transform:uppercase;color:var(--black);margin:2.5rem 0 .75rem}
-    .legal p{font-size:1rem;line-height:1.8;color:var(--mid);margin-bottom:1rem}
-    .legal ul{list-style:disc;padding-left:1.5rem;margin-bottom:1rem}
-    .legal li{font-size:1rem;line-height:1.8;color:var(--mid);margin-bottom:.35rem}
+    .legal-toc{margin:0 0 2rem;padding:1.25rem 1.5rem;background:var(--surface);border-radius:var(--radius)}
+    .legal-toc p{font-weight:600;color:var(--ink);margin-bottom:.4rem}
+    .prose .legal-toc ol{margin:0}
+    .prose .legal-toc li{font-size:.98rem;padding:.15rem 0}
+    .cancel-form{border:1px dashed var(--subtle);border-radius:var(--radius);padding:1.25rem 1.5rem}
+    .prose .cancel-form p{margin-bottom:.6rem}
   </style>
+  <script src="site.js" defer></script>
 </head>
 <body>
 
-<nav class="sub-nav">
-  <div class="container">
-    <div class="sub-nav-inner">
-      <a href="index.html" class="sub-nav-logo">B<span>.</span>Morvay</a>
-      <a href="index.html" class="sub-nav-back" onclick="if(document.referrer&&history.length>1){history.back();return false;}">&larr; Back</a>
-    </div>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a href="index.html" class="logo" aria-label="B. Morvay Coaching, home">B<span>.</span>Morvay</a>
+    <nav class="site-nav" aria-label="Main">
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-bars" aria-hidden="true"></span></button>
+      <ul class="site-menu" id="site-menu">
+        <li><a href="index.html#how-it-works">How it works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="library.html">Free guides</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#consultation" class="btn header-cta">Free consultation</a>
   </div>
-</nav>
+</header>
 
-<main class="container">
-  <div class="legal">
-    <h1>Terms &amp; Conditions</h1>
-    <p class="updated">Last updated: 5 July 2026</p>
+<main id="main" tabindex="-1" class="container">
+  <div class="page-header">
+    <p class="eyebrow">Terms</p>
+    <h1>Coaching terms</h1>
+    <p class="lead">Last updated 23 September 2026</p>
+  </div>
 
-    <p>These terms govern your use of the B. Morvay Coaching website and services. By using this website or engaging my coaching services, you agree to these terms.</p>
+  <div class="prose">
+    <p>These terms cover the services I provide and your use of this website. Before you pay for anything, I give you a written agreement that sets out the service you're buying, the price, the start date, how payment works and how to cancel. Filling in the intake form does not place an order, start paid coaching or authorise a payment.</p>
 
-    <h2>1. Services</h2>
-    <p>B. Morvay Coaching provides online personal training and optional in-person coaching sessions. Services include custom training programmes, nutrition guidance, form check video feedback, direct messaging support, and regular check-ins as described on the website.</p>
-    <p>I am a qualified personal trainer holding a Physical Activity and Health BSc (Hons). I am not a medical doctor, physiotherapist, or registered dietitian. My services do not constitute medical advice.</p>
+    <nav class="legal-toc" aria-label="On this page">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#who">Who provides the service</a></li>
+        <li><a href="#services">What each service includes</a></li>
+        <li><a href="#contact">Check-ins, messages and reply times</a></li>
+        <li><a href="#health">Health and exercise</a></li>
+        <li><a href="#payment">Prices and payment</a></li>
+        <li><a href="#cancel">Cancelling and refunds</a></li>
+        <li><a href="#cooling-off">Your 14-day right to cancel</a></li>
+        <li><a href="#plans">Your plans and the free guides</a></li>
+        <li><a href="#complaints">Problems and complaints</a></li>
+        <li><a href="#rights">Your legal rights</a></li>
+        <li><a href="#form">Cancellation form</a></li>
+      </ol>
+    </nav>
 
-    <h2>2. Health Disclaimer</h2>
-    <p>You are responsible for ensuring you are physically fit to participate in exercise programmes. You should consult your GP or medical professional before starting any new exercise or nutrition programme, particularly if you:</p>
+    <h2 id="who">1. Who provides the service</h2>
+    <p>B. Morvay Coaching is run by Balazs Morvay, a sole trader based in Edinburgh, Scotland. You can contact me at <a href="mailto:morvaybalazs@gmail.com">morvaybalazs@gmail.com</a> or on <a href="tel:+447914390913">07914 390913</a>. My postal address is in your written agreement.</p>
+    <p>The services are for adults aged 18 or over.</p>
+
+    <h2 id="services">2. What each service includes</h2>
+    <p><strong>Coaching (£200 a month)</strong></p>
     <ul>
-      <li>Have any pre-existing medical conditions</li>
-      <li>Are pregnant or postpartum</li>
-      <li>Are taking medication that may affect exercise capacity (including GLP-1 medications)</li>
-      <li>Have a history of injury or chronic pain</li>
+      <li>A training plan built from your questionnaire, goals, equipment and schedule, and adjusted when your check-ins show it should change</li>
+      <li>A nutrition plan with daily calorie and protein targets and simple rules for adjusting them, if you want one. It is not a meal plan.</li>
+      <li>A check-in after your first week, then every two weeks, with a video or phone call when it helps</li>
+      <li>Messages by WhatsApp, iMessage or email</li>
+      <li>Feedback on videos of your lifts</li>
+      <li>A review at the end of each block of training, and your next block built from it</li>
+      <li>Home gym planning if you need it</li>
     </ul>
-    <p>You participate in all training at your own risk. I will design programmes with safety in mind, but I cannot be held liable for injuries sustained during training.</p>
+    <p><strong>Programme Block (£100, one-off):</strong> a personal 4 to 12 week training plan for you to follow on your own. It does not include check-ins, messaging or a nutrition plan.</p>
+    <p><strong>In-person sessions (£60 each):</strong> at your home gym, my private garage gym, or a gym in or near Edinburgh that allows visiting trainers. You don't need to take coaching to book one.</p>
+    <p><strong>Mobile sports massage (£50 for 45 minutes):</strong> at your home, in Edinburgh and nearby, subject to availability.</p>
+    <p><strong>Home gym planning:</strong> equipment and layout advice only, with no building work. It's included with coaching. On its own, it is quoted by scope and the price is agreed in writing before any work starts.</p>
 
-    <h2>3. Pricing and Payment</h2>
-    <p>Full Coaching is billed monthly at the rate displayed on the website (currently &pound;200/month). Programme Blocks are one-off purchases (currently &pound;100 for a bespoke 4-12 week programme, with no ongoing coaching or nutrition support). In-person sessions are billed separately at the displayed rate (currently &pound;60/session), as is mobile sports massage (currently &pound;50 per 45-minute session, subject to availability). Home gym consultations are quoted individually depending on scope, with the price agreed in writing before any work begins.</p>
-    <p>Payment is due at the start of each billing period. I reserve the right to adjust pricing with 30 days' written notice.</p>
-
-    <h2>4. Refund Policy</h2>
-    <p><strong>Full Coaching:</strong> if you are not satisfied within the first 14 days of starting coaching, I will issue a full refund - no questions asked. After the initial 14-day period, no refunds will be issued for the current billing period, but you may cancel at any time to prevent future charges.</p>
-    <p><strong>Programme Blocks:</strong> you may cancel for a full refund at any time before your programme is delivered. Because each programme block is bespoke work created to your individual specifications, no refund is available once the programme has been delivered. Before I begin building your programme, I will ask you to confirm in writing that you are happy for the work to start straight away and that you understand your 14-day cancellation right under the Consumer Contracts Regulations 2013 ends once the programme is delivered. If anything in the delivered programme doesn't fit your equipment, schedule, or ability level, I will make one round of adjustments free of charge within 14 days of delivery.</p>
-    <p>Nothing in this policy affects your statutory rights under the Consumer Rights Act 2015, including the right to services performed with reasonable care and skill.</p>
-
-    <h2>5. Cancellation</h2>
-    <p>There are no contracts or long-term commitments. You may cancel your coaching subscription at any time by notifying me via email or message. Cancellation takes effect at the end of your current paid period.</p>
-
-    <h2>6. Communication</h2>
-    <p>Direct messaging support is available during reasonable daytime hours. While I aim to reply within a few hours, I am a sole trader and cannot guarantee instant responses. Messaging support is not a substitute for emergency medical services.</p>
-
-    <h2>7. Intellectual Property</h2>
-    <p>All content on this website - including text, images, programmes, guides, and design - is the property of B. Morvay Coaching and is protected by copyright. Free resources may be downloaded and used for personal purposes only. Redistribution, resale, or commercial use is not permitted.</p>
-    <p>Training programmes created for individual clients are for their personal use only and should not be shared or distributed.</p>
-
-    <h2>8. Confidentiality</h2>
-    <p>I treat all client information as confidential. I will not share your personal details, health information, progress data, or communications with third parties without your explicit consent, except where required by law.</p>
-
-    <h2>9. Limitation of Liability</h2>
-    <p>B. Morvay Coaching provides fitness coaching services in good faith based on professional qualifications and experience. I am not liable for:</p>
+    <h2 id="contact">3. Check-ins, messages and reply times</h2>
     <ul>
-      <li>Injuries sustained during training</li>
-      <li>Failure to achieve specific results (individual outcomes vary)</li>
-      <li>Decisions made based on general content published on this website</li>
-      <li>Loss or damage resulting from the use of free resources or guides</li>
+      <li>Your plan lists your check-in dates. You can send an extra check-in, or message me, any time.</li>
+      <li>I reply to messages and check-ins within two working days. Working days are Monday to Friday, not including public holidays.</li>
+      <li>I reply to enquiries from this website within one working day.</li>
+      <li>If you miss a check-in, send it when you can. Coaching isn't extended because a check-in was missed.</li>
+      <li>If I'm going to be away, I'll tell you in advance where I can, and we'll agree any cover, new dates or credit for support I can't give.</li>
+    </ul>
+    <p><strong>Messages are not an emergency service.</strong> If you have chest pain, fainting, severe breathlessness or another urgent symptom, stop exercising and call 999. For urgent advice that isn't an emergency, call NHS 111.</p>
+
+    <h2 id="health">4. Health and exercise</h2>
+    <ul>
+      <li>Tell me about your health conditions, injuries, medicines, symptoms and any exercise restrictions, and tell me when something changes. If you're not sure about something, say so.</li>
+      <li>Exercise has risks. Use suitable equipment, ask when you don't understand an exercise, and stop an exercise if it causes worrying symptoms.</li>
+      <li>I may pause or change an exercise, or ask you to get advice from a doctor or physiotherapist before we continue. Some health conditions need a doctor's OK before coaching can start.</li>
+      <li>I'm a personal trainer, not a doctor, physiotherapist or registered dietitian. Coaching doesn't replace diagnosis, treatment or rehabilitation, and my nutrition guidance stays within my qualifications.</li>
+      <li>If you take a prescribed medicine, including a GLP-1 medicine, your prescriber stays in charge of it. I don't advise on starting, changing or stopping any medicine.</li>
+      <li>You can stop an exercise, or stop coaching, at any time.</li>
     </ul>
 
-    <h2>10. Governing Law</h2>
-    <p>These terms are governed by the laws of Scotland and the United Kingdom. Any disputes shall be subject to the jurisdiction of the Scottish courts.</p>
+    <h2 id="payment">5. Prices and payment</h2>
+    <ul>
+      <li>Coaching is £200 a month, paid in advance. It renews each month until you cancel. There is no minimum term.</li>
+      <li>A Programme Block is £100, paid before I start building it.</li>
+      <li>In-person sessions and massage are paid as agreed when you book.</li>
+      <li>I won't add charges, or renew your service on terms you haven't agreed. I'll give you at least 30 days' written notice before a price change, and you can cancel before it takes effect.</li>
+    </ul>
 
-    <h2>11. Changes to These Terms</h2>
-    <p>I may update these terms from time to time. Material changes will be communicated to active clients. The latest version will always be available on this page.</p>
+    <h2 id="cancel">6. Cancelling and refunds</h2>
+    <h3>Coaching</h3>
+    <ul>
+      <li>To cancel, email or message me before your next payment date. That stops future payments. Your coaching carries on until the end of the month you've paid for, and I'll confirm the end date in writing.</li>
+      <li><strong>14-day money-back promise:</strong> if you tell me within 14 days of starting coaching that you're not happy, I'll refund you in full. This is in addition to your legal rights.</li>
+      <li>After that, cancelling doesn't normally refund a month that has already started. This doesn't limit any refund the law requires, or your rights if the service isn't provided with reasonable care and skill.</li>
+      <li>Want to pause instead? Ask me. A pause needs to be agreed in writing.</li>
+    </ul>
+    <h3>Programme Blocks</h3>
+    <ul>
+      <li>You can cancel for a full refund at any time before I deliver your programme.</li>
+      <li>Before I start, I'll ask you to confirm in writing that you want me to begin within your 14-day cancellation period, and that you understand you lose the right to cancel once the programme has been delivered.</li>
+      <li>If something in the delivered programme doesn't fit your equipment, schedule or ability, I'll make one round of changes free of charge within 14 days of delivery.</li>
+    </ul>
+    <h3>In-person sessions and massage</h3>
+    <ul>
+      <li>Please give at least 24 hours' notice to move or cancel a session. With less notice, I may charge up to the price of the session, taking your circumstances into account.</li>
+      <li>There's no charge if I have to cancel.</li>
+      <li>Sessions at a gym depend on that gym allowing visiting trainers.</li>
+    </ul>
+    <p>If I can't provide something we agreed, we'll agree a fair remedy, including a refund where one is due.</p>
 
-    <h2>Contact</h2>
-    <p>For any questions about these terms, contact me at:</p>
-    <p><a href="mailto:morvaybalazs@gmail.com">morvaybalazs@gmail.com</a><br>
-    <a href="tel:+447914390913">07914 390913</a></p>
+    <h2 id="cooling-off">7. Your 14-day right to cancel</h2>
+    <p>When you buy a service online, by phone or by email, you normally have 14 days from the day we make the agreement to cancel without giving a reason.</p>
+    <ul>
+      <li>To cancel, tell me clearly by email or post. You can use the form at the end of this page, but you don't have to.</li>
+      <li>If you asked me to start within those 14 days and then cancel, you may have to pay for the part of the service already provided. For coaching, the 14-day money-back promise above still applies.</li>
+      <li>If you asked me to start and the service has been fully provided within the 14 days, the right to cancel ends once it has been provided. I'll only rely on this if you asked me in writing to start and confirmed you understood this.</li>
+      <li>I refund money due under this right within 14 days of you telling me, to the way you paid unless we agree otherwise.</li>
+    </ul>
+
+    <h2 id="plans">8. Your plans and the free guides</h2>
+    <ul>
+      <li>Your plans are for your own use. Please don't sell or share them as coaching material. You can keep copies and share them with a health professional who is advising you.</li>
+      <li>The text, images, guides and design on this website belong to B. Morvay Coaching. You're welcome to use the free guides for your own training, but please don't republish or sell them.</li>
+      <li>The free guides are general information for healthy adults, not personal advice. If you have a health condition, an injury or pain, check with a health professional before following them.</li>
+      <li>My <a href="privacy.html">privacy notice</a> explains how I use your information. I ask separately, and you can say no, before using a testimonial or photo of you.</li>
+    </ul>
+
+    <h2 id="complaints">9. Problems and complaints</h2>
+    <p>If something isn't right, email me with what went wrong and what would help put it right. I'll acknowledge your complaint within two working days and give you a full answer within ten working days. If it needs longer, I'll explain why and keep you updated. This doesn't limit your right to independent advice or to take other action.</p>
+
+    <h2 id="rights">10. Your legal rights</h2>
+    <ul>
+      <li>I provide every service with reasonable care and skill.</li>
+      <li>I can't promise a particular change in your weight, strength, appearance or performance, because results depend on many things, including your circumstances and how the plan fits your life.</li>
+      <li>Nothing in these terms excludes or limits my liability for death or personal injury caused by negligence, for fraud, or for anything else the law doesn't allow me to exclude or limit.</li>
+      <li>Nothing in these terms affects your statutory rights.</li>
+      <li>These terms are governed by Scots law. If you live in England, Wales or Northern Ireland, you can also bring a claim in your local courts, and you keep any protection your local law gives you.</li>
+      <li>If I change these terms, I'll tell current clients before the change affects them. Your written agreement records the version that applies to you.</li>
+    </ul>
+
+    <h2 id="form">11. Cancellation form</h2>
+    <p>You don't have to use this form. An email saying you want to cancel is enough.</p>
+    <div class="cancel-form">
+      <p>To: Balazs Morvay, B. Morvay Coaching, morvaybalazs@gmail.com</p>
+      <p>I give notice that I cancel my contract for the following service: ____________</p>
+      <p>Date of agreement: ____________</p>
+      <p>Your name: ____________</p>
+      <p>Your address: ____________</p>
+      <p>Signature (only if sent on paper): ____________</p>
+      <p>Date: ____________</p>
+    </div>
   </div>
 </main>
 
-<footer class="footer-simple">
+<footer class="site-footer on-dark">
   <div class="container">
-    <p>&copy; <script>document.write(new Date().getFullYear())</script> Balazs Morvay Coaching &middot; <a href="index.html">Back to Home</a> &middot; <a href="privacy.html">Privacy</a></p>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">B<span>.</span>Morvay</p>
+        <p class="footer-tagline">Online coaching for busy professionals. Based in Edinburgh, Scotland.</p>
+      </div>
+      <nav aria-label="Footer">
+        <p class="footer-h">Explore</p>
+        <ul class="footer-links">
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="personal-training-edinburgh.html">Personal training in Edinburgh</a></li>
+          <li><a href="library.html">Free guides</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="footer-h">Contact</p>
+        <ul class="footer-links">
+          <li><a href="index.html#consultation">Request a consultation</a></li>
+          <li><a href="mailto:morvaybalazs@gmail.com">morvaybalazs@gmail.com</a></li>
+          <li><a href="tel:+447914390913">07914 390913</a></li>
+          <li>Edinburgh, Scotland</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year>2026</span> Balazs Morvay Coaching</p>
+      <p class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html" aria-current="page">Terms</a></p>
+    </div>
   </div>
 </footer>
 
