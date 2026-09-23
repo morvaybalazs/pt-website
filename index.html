@@ -75,11 +75,12 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* Hero */
-    .hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:calc(100svh - var(--header-h))}
-    .hero-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,4vw,3.5rem) clamp(2.5rem,6vw,4.5rem) max(clamp(1.25rem,5vw,3rem),calc((100vw - 1180px) / 2 + 3rem))}
-    .hero-title{font-size:clamp(2.6rem,6vw,4.8rem);color:var(--black);margin-bottom:1.25rem}
+    .hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:min(calc(100svh - var(--header-h)),860px)}
+    .hero-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,4vw,3.5rem) clamp(2.5rem,6vw,4.5rem) max(clamp(1.25rem,5vw,3rem),calc((100vw - var(--container-max)) / 2 + 3rem))}
+    .hero-title{font-size:clamp(2.6rem,6vw,5.4rem);color:var(--black);margin-bottom:1.25rem;max-width:14ch}
     .hero-title em{font-style:italic;font-weight:700;color:var(--accent-dim)}
     .hero-lead{font-size:1.12rem;font-weight:300;line-height:1.7;color:var(--mid);max-width:34rem;margin-bottom:1.25rem}
+    @media (min-width:1500px){.hero-lead{font-size:1.2rem;max-width:38rem}.hero-text{padding-right:4rem}}
     .hero-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .65rem;font-size:1rem;color:var(--mid);margin-bottom:1.5rem}
     .hero-price strong{font-family:var(--display);font-size:1.7rem;font-weight:800;color:var(--black)}
     .hero-price .facts{white-space:nowrap}

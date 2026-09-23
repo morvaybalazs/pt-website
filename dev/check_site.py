@@ -11,6 +11,7 @@ import json
 import pathlib
 import re
 import sys
+from html.parser import HTMLParser
 
 SITE = pathlib.Path(__file__).resolve().parent.parent
 PAGES = sorted(p for p in SITE.glob("*.html") if not p.name.startswith("google"))
@@ -121,6 +122,46 @@ for page in PAGES:
     # A table that scrolls sideways must be reachable with a keyboard
     for hit in re.findall(r'<div class="table-wrap"(?! tabindex="0")', html):
         fail(name, "a table that scrolls sideways needs tabindex=\"0\" so a keyboard can reach it")
+
+    # Tags must nest properly. A stray closing tag silently drops content out of its
+    # container, which is how Day 2 of the free programme escaped its card in September 2026.
+    class Nesting(HTMLParser):
+        VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link",
+                "meta", "param", "source", "track", "wbr"}
+
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.stack = []
+            self.errors = []
+
+        def handle_starttag(self, tag, attrs):
+            if tag not in self.VOID:
+                self.stack.append((tag, self.getpos()[0]))
+
+        def handle_startendtag(self, tag, attrs):
+            pass
+
+        def handle_endtag(self, tag):
+            if tag in self.VOID:
+                return
+            if not self.stack:
+                self.errors.append(f"</{tag}> on line {self.getpos()[0]} closes nothing")
+            elif self.stack[-1][0] == tag:
+                self.stack.pop()
+            elif any(t == tag for t, _ in self.stack):
+                while self.stack and self.stack[-1][0] != tag:
+                    open_tag, line = self.stack.pop()
+                    self.errors.append(f"<{open_tag}> opened on line {line} is never closed")
+                self.stack.pop()
+            else:
+                self.errors.append(f"</{tag}> on line {self.getpos()[0]} closes nothing")
+
+    parser = Nesting()
+    parser.feed(html)
+    for left, line in parser.stack:
+        parser.errors.append(f"<{left}> opened on line {line} is never closed")
+    for error in parser.errors[:5]:
+        fail(name, "broken HTML: " + error)
 
     # Duplicate ids
     ids = re.findall(r'\sid="([^"]+)"', html)
