@@ -26,7 +26,8 @@ The three layers:
 | Reply time, clients | Two working days, Monday to Friday | Website pricing, FAQ, terms; the client's agreement |
 | Messaging | WhatsApp, iMessage or email | Website pricing, FAQ, terms, privacy notice |
 | Nutrition scope | Calorie and protein targets, a meal pattern and rules for adjusting. No meal plans. Client logs food in their own app or uses hand portions | Website pricing, FAQ, terms; builder `nutrition_lib` |
-| Training log | A Google Sheet the client opens on their phone; weight x reps; Last week column; Substitute list | Website FAQ and how it works; builder week tabs |
+| Food help prompt | Coaching clients get a ready-written prompt in their workbook to paste into an AI chat, which estimates what they eat and counts it against their targets. A convenience, not coaching advice, and not given to a client who has told us about a history of disordered eating | Website FAQ; builder `FOOD_HELP_SHEET`, withheld by `health_filters` |
+| Training log | ONE Google Sheet per training block, opened on the phone; weight x reps; Last week column; Substitute list. Coaching clients' calorie targets and weigh-ins are tabs in the same sheet, so there is one file to open | Website FAQ and how it works; builder week tabs, `render_program` |
 | Block review | At the end of each block, the next block is built from it | Website how it works, FAQ; Google End-of-Block Review form |
 | Age | Adults 18 or over | Website FAQ and terms; Google intake (`core/age` validation and `validate_submission`) |
 | Refund | Full refund within the first 14 days of coaching; Programme Block refundable until delivered | Website pricing, FAQ, terms |
