@@ -69,7 +69,9 @@ REQUIRED = [
     ("index.html", r"within two working days", "the reply time for clients"),
     ("index.html", r"within one working day", "the reply time for enquiries"),
     ("index.html", r"No minimum term|no minimum term", "the cancellation wording"),
-    ("index.html", r"free pilot", "the testimonials must say they are free pilot clients"),
+    ("index.html", r"videos of your lifts, up to 2 a week", "the video feedback limit"),
+    ("faq.html", r"videos of your lifts, up to 2 a week", "the video feedback limit"),
+    ("terms.html", r"videos of your lifts, up to 2 a week", "the video feedback limit"),
     ("index.html", r"prescriber stays in charge", "the GLP-1 safety line"),
     ("faq.html", r"18 and over|aged 18 or over", "coaching is for adults"),
     ("faq.html", r"after your first week, then every two weeks", "the check-in rhythm"),
@@ -193,11 +195,24 @@ for page in PAGES:
         except json.JSONDecodeError as exc:
             fail(name, f"structured data is not valid JSON: {exc}")
 
-    # Dashes used as punctuation (the testimonial is quoted word for word, so it is allowed)
-    for hit in re.findall(r"[a-z,\)] - [a-zA-Z0-9(]", visible):
-        if "hotel gyms" in visible and name == "index.html":
-            continue
+    # Dashes used as punctuation. A real client's quote is exempt, word for word, inside its
+    # <blockquote>; nothing else is.
+    for hit in re.findall(r"[a-z,\)] - [a-zA-Z0-9(]", text_of(re.sub(r"<blockquote>.*?</blockquote>", " ", html, flags=re.S))):
         fail(name, f"dash used as punctuation near '{hit}'")
+
+    # Testimonials (dev/SERVICE.md). The three on the first site were invented (owner, S32), which
+    # the DMCC Act 2024 makes illegal. A quote must be a real client's own words, each <figure
+    # class="quote"> must carry data-permission="YYYY-MM-DD" (the date of their written
+    # permission), and a free pilot must be called one on the page.
+    for name_ in ("Sarah", "Mike", "Emma"):
+        if re.search(rf"<figcaption>\s*{name_}\b", html):
+            fail(name, f"the invented testimonial '{name_}' is back")
+    quotes = re.findall(r'<figure class="quote"[^>]*>', html)
+    for tag in quotes:
+        if not re.search(r'data-permission="\d{4}-\d{2}-\d{2}"', tag):
+            fail(name, "a quote without data-permission=\"YYYY-MM-DD\" (the date of the written permission)")
+    if any('data-pilot="yes"' in tag for tag in quotes) and not re.search(r"free pilot", visible, re.I):
+        fail(name, "a free pilot client is quoted but the page does not say so")
 
 for page_name, pattern, what in REQUIRED:
     page = SITE / page_name

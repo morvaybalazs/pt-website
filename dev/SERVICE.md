@@ -24,6 +24,7 @@ The three layers:
 | Check-in questions | Training done, how hard it felt, food, energy, sleep, stress, health changes, weight, progress, questions | Google Check-in form (`weekly_checkin.fields`); the free printable check-in mirrors it |
 | Reply time, enquiries | One working day | Homepage consultation section, thanks page, terms |
 | Reply time, clients | Two working days, Monday to Friday | Website pricing, FAQ, terms; the client's agreement |
+| Video feedback | Feedback on videos of the client's lifts, up to 2 a week | Website pricing, FAQ, terms, `llms.txt`; the client's agreement |
 | Messaging | WhatsApp, iMessage or email | Website pricing, FAQ, terms, privacy notice |
 | Nutrition scope | Calorie and protein targets, a meal pattern and rules for adjusting. No meal plans. Client logs food in their own app or uses hand portions | Website pricing, FAQ, terms; builder `nutrition_lib` |
 | Food help prompt | Coaching clients get a ready-written prompt in their workbook to paste into an AI chat, which estimates what they eat and counts it against their targets. A convenience, not coaching advice, and not given to a client who has told us about a history of disordered eating | Website FAQ; builder `FOOD_HELP_SHEET`, withheld by `health_filters` |
@@ -46,9 +47,20 @@ These were on the site and are wrong or unsupported. `dev/check_site.py` fails i
 - "Quick daytime replies", "reply within a few hours", opening hours of 06:00 to 21:00 seven days
 - "No sales pitch" for a call where a paid service is discussed
 - "Core specialism" in GLP-1 support
+- The invented testimonials from Sarah, Mike and Emma
 
 ## Testimonials
 
-Sarah, Mike and Emma are free pilot clients, quoted with their permission, and the page says so.
-Any new quote needs the client's written permission and must say if it came from a free pilot.
-Keep the permission where you can find it again.
+There are none on the site at the moment. The three that were there (Sarah, Mike and Emma) were
+invented, which the Digital Markets, Competition and Consumers Act 2024 makes illegal, so they came
+off in S32 and `dev/check_site.py` fails if those names come back.
+
+A quote goes on the site only when all of these are true:
+
+- They are the client's own words about their own experience. Never write a quote for someone,
+  and never put a real client's name on words they did not say.
+- The client gave written permission for that exact wording, with the date. Keep it where you can
+  find it again.
+- The quote's `<figure class="quote">` carries `data-permission="YYYY-MM-DD"`, the date of that
+  permission, and `data-pilot="yes"` if the coaching was a free pilot, in which case the page says
+  so. `dev/check_site.py` enforces both.

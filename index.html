@@ -62,7 +62,7 @@
     "serviceType": "Online personal training",
     "provider": {"@id": "https://bmorvay.com/#business"},
     "areaServed": "Worldwide",
-    "description": "A personal training plan, a nutrition plan, check-ins after the first week and then every two weeks, messaging support and exercise video feedback.",
+    "description": "A personal training plan, a nutrition plan, check-ins after the first week and then every two weeks, messaging support and feedback on up to 2 lift videos a week.",
     "offers": [
       {"@type": "Offer", "name": "Coaching", "price": "200", "priceCurrency": "GBP", "description": "Monthly, paid in advance, no minimum term"},
       {"@type": "Offer", "name": "Programme Block", "price": "100", "priceCurrency": "GBP", "description": "A one-off 4 to 12 week training plan"}
@@ -118,15 +118,6 @@
       .hero-actions .btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.65)}
       .video-toggle{top:.85rem;bottom:auto}
     }
-
-    /* Pilot client quotes */
-    .quote{display:flex;flex-direction:column;padding:1.75rem;background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
-    .quote blockquote p{font-family:var(--display);font-size:1.35rem;font-weight:600;line-height:1.3;color:var(--black)}
-    .quote blockquote p::before{content:'\201C';display:block;font-size:2.6rem;line-height:.75;color:var(--accent);margin-bottom:.35rem}
-    .quote figcaption{margin-top:auto;padding-top:1.25rem;font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-    .quotes-note{margin-top:1.5rem;text-align:center;font-size:.95rem;color:var(--muted)}
-    .quote:nth-child(2){transition-delay:.09s}
-    .quote:nth-child(3){transition-delay:.18s}
 
     /* Who it's for */
     .who-card{padding:1.75rem;background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
@@ -301,28 +292,6 @@
     </div>
   </section>
 
-  <section class="section section-alt" aria-labelledby="quotes-title">
-    <div class="container">
-      <p class="eyebrow center">From pilot clients</p>
-      <h2 id="quotes-title" class="display h2 center">What people say</h2>
-      <div class="quotes card-row" role="group" aria-label="What pilot clients say" tabindex="0">
-        <figure class="quote" data-reveal>
-          <blockquote><p>I travel a lot for work and had written off training as impossible. Having a programme I could actually follow from hotel gyms - and someone to message when I wasn't sure - made the difference.</p></blockquote>
-          <figcaption>Sarah, marketing</figcaption>
-        </figure>
-        <figure class="quote" data-reveal>
-          <blockquote><p>I'd done the start-stop thing for years. What worked this time was having a plan that bent when my week got messy, instead of one I had to abandon.</p></blockquote>
-          <figcaption>Mike, software</figcaption>
-        </figure>
-        <figure class="quote" data-reveal>
-          <blockquote><p>Two kids and long shifts mean I can't commit to a fixed schedule. Balazs built the programme around that rather than against it, which is why I've actually stuck with it.</p></blockquote>
-          <figcaption>Emma, healthcare</figcaption>
-        </figure>
-      </div>
-      <p class="quotes-note">All three took part in a free pilot of the coaching, and are quoted with their permission.</p>
-    </div>
-  </section>
-
   <section class="section" id="who" aria-labelledby="who-title">
     <div class="container">
       <p class="eyebrow">Who it's for</p>
@@ -420,7 +389,7 @@
           <ul class="ticks">
             <li>A check-in after your first week, then every two weeks, with a video or phone call when it helps</li>
             <li>Messages any time on WhatsApp or iMessage, answered within two working days (Monday to Friday)</li>
-            <li>Feedback on videos of your lifts</li>
+            <li>Feedback on videos of your lifts, up to 2 a week</li>
             <li>A review at the end of each block, and your next block built from it</li>
           </ul>
           <p class="price-terms">Paid monthly in advance. No minimum term: cancel before your next payment date. Full refund if you're not happy within your first 14 days.</p>
