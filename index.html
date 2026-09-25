@@ -136,11 +136,11 @@
       .quote blockquote p{font-size:1.2rem}
       .quotes-note{margin-top:.5rem}
     }
-    .glp1-band{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1.5rem 2.5rem;margin-top:1.25rem;padding:clamp(1.5rem,4vw,2rem);background:var(--black);border-radius:var(--radius);color:rgba(255,255,255,.88)}
-    .glp1-band h3{font-family:var(--display);font-size:1.6rem;font-weight:700;line-height:1.1;text-transform:uppercase;color:var(--white);margin-bottom:.6rem}
-    .glp1-band p{font-size:1rem;line-height:1.75;max-width:760px}
-    .btn-light{background:transparent;color:var(--white);border-color:rgba(255,255,255,.5)}
-    .btn-light:hover{background:var(--white);border-color:var(--white);color:var(--black)}
+    /* GLP-1 note: after pricing, as a quiet card rather than a black band in the first screens,
+       so the page leads with the busy-professional offer and this stays easy to find. */
+    .glp1-band{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem 2rem;max-width:1000px;margin:2rem auto 0;padding:1.25rem 1.5rem;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:var(--radius)}
+    .glp1-band h3{font-size:1.1rem;font-weight:700;line-height:1.35;color:var(--ink);margin-bottom:.35rem}
+    .glp1-band p{font-size:.95rem;line-height:1.7;color:var(--mid);max-width:720px}
     @media (max-width:900px){.who-grid{margin-bottom:.25rem}.glp1-band{grid-template-columns:1fr}.glp1-band .btn{justify-self:start}}
 
     /* How it works */
@@ -311,13 +311,6 @@
           <p>You already train, but progress has stalled. You log every set, aim to beat last week's numbers, and get planned easier weeks so you keep going.</p>
         </article>
       </div>
-      <div class="glp1-band on-dark" data-reveal>
-        <div>
-          <h3>On a weight-loss medicine like a GLP-1? You're welcome here.</h3>
-          <p>You don't need to worry about starting with a trainer. Strength training and enough protein are the best-supported ways to keep muscle and strength while you lose weight, so your plan puts both first and checks you're eating enough. Your prescriber stays in charge of the medicine.</p>
-        </div>
-        <a class="btn btn-light" href="blog-glp1.html">Read the GLP-1 guide</a>
-      </div>
     </div>
   </section>
 
@@ -410,6 +403,13 @@
         </article>
       </div>
       <p class="local-line">In Edinburgh: <a class="text-link" href="personal-training-edinburgh.html">in-person sessions (£60), mobile sports massage (£50 for 45 minutes) and home gym planning</a>.</p>
+      <div class="glp1-band" data-reveal>
+        <div>
+          <h3>On a weight-loss medicine like a GLP-1? You're welcome here.</h3>
+          <p>You don't need to worry about starting with a trainer. Strength training and enough protein are the best-supported ways to keep muscle and strength while you lose weight, so your plan puts both first and checks you're eating enough. Your prescriber stays in charge of the medicine.</p>
+        </div>
+        <a class="btn btn-ghost" href="blog-glp1.html">Read the GLP-1 guide</a>
+      </div>
     </div>
   </section>
 

@@ -32,7 +32,7 @@ The three layers:
 | Block review | At the end of each block, the next block is built from it | Website how it works, FAQ; Google End-of-Block Review form |
 | Age | Adults 18 or over | Website FAQ and terms; Google intake (`core/age` validation and `validate_submission`) |
 | Refund | Full refund within the first 14 days of coaching; Programme Block refundable until delivered | Website pricing, FAQ, terms |
-| GLP-1 clients | Welcome. Higher protein target, a check that they are eating enough, prescriber stays in charge of the medicine | Homepage band, FAQ, GLP-1 guide; builder raises the protein floor and adds an under-eating check for appetite medication |
+| GLP-1 clients | Welcome. Higher protein target, a check that they are eating enough, prescriber stays in charge of the medicine | Homepage note under the prices, FAQ, GLP-1 guide; builder raises the protein floor and adds an under-eating check for appetite medication |
 
 ## Claims that must not come back
 
