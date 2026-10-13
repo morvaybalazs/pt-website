@@ -46,6 +46,7 @@ BANNED = [
     (r"core specialism", "unsupported specialist claim"),
     (r"06:00|21:00", "seven-day opening hours are not real"),
     (r"book (a )?free consultation|book consultation", "the form sends a request, so say 'request'"),
+    (r"messaging or (a )?nutrition plan", "the Programme Block includes the nutrition plan (October 2026)"),
 ]
 # 2. Code-level defects the review found
 CODE_BANNED = [
@@ -77,6 +78,10 @@ REQUIRED = [
     ("faq.html", r"after your first week, then every two weeks", "the check-in rhythm"),
     ("terms.html", r"death or personal injury caused by negligence", "the liability wording the law requires"),
     ("terms.html", r"after your first week, then every two weeks", "the check-in rhythm"),
+    ("index.html", r"within 14 days of getting your plan", "the Programme Block money-back promise"),
+    ("terms.html", r"within 14 days of getting your programme", "the Programme Block money-back promise"),
+    ("terms.html", r"£50 at my private garage gym", "the in-person price at the garage gym"),
+    ("personal-training-edinburgh.html", r"£50<span> a session", "the in-person price at the garage gym"),
     ("privacy.html", r"Anthropic", "the AI assistant must be disclosed"),
     ("privacy.html", r"Article 9\(2\)\(a\)", "the lawful basis for health information"),
     ("blog-glp1.html", r"lean mass is not the same as muscle|Lean mass is not the same as muscle", "the lean mass correction"),

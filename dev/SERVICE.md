@@ -16,8 +16,8 @@ The three layers:
 | Fact | What it is | Where it is set |
 |---|---|---|
 | Price of coaching | £200 a month, paid monthly in advance, no minimum term | Website pricing, FAQ, terms, `llms.txt`; the client's written agreement |
-| Programme Block | £100 one-off, a 4 to 12 week plan, one round of changes within 14 days, no check-ins or nutrition plan | Website pricing, FAQ, terms; builder sets `spec["checkins"] = False` |
-| In-person session | £60, at the client's home gym, the garage gym, or a gym that allows visiting trainers. Open to anyone | Edinburgh page, FAQ, terms |
+| Programme Block | £100 one-off, a 4 to 12 week training plan with the nutrition plan and the food help prompt (owner, October 2026), one round of changes within 14 days, no check-ins or messaging. The food targets are set for the whole block | Website pricing, FAQ, terms, `llms.txt`; builder sets `spec["checkins"] = False`, which also takes the check-in wording off the food pages |
+| In-person session | £50 at the garage gym. £60 at the client's home gym or a gym that allows visiting trainers, because the coach travels (owner, October 2026). Open to anyone | Homepage local line, Edinburgh page, FAQ, terms, `llms.txt` |
 | Sports massage | £50 for 45 minutes, Edinburgh and nearby, subject to availability | Edinburgh page, FAQ, terms |
 | Home gym planning | Advice only, included with coaching or quoted by scope | Edinburgh page, FAQ, terms |
 | Check-in rhythm | After the first week, then every two weeks, plus any time the client wants | Website pricing, FAQ, terms; builder `checkin_dates` prints the dates in the Read Me; Google Check-in form |
@@ -27,11 +27,11 @@ The three layers:
 | Video feedback | Feedback on videos of the client's lifts, up to 2 a week | Website pricing, FAQ, terms, `llms.txt`; the client's agreement |
 | Messaging | WhatsApp, iMessage or email | Website pricing, FAQ, terms, privacy notice |
 | Nutrition scope | Calorie and protein targets, a meal pattern and rules for adjusting. No meal plans. Client logs food in their own app or uses hand portions | Website pricing, FAQ, terms; builder `nutrition_lib` |
-| Food help prompt | Coaching clients get a ready-written prompt in their workbook to paste into an AI chat, which estimates what they eat and counts it against their targets. A convenience, not coaching advice, and not given to a client who has told us about a history of disordered eating | Website FAQ; builder `FOOD_HELP_SHEET`, withheld by `health_filters` |
+| Food help prompt | Coaching and Programme Block clients get a ready-written prompt in their workbook to paste into an AI chat, which estimates what they eat and counts it against their targets. A convenience, not coaching advice, and not given to a client who has told us about a history of disordered eating | Website FAQ; builder `FOOD_HELP_SHEET`, withheld by `health_filters` |
 | Training log | ONE Google Sheet per training block, opened on the phone; weight x reps; Last week column; Substitute list. Coaching clients' calorie targets and weigh-ins are tabs in the same sheet, so there is one file to open | Website FAQ and how it works; builder week tabs, `render_program` |
 | Block review | At the end of each block, the next block is built from it | Website how it works, FAQ; Google End-of-Block Review form |
 | Age | Adults 18 or over | Website FAQ and terms; Google intake (`core/age` validation and `validate_submission`) |
-| Refund | Full refund within the first 14 days of coaching; Programme Block refundable until delivered | Website pricing, FAQ, terms |
+| Refund | Full refund within the first 14 days of coaching. Programme Block: refundable until delivered, and a full refund within 14 days of getting it if the client is not happy (owner, October 2026) | Website pricing, FAQ, terms, `llms.txt` |
 | GLP-1 clients | Welcome. Higher protein target, a check that they are eating enough, prescriber stays in charge of the medicine | Homepage note under the prices, FAQ, GLP-1 guide; builder raises the protein floor and adds an under-eating check for appetite medication |
 
 ## Claims that must not come back
@@ -48,6 +48,7 @@ These were on the site and are wrong or unsupported. `dev/check_site.py` fails i
 - "No sales pitch" for a call where a paid service is discussed
 - "Core specialism" in GLP-1 support
 - The invented testimonials from Sarah, Mike and Emma
+- "No check-ins, messaging or nutrition plan" for the Programme Block (it includes the nutrition plan since October 2026)
 
 ## Testimonials
 
