@@ -258,6 +258,22 @@ for fg, bg, least, label in [
         if got < least:
             fail("styles.css", f"{label} is {got:.2f}:1, needs {least}:1")
 
+# 5. The PDF copies in the New client pack (Google Drive, on the owner's Mac). The pages here are
+# the master. A copy made before a page changed is an out-of-date notice in a client's inbox, so
+# each copy carries its page's "Last updated" date in its name and must match it. Where the Drive
+# folder is not present (Netlify, another machine) there is nothing to check.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import make_pack_copies as pack  # noqa: E402
+
+for folder in pack.pack_folders():
+    for page_name, label in pack.COPIES.items():
+        date = pack.page_date((SITE / page_name).read_text())
+        if not date:
+            fail(page_name, "no 'Last updated' date, so its copy in the New client pack cannot be checked")
+        elif list(folder.glob(pack.copy_name(label, "*"))) and not (folder / pack.copy_name(label, date)).is_file():
+            fail(page_name, f"the copy in the New client pack is older than this page ({date}): "
+                            "run python3 dev/make_pack_copies.py")
+
 print("Checked %d pages." % len(PAGES))
 for note in notes:
     print("  note:", note)
