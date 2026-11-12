@@ -10,7 +10,7 @@ The three layers:
 - **Agreements** (Google Drive, `Business/New client pack`): the coaching and Programme Block
   agreement templates. The signed agreement carries the client's written consent to keep their
   health information. The Google forms were retired on 12 November 2026.
-- **Plan Builder** (`RP Hypertrophy` repository, `planner/`): builds the plans and prints the dates,
+- **Plan Builder** (the `Balazs Morvay Coaching` project, `planner/`): builds the plans and prints the dates,
   check-ins and instructions the client reads in their workbook.
 
 | Fact | What it is | Where it is set |
