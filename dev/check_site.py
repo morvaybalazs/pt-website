@@ -49,6 +49,8 @@ BANNED = [
     (r"messaging or (a )?nutrition plan", "the Programme Block includes the nutrition plan (October 2026)"),
     (r"\bsports therapist", "'sports therapist' suggests a sports therapy degree; say 'sports massage therapist' (November 2026)"),
     (r"\bstrength coach", "not Balazs's title; say 'personal trainer' (owner, November 2026)"),
+    (r"cimspa[- ](member|registered)|registered with cimspa", "CIMSPA membership lapsed in 2022; say 'CIMSPA-recognised personal trainer'"),
+    (r"sports massage qualified|a sports massage qualification", "name the qualification: HNC Soft Tissue Therapy (SQA)"),
     (r"\btoxins?\b|lactic acid", "massage does not flush out toxins or lactic acid"),
     (r"\b(we|I) (treat|fix|cure) (your )?injur", "massage here does not treat injuries; say what it does, and refer on"),
 ]
