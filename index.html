@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.className='js';</script>
-  <title>Online Personal Training for Busy Professionals | B. Morvay Coaching</title>
-  <meta name="description" content="Strength and nutrition coaching that fits your working week. A plan built around your schedule, regular check-ins and support by message. £200 a month, no minimum term. Based in Edinburgh." />
+  <title>Sports Massage in Edinburgh, with a Plan to Take Home | B. Morvay</title>
+  <meta name="description" content="Sports massage in Edinburgh, at your home or a private garage gym. A movement check, the massage, then exercises and a written plan to take home. £75 for 75 minutes, or £50 for a 45-minute massage. Pay per session." />
   <meta name="author" content="Balazs Morvay" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0d0e10" />
   <link rel="canonical" href="https://bmorvay.com/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Online coaching that fits your working week | B. Morvay Coaching" />
-  <meta property="og:description" content="A training plan built around your schedule, regular check-ins and support by message. £200 a month, no minimum term. Based in Edinburgh." />
-  <meta property="og:image" content="https://bmorvay.com/images/og-coaching.jpg" />
+  <meta property="og:title" content="Sports massage that comes with a plan | B. Morvay, Edinburgh" />
+  <meta property="og:description" content="A movement check, the massage, then exercises and a written plan to take home. At your home or a private garage gym in Edinburgh. Pay per session." />
+  <meta property="og:image" content="https://bmorvay.com/images/og-massage.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Balazs Morvay, online coach, with the words: strength training that fits your working week" />
+  <meta property="og:image:alt" content="Balazs Morvay, sports massage therapist and personal trainer, with the words: sports massage that comes with a plan" />
   <meta property="og:url" content="https://bmorvay.com/" />
   <meta property="og:site_name" content="B. Morvay Coaching" />
   <meta property="og:locale" content="en_GB" />
@@ -32,9 +32,9 @@
     "@id": "https://bmorvay.com/#business",
     "name": "Balazs Morvay Online Personal Training",
     "alternateName": "B. Morvay Coaching",
-    "description": "Online strength and nutrition coaching for busy professionals, based in Edinburgh. In-person training and mobile sports massage in Edinburgh and nearby.",
+    "description": "Sports massage and personal training in Edinburgh, at the client's home or a private garage gym. Online coaching wherever the client trains.",
     "url": "https://bmorvay.com/",
-    "image": "https://bmorvay.com/images/og-coaching.jpg",
+    "image": "https://bmorvay.com/images/og-massage.jpg",
     "telephone": "+447914390913",
     "email": "morvaybalazs@gmail.com",
     "priceRange": "££",
@@ -45,8 +45,8 @@
     "founder": {
       "@type": "Person",
       "name": "Balazs Morvay",
-      "jobTitle": "Personal trainer",
-      "knowsAbout": ["Strength training", "Weight management", "Nutrition coaching", "Returning to training", "Sports massage"],
+      "jobTitle": "Sports massage therapist and personal trainer",
+      "knowsAbout": ["Sports massage", "Strength training", "Exercise programming", "Returning to training", "Nutrition coaching"],
       "hasCredential": [
         {"@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Physical Activity and Health BSc (Hons)"},
         {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Sports massage qualification"}
@@ -58,14 +58,14 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Online coaching",
-    "serviceType": "Online personal training",
+    "name": "Sports massage",
+    "serviceType": "Sports massage",
     "provider": {"@id": "https://bmorvay.com/#business"},
-    "areaServed": "Worldwide",
-    "description": "A personal training plan, a nutrition plan, check-ins after the first week and then every two weeks, messaging support and feedback on up to 2 lift videos a week.",
+    "areaServed": {"@type": "City", "name": "Edinburgh"},
+    "description": "Sports massage at the client's home in Edinburgh and nearby, or at a private garage gym. The Massage and Plan session adds a movement check, two or three exercises and a written plan sent the same day.",
     "offers": [
-      {"@type": "Offer", "name": "Coaching", "price": "200", "priceCurrency": "GBP", "description": "Monthly, paid in advance, no minimum term"},
-      {"@type": "Offer", "name": "Programme Block", "price": "100", "priceCurrency": "GBP", "description": "A one-off 4 to 12 week training plan with daily calorie and protein targets"}
+      {"@type": "Offer", "name": "Massage and Plan", "price": "75", "priceCurrency": "GBP", "description": "75 minutes: a talk and movement check, 45 minutes of sports massage, two or three exercises, and a written plan sent the same day"},
+      {"@type": "Offer", "name": "Sports massage", "price": "50", "priceCurrency": "GBP", "description": "45 minutes of sports massage"}
     ]
   }
   </script>
@@ -74,105 +74,77 @@
   <link rel="preload" href="fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:min(calc(100svh - var(--header-h)),860px)}
-    .hero-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,4vw,3.5rem) clamp(2.5rem,6vw,4.5rem) max(clamp(1.25rem,5vw,3rem),calc((100vw - var(--container-max)) / 2 + 3rem))}
-    .hero-title{font-size:clamp(2.6rem,6vw,5.4rem);color:var(--black);margin-bottom:1.25rem;max-width:14ch}
-    .hero-title em{font-style:italic;font-weight:700;color:var(--accent-dim)}
-    .hero-lead{font-size:1.12rem;font-weight:300;line-height:1.7;color:var(--mid);max-width:34rem;margin-bottom:1.25rem}
-    @media (min-width:1500px){.hero-lead{font-size:1.2rem;max-width:38rem}.hero-text{padding-right:4rem}}
+    /* Hero. Words first. On a wide screen the portrait sits beside them in a framed card,
+       at about the size it was taken for; on a phone it shrinks to a small face by the name,
+       so the offer and the button fit on the first screen. */
+    .hero{padding:clamp(2.25rem,6vw,5rem) 0 clamp(3rem,7vw,5.5rem)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+    .hero-who{display:flex;align-items:center;gap:.85rem;margin-bottom:1.25rem}
+    .hero-who .eyebrow{margin-bottom:0}
+    .avatar{display:none;width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#e6e7ea}
+    .hero-title{font-size:clamp(2.7rem,6.4vw,5.4rem);color:var(--black);margin-bottom:1.25rem;max-width:14ch;text-wrap:balance}
+    .hero-title em{font-style:italic;font-weight:700;color:var(--accent-dim);white-space:nowrap}
+    .hero-lead{font-size:1.12rem;font-weight:300;line-height:1.7;color:var(--mid);max-width:34rem;margin-bottom:1.35rem}
     .hero-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .65rem;font-size:1rem;color:var(--mid);margin-bottom:1.5rem}
     .hero-price strong{font-family:var(--display);font-size:1.7rem;font-weight:800;color:var(--black)}
-    .hero-price .facts{white-space:nowrap}
     .hero-price .dot{color:var(--accent-dim);margin:0 .2rem}
+    .hero-price .facts{white-space:nowrap}
+    .hero-price .facts>.dot:first-child{margin-left:0}
+    @media (max-width:520px){.hero-price .facts{flex-basis:100%}.hero-price .facts>.dot:first-child{display:none}}
     .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.75rem}
     .hero-creds{font-size:.92rem;line-height:1.6;color:var(--muted);max-width:36rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
-    .hero-media{position:relative;overflow:hidden;background:#e6e7ea;min-height:420px}
-    .hero-media picture,.hero-media img{position:absolute;inset:0;width:100%;height:100%}
-    .hero-media img{object-fit:cover;object-position:center 60%;filter:grayscale(.7) brightness(.94) contrast(1.02)}
-    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;filter:grayscale(.7) brightness(.9) contrast(1.02);opacity:0;transition:opacity .9s ease}
-    .hero-video.on{opacity:1}
-    .video-toggle{position:absolute;right:1rem;bottom:1rem;z-index:2;width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(13,14,16,.78);color:var(--white);--focus:#ffffff}
-    .video-toggle:hover{background:var(--black)}
-    /* On a phone the photograph is the first screen and the words sit on it, over a dark wash.
-       The picture is darkened here as well as covered, so white text clears 4.5:1 everywhere. */
+    .hero-photo{position:relative;justify-self:center;width:100%;max-width:430px;margin:0 1.25rem 1.25rem 0}
+    .hero-photo::before{content:'';position:absolute;inset:1.25rem -1.25rem -1.25rem 1.25rem;border:2px solid var(--accent);border-radius:var(--radius)}
+    .hero-photo picture{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius);background:#e6e7ea}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+    .hero-photo figcaption{position:absolute;left:-1.5rem;bottom:2rem;padding:.8rem 1.1rem;background:var(--white);border-radius:var(--radius-sm);box-shadow:0 10px 30px rgba(13,14,16,.14);line-height:1.35}
+    .hero-photo figcaption strong{display:block;font-size:1rem;color:var(--black)}
+    .hero-photo figcaption span{font-size:.88rem;color:var(--muted)}
     @media (max-width:860px){
-      .hero{grid-template-columns:1fr;grid-template-rows:1fr;min-height:0;--focus:#ffffff}
-      .hero>*{grid-column:1;grid-row:1}
-      .hero-media{min-height:0;height:100%}
-      .hero-media img,.hero-video{object-position:center 30%;filter:grayscale(.75) brightness(.62) contrast(1.05)}
-      .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,9,11,.38) 0%,rgba(8,9,11,.5) 32%,rgba(8,9,11,.82) 72%,rgba(8,9,11,.92) 100%)}
-      .hero-text{position:relative;z-index:1;justify-content:flex-end;min-height:min(84svh,660px);padding:3.5rem clamp(1.25rem,5vw,3rem) 2.25rem}
-      .hero-lead{margin-bottom:1rem}
-      .hero-price{margin-bottom:1.25rem}
-      .hero-actions{margin-bottom:1.35rem}
-      .hero-creds{padding-top:1rem}
-      .hero-text .eyebrow{color:rgba(255,255,255,.92)}
-      .hero-title{color:var(--white)}
-      .hero-title em{color:#e6bd82}
-      .hero-lead{color:rgba(255,255,255,.9)}
-      .hero-price{color:rgba(255,255,255,.9)}
-      .hero-price strong{color:var(--white)}
-      .hero-creds{color:rgba(255,255,255,.8);border-top-color:rgba(255,255,255,.28)}
-      .hero-actions .btn{background:var(--white);border-color:var(--white);color:var(--black)}
-      .hero-actions .btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.65)}
-      .video-toggle{top:.85rem;bottom:auto}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-photo{display:none}
+      .avatar{display:block}
+      .hero-who{gap:.75rem}
+      .hero-who .eyebrow::before{display:none}
     }
 
-    /* Who it's for */
-    .who-card{padding:1.75rem;background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
-    .who-card h3{font-family:var(--display);font-size:1.6rem;font-weight:700;line-height:1.05;text-transform:uppercase;color:var(--black);margin-bottom:.7rem}
-    .who-card p{font-size:1rem;line-height:1.75;color:var(--mid)}
-    .who-card:nth-child(2){transition-delay:.09s}
-    .who-card:nth-child(3){transition-delay:.18s}
-
-    /* Three cards across on a wide screen. On a phone they become one swipeable row,
-       with the next card showing at the edge so it is clear there is more. */
-    .card-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.25rem}
-    @media (max-width:900px){
-      .card-row{display:flex;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scroll-padding-left:var(--gut);margin:2rem calc(-1 * var(--gut)) 0;padding:.4rem var(--gut) 1.1rem}
-      .card-row::-webkit-scrollbar{height:0}
-      .card-row>*{flex:0 0 min(84%,330px);scroll-snap-align:start;padding:1.5rem}
-      .quote blockquote p{font-size:1.2rem}
-      .quotes-note{margin-top:.5rem}
-    }
-    /* GLP-1 note: after pricing, as a quiet card rather than a black band in the first screens,
-       so the page leads with the busy-professional offer and this stays easy to find. */
-    .glp1-band{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem 2rem;max-width:1000px;margin:2rem auto 0;padding:1.25rem 1.5rem;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:var(--radius)}
-    .glp1-band h3{font-size:1.1rem;font-weight:700;line-height:1.35;color:var(--ink);margin-bottom:.35rem}
-    .glp1-band p{font-size:.95rem;line-height:1.7;color:var(--mid);max-width:720px}
-    @media (max-width:900px){.who-grid{margin-bottom:.25rem}.glp1-band{grid-template-columns:1fr}.glp1-band .btn{justify-self:start}}
-
-    /* How it works */
-    .steps{counter-reset:step;max-width:820px;margin-top:2.25rem}
+    /* The session: the steps, with an example of the written plan beside them */
+    .session-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;margin-top:2.25rem}
+    .steps{counter-reset:step;max-width:640px}
     .steps li{counter-increment:step;position:relative;padding:0 0 1.75rem 4.25rem;min-height:3.5rem}
     .steps li::before{content:counter(step);position:absolute;left:0;top:0;width:2.9rem;height:2.9rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--black);color:var(--white);font-family:var(--display);font-size:1.35rem;font-weight:800}
     .steps li::after{content:'';position:absolute;left:1.4rem;top:3.2rem;bottom:.3rem;width:2px;background:var(--rule)}
     .steps li:last-child{padding-bottom:0}
     .steps li:last-child::after{display:none}
     .steps h3{font-size:1.15rem;font-weight:600;color:var(--black);margin:.45rem 0 .4rem}
+    .steps h3 .time{margin-left:.4rem;font-size:.92rem;font-weight:500;color:var(--muted)}
     .steps p{font-size:1rem;line-height:1.75;color:var(--mid)}
-    .steps li:nth-child(2){transition-delay:.07s}
-    .steps li:nth-child(3){transition-delay:.14s}
-    .steps li:nth-child(4){transition-delay:.21s}
-    .steps li:nth-child(5){transition-delay:.28s}
-    .steps li:nth-child(6){transition-delay:.35s}
+    .plan-card{position:sticky;top:calc(var(--header-h) + 1.5rem);padding:1.5rem 1.5rem 1.25rem;background:var(--white);border-radius:var(--radius);box-shadow:0 1px 3px rgba(13,14,16,.08),0 14px 36px rgba(13,14,16,.08)}
+    .plan-tag{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .plan-card h3{font-size:1.1rem;font-weight:600;line-height:1.4;color:var(--black);margin:.35rem 0 .9rem}
+    .plan-list li{display:grid;grid-template-columns:auto 1fr;column-gap:.85rem;padding:.85rem 0;border-top:1px solid var(--rule)}
+    .plan-list .n{grid-row:span 2;width:1.9rem;height:1.9rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--surface);font-size:.85rem;font-weight:700;color:var(--ink)}
+    .plan-list strong{font-size:.98rem;color:var(--ink)}
+    .plan-list .dose{font-size:.92rem;color:var(--mid)}
+    .plan-foot{padding-top:.85rem;border-top:1px solid var(--rule);font-size:.9rem;line-height:1.55;color:var(--muted)}
+    .scope-note{max-width:640px;margin-top:2.25rem;padding:1rem 1.25rem;background:var(--white);border-left:4px solid var(--accent);border-radius:var(--radius-sm);font-size:.98rem;line-height:1.65;color:var(--mid)}
+    @media (max-width:900px){.session-grid{grid-template-columns:1fr}.plan-card{position:static;max-width:520px}}
 
-    /* Photographs between sections. Portrait frames, so nobody loses their head to the crop. */
-    .shots{background:var(--black);padding:clamp(2rem,5vw,3rem) 0 clamp(1.5rem,4vw,2.25rem)}
-    .shot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;max-width:var(--container-max);margin:0 auto;padding:0 var(--gut)}
-    .shot-grid picture{display:block;overflow:hidden;border-radius:var(--radius);background:#1b1d21;aspect-ratio:4/5}
-    .shot-grid img{width:100%;height:100%;object-fit:cover;filter:grayscale(.45) contrast(1.04)}
-    .shot-grid picture:nth-child(2){transition-delay:.09s}
-    .shot-grid picture:nth-child(3){transition-delay:.18s}
-    .shots-note{max-width:var(--container-max);margin:0 auto;padding:1.25rem var(--gut) 0;text-align:center;font-size:.95rem;color:rgba(255,255,255,.72)}
-    @media (max-width:860px){
-      .shot-grid{grid-template-columns:1fr 1fr;gap:.5rem}
-      .shot-grid picture:first-child{grid-column:1/-1;aspect-ratio:4/5}
-      .shot-grid picture:nth-child(n+2){aspect-ratio:3/4}
+    /* Who it's for: three cards across on a wide screen, one swipeable row on a phone,
+       with the next card showing at the edge so it is clear there is more */
+    .who-card{padding:1.75rem;background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
+    .who-card h3{font-family:var(--display);font-size:1.6rem;font-weight:700;line-height:1.05;text-transform:uppercase;color:var(--black);margin-bottom:.7rem}
+    .who-card p{font-size:1rem;line-height:1.75;color:var(--mid)}
+    .who-card:nth-child(2){transition-delay:.09s}
+    .who-card:nth-child(3){transition-delay:.18s}
+    .card-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.25rem}
+    @media (max-width:900px){
+      .card-row{display:flex;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scroll-padding-left:var(--gut);margin:2rem calc(-1 * var(--gut)) 0;padding:.4rem var(--gut) 1.1rem}
+      .card-row::-webkit-scrollbar{height:0}
+      .card-row>*{flex:0 0 min(84%,330px);scroll-snap-align:start;padding:1.5rem}
     }
 
-    /* Pricing */
+    /* Prices */
     .price-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:1.5rem;max-width:1000px;margin:2.5rem auto 0;align-items:start}
     .price-card{display:flex;flex-direction:column;padding:clamp(1.5rem,4vw,2.25rem);background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
     .price-card.featured{border:2px solid var(--accent);box-shadow:0 12px 40px rgba(196,138,63,.12)}
@@ -182,39 +154,59 @@
     .price-card h3{font-size:1.4rem;font-weight:600;color:var(--black);margin-bottom:.35rem}
     .price{font-size:1.05rem;color:var(--mid)}
     .price strong{font-family:var(--display);font-size:3.2rem;font-weight:800;line-height:1;color:var(--black);margin-right:.2rem}
-    .price-desc{font-size:1rem;color:var(--mid);margin-top:.75rem}
-    .ticks-head{margin:1.25rem 0 .1rem;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .price-desc{font-size:1rem;line-height:1.7;color:var(--mid);margin-top:.75rem}
     .ticks{display:flex;flex-direction:column;gap:.7rem;margin:1.25rem 0 1.5rem}
     .ticks li{position:relative;padding-left:1.7rem;font-size:.98rem;line-height:1.6;color:var(--mid)}
     .ticks li::before{content:'';position:absolute;left:.1rem;top:.38rem;width:.9rem;height:.5rem;border-left:2.5px solid var(--accent-dim);border-bottom:2.5px solid var(--accent-dim);transform:rotate(-45deg)}
-    .price-terms{margin-bottom:1.25rem;padding:.9rem 1rem;border-radius:var(--radius-sm);background:var(--surface);font-size:.94rem;line-height:1.6;color:var(--mid)}
     .price-card .btn{margin-top:auto}
-    .local-line{max-width:1000px;margin:1.75rem auto 0;text-align:center;font-size:1rem;line-height:1.7;color:var(--mid)}
-    @media (max-width:860px){.price-grid{grid-template-columns:1fr;max-width:560px}}
+    .extra-band{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem 2rem;max-width:1000px;margin:1.5rem auto 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:var(--radius)}
+    .extra-band h3{font-size:1.1rem;font-weight:700;line-height:1.35;color:var(--ink);margin-bottom:.35rem}
+    .extra-band p{font-size:.97rem;line-height:1.7;color:var(--mid);max-width:680px}
+    .local-line{max-width:760px;margin:1.75rem auto 0;text-align:center;font-size:1rem;line-height:1.7;color:var(--mid)}
+    @media (max-width:860px){.price-grid{grid-template-columns:1fr;max-width:560px}.extra-band{grid-template-columns:1fr;max-width:560px}.extra-band .btn{justify-self:start}}
 
     /* About */
     .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:center}
-    .about-grid p{font-size:1.05rem;line-height:1.8;color:var(--mid);margin-bottom:1.1rem}
+    .about-grid p:not(.eyebrow){font-size:1.05rem;line-height:1.8;color:var(--mid);margin-bottom:1.1rem}
     .badges{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
     .badges li{padding:.5rem .9rem;background:var(--white);border:1px solid var(--rule);border-radius:var(--radius-sm);font-size:.9rem;font-weight:500;color:var(--ink)}
-    .about-photo{justify-self:center;width:100%;max-width:460px;aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius);background:#e6e7ea}
-    .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-    @media (max-width:860px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:420px}}
+    .about-photo{justify-self:center;width:100%;max-width:520px;aspect-ratio:4/3;overflow:hidden;border-radius:var(--radius);background:#e6e7ea}
+    .about-photo img{width:100%;height:100%;object-fit:cover;object-position:45% center;filter:grayscale(.35) contrast(1.03)}
+    @media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+    /* After a session: the two ways to keep training, on black */
+    .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:880px;margin:2rem 0 1.75rem}
+    .next-card{padding:1.4rem 1.5rem;border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);background:rgba(255,255,255,.04)}
+    .next-card h3{font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:.2rem}
+    .next-card p{font-size:.98rem;line-height:1.65;color:rgba(255,255,255,.84)}
+    .next-card .next-price{font-family:var(--display);font-size:2rem;font-weight:800;line-height:1.1;color:var(--white);margin-bottom:.55rem}
+    .next-price span{font-family:var(--body);font-size:.92rem;font-weight:400;color:rgba(255,255,255,.78)}
+    .section-dark .lead{color:rgba(255,255,255,.86)}
+    @media (max-width:760px){.next-grid{grid-template-columns:1fr}}
 
     /* Questions */
     .faq-list{margin-top:2rem}
     .faq-more{margin-top:1.5rem}
     .faq-more a{display:inline-block;padding:.6rem 0}
 
-    /* Consultation request */
+    /* Booking request */
     .consult-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,3.5rem);max-width:1040px;margin:2.5rem auto 0;align-items:start}
     .consult-box{padding:clamp(1.5rem,4vw,2.25rem);background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
     .field{margin-bottom:1.25rem}
-    .field label{display:block;margin-bottom:.45rem;font-size:.95rem;font-weight:600;color:var(--ink)}
+    .field>label,.field>legend{display:block;margin-bottom:.45rem;padding:0;font-size:.95rem;font-weight:600;color:var(--ink)}
+    fieldset.field{border:0;padding:0;min-width:0}
     .optional{font-weight:400;color:var(--muted)}
-    .field input,.field textarea{width:100%;padding:.75rem .9rem;font-family:var(--body);font-size:1rem;line-height:1.5;color:var(--ink);background:var(--white);border:1.5px solid #7d848e;border-radius:var(--radius-sm)}
+    .field input[type="text"],.field input[type="email"],.field input[type="tel"],.field textarea{width:100%;padding:.75rem .9rem;font-family:var(--body);font-size:1rem;line-height:1.5;color:var(--ink);background:var(--white);border:1.5px solid #7d848e;border-radius:var(--radius-sm)}
     .field input:focus,.field textarea:focus{border-color:var(--black)}
-    .field textarea{min-height:120px;resize:vertical}
+    .field textarea{min-height:110px;resize:vertical}
+    .choices{display:grid;gap:.5rem}
+    .choices.three{grid-template-columns:repeat(3,1fr)}
+    .choice{display:flex;align-items:flex-start;gap:.7rem;min-height:48px;padding:.75rem .9rem;border:1.5px solid #c9ced5;border-radius:var(--radius-sm);cursor:pointer;line-height:1.4;font-size:.98rem;color:var(--ink)}
+    .choice:hover{border-color:var(--mid)}
+    .choice input{flex-shrink:0;width:1.15rem;height:1.15rem;margin-top:.12rem;accent-color:var(--black)}
+    .choice:has(input:checked){border-color:var(--black);background:var(--surface)}
+    .choice small{display:block;margin-top:.1rem;font-size:.88rem;color:var(--muted)}
+    @media (max-width:560px){.choices.three{grid-template-columns:1fr}}
     .hint{margin-top:.45rem;font-size:.9rem;line-height:1.55;color:var(--muted)}
     .form-privacy{margin-top:.9rem;font-size:.9rem;color:var(--muted)}
     .form-error{margin-top:1.25rem;padding:1.25rem;border:1.5px solid #b3261e;border-radius:var(--radius-sm);background:#fdecec;color:#5c1010}
@@ -227,24 +219,17 @@
     .contact-list{margin-bottom:1.5rem}
     .contact-list a{display:inline-block;padding:.45rem 0;font-weight:600;color:var(--ink);text-decoration:underline;text-decoration-color:var(--subtle);text-underline-offset:.2em}
     .contact-list a:hover{color:var(--accent-dim)}
-    .consult-side p{font-size:1rem;line-height:1.7;color:var(--mid);margin-bottom:1.5rem}
-    .next-steps{list-style:decimal;padding-left:1.25rem}
+    .consult-side p{font-size:1rem;line-height:1.7;color:var(--mid)}
+    .next-steps{list-style:decimal;padding-left:1.25rem;margin-bottom:1.5rem}
     .next-steps li{padding:.2rem 0;line-height:1.65;color:var(--mid)}
     @media (max-width:860px){.consult-grid{grid-template-columns:1fr;max-width:620px}}
-
-    /* Free guides */
-    .guides{padding:2.5rem 0 3.5rem;border-top:1px solid var(--rule)}
-    .guides h2{font-family:var(--display);font-size:1.5rem;font-weight:800;text-transform:uppercase;color:var(--black);margin-bottom:1rem}
-    .guide-links{display:flex;flex-wrap:wrap;gap:.6rem}
-    .guide-links a{display:inline-flex;align-items:center;min-height:44px;padding:.5rem 1rem;border:1px solid #b9bfc7;border-radius:99px;font-size:.95rem;font-weight:600;color:var(--ink)}
-    .guide-links a:hover{border-color:var(--accent-dim);color:var(--accent-dim)}
 
     /* Back to top */
     .back-to-top{position:fixed;right:1rem;bottom:1rem;z-index:90;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--black);color:var(--white);border:1.5px solid rgba(255,255,255,.25);box-shadow:0 4px 16px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
     .back-to-top.visible{opacity:1;visibility:visible;transform:none}
     .back-to-top:hover{background:var(--accent);color:var(--on-accent)}
     body:has(.menu-open) .back-to-top{opacity:0;visibility:hidden}
-    @media print{.hero-media,.back-to-top,.consult-grid,.guides{display:none!important}.hero{display:block;min-height:0}}
+    @media print{.hero-photo,.back-to-top,.consult-grid{display:none!important}.plan-card{position:static}}
   </style>
   <script src="site.js" defer></script>
 </head>
@@ -258,186 +243,193 @@
     <nav class="site-nav" aria-label="Main">
       <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-bars" aria-hidden="true"></span></button>
       <ul class="site-menu" id="site-menu">
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#session">Sports massage</a></li>
+        <li><a href="personal-training-edinburgh.html">Personal training</a></li>
+        <li><a href="online-coaching.html">Online coaching</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="library.html">Free guides</a></li>
       </ul>
     </nav>
-    <a href="#consultation" class="btn header-cta">Free consultation</a>
+    <a href="#book" class="btn header-cta">Book a session</a>
   </div>
 </header>
 
 <main id="main" tabindex="-1">
 
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-text">
-      <p class="eyebrow">Online coaching · Edinburgh</p>
-      <h1 id="hero-title" class="display hero-title">Strength training that fits <em>your working week.</em></h1>
-      <p class="hero-lead">Online coaching for busy professionals who want to get stronger and stop starting over. I build your plan around the time you really have, and change it when work gets busy.</p>
-      <p class="hero-price"><strong>£200 a month</strong><span class="facts">No minimum term <span class="dot" aria-hidden="true">·</span> Free first call</span></p>
-      <div class="hero-actions">
-        <a class="btn" href="#consultation">Request a free consultation</a>
-        <a class="btn btn-ghost" href="#pricing">See what's included</a>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="hero-who">
+          <img class="avatar" src="images/balazs-avatar-192.jpg" width="56" height="56" alt="" />
+          <p class="eyebrow">Sports massage · Edinburgh</p>
+        </div>
+        <h1 id="hero-title" class="display hero-title">Sports massage that comes <em>with a plan.</em></h1>
+        <p class="hero-lead">I'm Balazs, a sports massage therapist and personal trainer. We look at how you move, I work on what's tight, and you go home with two or three exercises, written up and sent to your phone.</p>
+        <p class="hero-price"><strong>£75</strong><span>for 75 minutes</span><span class="facts"><span class="dot" aria-hidden="true">·</span> Massage only £50 <span class="dot" aria-hidden="true">·</span> Pay per session</span></p>
+        <div class="hero-actions">
+          <a class="btn" href="#book" data-pick="Massage and Plan">Book a session</a>
+          <a class="btn btn-ghost" href="#session">What happens in a session</a>
+        </div>
+        <p class="hero-creds">At your home in Edinburgh, or my private garage gym · BSc (Hons) Physical Activity and Health · Sports massage qualified · 10+ years in the industry</p>
       </div>
-      <p class="hero-creds">BSc (Hons) Physical Activity and Health · Sports massage therapist · 10+ years in the industry</p>
+      <figure class="hero-photo">
+        <picture>
+          <source media="(max-width: 860px)" srcset="images/balazs-avatar-192.jpg" />
+          <source type="image/avif" srcset="images/portrait-700.avif 700w, images/portrait-1066.avif 1066w" sizes="430px" />
+          <img src="images/portrait-700.jpg" srcset="images/portrait-700.jpg 700w, images/portrait-1066.jpg 1066w" sizes="430px" width="700" height="1050" alt="Balazs Morvay" fetchpriority="high" />
+        </picture>
+        <figcaption><strong>Balazs Morvay</strong><span>Sports massage therapist and personal trainer</span></figcaption>
+      </figure>
     </div>
-    <div class="hero-media" data-hero-video="videos/hero-loop.mp4" data-hero-video-small="videos/hero-loop-480.mp4">
-      <picture>
-        <source type="image/avif" media="(max-width: 860px)" srcset="images/hero-phone-440.avif 440w, images/hero-phone-720.avif 720w" sizes="100vw" />
-        <source type="image/jpeg" media="(max-width: 860px)" srcset="images/hero-phone-440.jpg 440w, images/hero-phone-720.jpg 720w" sizes="100vw" />
-        <source type="image/avif" srcset="images/hero-600.avif 600w, images/hero-1094.avif 1094w" sizes="(min-width: 861px) 50vw, 100vw" />
-        <img src="images/hero-1094.jpg" srcset="images/hero-600.jpg 600w, images/hero-1094.jpg 1094w" sizes="(min-width: 861px) 50vw, 100vw" width="1094" height="1250" alt="Balazs Morvay setting up a heavy deadlift in the gym" fetchpriority="high" />
-      </picture>
+  </section>
+
+  <section class="section section-alt" id="session" aria-labelledby="session-title">
+    <div class="container">
+      <p class="eyebrow">The session</p>
+      <h2 id="session-title" class="display h2">75 minutes, and a plan to take home</h2>
+      <p class="lead">A Massage and Plan session always has the same five parts, so you know what you're paying for.</p>
+      <div class="session-grid">
+        <div>
+          <ol class="steps">
+            <li data-reveal>
+              <h3>A talk and a movement check <span class="time">about 15 minutes</span></h3>
+              <p>What you do, what's bothering you and what you want to get back to. Then a few simple movements, like a squat and a reach overhead, to see what's tight and what moves well.</p>
+            </li>
+            <li data-reveal>
+              <h3>The massage <span class="time">45 minutes</span></h3>
+              <p>Sports massage on the areas the check pointed to, at a pressure you're comfortable with. Only the area I'm working on is uncovered.</p>
+            </li>
+            <li data-reveal>
+              <h3>Two or three exercises <span class="time">about 15 minutes</span></h3>
+              <p>We go through each one until you're confident with it. At my garage gym we can use weights. At home, a band or your body weight.</p>
+            </li>
+            <li data-reveal>
+              <h3>Your plan, the same day</h3>
+              <p>The exercises written up with sets, reps and how often to do them, and sent to your phone, so you don't have to remember them.</p>
+            </li>
+            <li data-reveal>
+              <h3>A check-in a few days later</h3>
+              <p>I message to ask how you feel and to answer any questions about the exercises.</p>
+            </li>
+          </ol>
+          <p class="scope-note">I don't diagnose injuries. If something needs a physio or a GP, I'll tell you and suggest where to go.</p>
+        </div>
+        <aside class="plan-card" aria-labelledby="plan-title" data-reveal>
+          <p class="plan-tag">Example plan</p>
+          <h3 id="plan-title">Tight calves and hips, training for a half marathon</h3>
+          <ol class="plan-list">
+            <li><span class="n" aria-hidden="true">1</span><strong>Calf raise, slow on the way down</strong><span class="dose">3 sets of 15, every other day</span></li>
+            <li><span class="n" aria-hidden="true">2</span><strong>Kneeling hip flexor stretch</strong><span class="dose">2 x 45 seconds each side, daily</span></li>
+            <li><span class="n" aria-hidden="true">3</span><strong>Side plank</strong><span class="dose">3 x 30 seconds each side, 3 times a week</span></li>
+          </ol>
+          <p class="plan-foot">Yours is written for you, from what we find in the session, and sent the same day.</p>
+        </aside>
+      </div>
     </div>
   </section>
 
   <section class="section" id="who" aria-labelledby="who-title">
     <div class="container">
       <p class="eyebrow">Who it's for</p>
-      <h2 id="who-title" class="display h2">Coaching for real working weeks</h2>
-      <p class="lead">For adults at any level who want a clear plan and someone checking in.</p>
-      <div class="who-grid card-row" role="group" aria-label="Who the coaching is for" tabindex="0">
+      <h2 id="who-title" class="display h2">For people who train, and people who sit</h2>
+      <p class="lead">Most people come with tight spots and aches, not injuries.</p>
+      <div class="card-row" role="group" aria-label="Who the sessions are for" tabindex="0">
         <article class="who-card" data-reveal>
-          <h3>Your week keeps changing</h3>
-          <p>Meetings run over, travel comes up, a week disappears. Your plan uses the days and the time you really have. Miss a session and you do the next one in order.</p>
+          <h3>You run, lift or play sport</h3>
+          <p>Calves before a race, hips after heavy squats, a shoulder that complains on the bench. A massage around a big week, and exercises that fit the training you already do.</p>
         </article>
         <article class="who-card" data-reveal>
-          <h3>Getting back into it</h3>
-          <p>You trained before, then work, family or an injury got in the way. We start where you can recover and build back steadily. If something hurts, the plan works around it.</p>
+          <h3>You sit at a desk all day</h3>
+          <p>A stiff neck, tight shoulders, a lower back that aches by Friday. The massage eases it, and a few minutes of exercises during the week give you something to do about it.</p>
         </article>
         <article class="who-card" data-reveal>
-          <h3>Ready to get stronger</h3>
-          <p>You already train, but progress has stalled. You log every set, aim to beat last week's numbers, and get planned easier weeks so you keep going.</p>
+          <h3>The same spot keeps coming back</h3>
+          <p>You have regular massages and the same area tightens up again. We look at your training and your week, not just the sore spot, and build your exercises around what we find.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="how-it-works" aria-labelledby="how-title">
+  <section class="section section-alt" id="prices" aria-labelledby="prices-title">
     <div class="container">
-      <p class="eyebrow">How it works</p>
-      <h2 id="how-title" class="display h2">What working together looks like</h2>
-      <ol class="steps">
-        <li data-reveal>
-          <h3>A free call</h3>
-          <p>30 minutes. Your goals, your week, and what has got in the way before. I explain the coaching and the price, and we decide together. No obligation.</p>
-        </li>
-        <li data-reveal>
-          <h3>A clear agreement</h3>
-          <p>You see the service and the price in writing, and agree before you pay. I don't ask about your health until then.</p>
-        </li>
-        <li data-reveal>
-          <h3>A private questionnaire</h3>
-          <p>Your health, training, equipment and schedule. Your answers stay private. If anything needs a doctor's OK first, I'll tell you. If we can't start, you get a full refund.</p>
-        </li>
-        <li data-reveal>
-          <h3>Your plan, explained</h3>
-          <p>I build your plan, then we walk through it on a call and agree your starting weights.</p>
-        </li>
-        <li data-reveal>
-          <h3>Train and check in</h3>
-          <p>Your plan is a Google Sheet on your phone: your sets, rest times and last week's numbers to beat. Send a short check-in after your first week, then every two weeks, and message me any time.</p>
-        </li>
-        <li data-reveal>
-          <h3>Review, then your next block</h3>
-          <p>Each block of training ends with an easier week and a short review. I build your next block from what you logged.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="shots on-dark" aria-labelledby="shots-title">
-    <h2 id="shots-title" class="visually-hidden">Photographs from my own training</h2>
-    <div class="shot-grid">
-      <picture data-reveal>
-        <source type="image/avif" srcset="images/gym-deadlift-400.avif 400w, images/gym-deadlift-720.avif 720w" sizes="(min-width: 861px) 360px, 92vw" />
-        <img src="images/gym-deadlift-720.jpg" srcset="images/gym-deadlift-400.jpg 400w, images/gym-deadlift-720.jpg 720w" sizes="(min-width: 861px) 360px, 92vw" width="720" height="898" alt="Balazs Morvay pulling a loaded barbell past his knees on a deadlift" loading="lazy" decoding="async" />
-      </picture>
-      <picture data-reveal>
-        <source type="image/avif" srcset="images/gym-squat-400.avif 400w, images/gym-squat-720.avif 720w" sizes="(min-width: 861px) 360px, 46vw" />
-        <img src="images/gym-squat-720.jpg" srcset="images/gym-squat-400.jpg 400w, images/gym-squat-720.jpg 720w" sizes="(min-width: 861px) 360px, 46vw" width="720" height="899" alt="Balazs Morvay standing up out of a barbell back squat in the rack" loading="lazy" decoding="async" />
-      </picture>
-      <picture data-reveal>
-        <source type="image/avif" srcset="images/gym-lockout-400.avif 400w, images/gym-lockout-502.avif 502w" sizes="(min-width: 861px) 360px, 46vw" />
-        <img src="images/gym-lockout-502.jpg" srcset="images/gym-lockout-400.jpg 400w, images/gym-lockout-502.jpg 502w" sizes="(min-width: 861px) 360px, 46vw" width="502" height="628" alt="Balazs Morvay standing tall at the top of a deadlift, barbell at his hips" loading="lazy" decoding="async" />
-      </picture>
-    </div>
-    <p class="shots-note">Me, training. The same lifts your plan is built on.</p>
-  </section>
-
-  <section class="section" id="pricing" aria-labelledby="pricing-title">
-    <div class="container">
-      <p class="eyebrow center">Pricing</p>
-      <h2 id="pricing-title" class="display h2 center">What you get</h2>
-      <p class="lead center">Coaching is the main service. If you'd rather train on your own, there's a one-off programme.</p>
+      <p class="eyebrow center">Prices</p>
+      <h2 id="prices-title" class="display h2 center">Pay per session</h2>
+      <p class="lead center">No packages and no subscription. Massage costs the same at your home or at my garage gym.</p>
       <div class="price-grid">
-        <article class="price-card featured" aria-labelledby="coaching-title" data-reveal>
-          <p class="price-tag">Ongoing coaching</p>
-          <h3 id="coaching-title">Coaching</h3>
-          <p class="price"><strong>£200</strong> a month</p>
-          <p class="ticks-head">Your plan</p>
+        <article class="price-card featured" aria-labelledby="plan-price-title" data-reveal>
+          <p class="price-tag">Start here</p>
+          <h3 id="plan-price-title">Massage and Plan</h3>
+          <p class="price"><strong>£75</strong> for 75 minutes</p>
           <ul class="ticks">
-            <li>A training plan built around your goals, equipment and schedule</li>
-            <li>Daily calorie and protein targets, with simple rules for adjusting them (not a meal plan)</li>
-            <li>Home gym planning if you need it</li>
+            <li>A talk and a movement check, so we know what to work on</li>
+            <li>45 minutes of sports massage</li>
+            <li>Two or three exercises, practised in the session</li>
+            <li>Your plan written up and sent to your phone the same day</li>
+            <li>A message a few days later to see how you're getting on</li>
           </ul>
-          <p class="ticks-head">Your support</p>
-          <ul class="ticks">
-            <li>A check-in after your first week, then every two weeks, with a video or phone call when it helps</li>
-            <li>Messages any time on WhatsApp or iMessage, answered within two working days (Monday to Friday)</li>
-            <li>Feedback on videos of your lifts, up to 2 a week</li>
-            <li>A review at the end of each block, and your next block built from it</li>
-          </ul>
-          <p class="price-terms">Paid monthly in advance. No minimum term: cancel before your next payment date. Full refund if you're not happy within your first 14 days.</p>
-          <a class="btn btn-block" href="#consultation">Request a free consultation</a>
+          <a class="btn btn-block" href="#book" data-pick="Massage and Plan">Book Massage and Plan</a>
         </article>
-        <article class="price-card" aria-labelledby="block-title" data-reveal>
-          <p class="price-tag plain">Plan only</p>
-          <h3 id="block-title">Programme Block</h3>
-          <p class="price"><strong>£100</strong> one-off</p>
-          <p class="price-desc">For people who want a plan to follow on their own.</p>
+        <article class="price-card" aria-labelledby="massage-price-title" data-reveal>
+          <p class="price-tag plain">Massage only</p>
+          <h3 id="massage-price-title">Sports massage</h3>
+          <p class="price"><strong>£50</strong> for 45 minutes</p>
+          <p class="price-desc">For regular upkeep while you train, or a return visit. If you already have exercises from me, we check how they're going and move them on.</p>
           <ul class="ticks">
-            <li>A personal 4 to 12 week training plan</li>
-            <li>Daily calorie and protein targets, set for the whole block (not a meal plan)</li>
-            <li>In a Google Sheet you log on your phone</li>
-            <li>One round of changes within 14 days if something doesn't fit</li>
-            <li>No check-ins or messaging</li>
+            <li>45 minutes of sports massage</li>
+            <li>A quick check of your exercises, if you have them</li>
           </ul>
-          <p class="price-terms">Paid once. Full refund if you're not happy within 14 days of getting your plan.</p>
-          <a class="btn btn-ghost btn-block" href="#consultation">Ask about a Programme Block</a>
+          <a class="btn btn-ghost btn-block" href="#book" data-pick="Sports massage">Book a massage</a>
         </article>
       </div>
-      <p class="local-line">In Edinburgh: <a class="text-link" href="personal-training-edinburgh.html">in-person sessions (£50 at my gym, £60 at yours), mobile sports massage (£50 for 45 minutes) and home gym planning</a>.</p>
-      <div class="glp1-band" data-reveal>
+      <div class="extra-band" data-reveal>
         <div>
-          <h3>On a weight-loss medicine like a GLP-1? You're welcome here.</h3>
-          <p>You don't need to worry about starting with a trainer. Strength training and enough protein are the best-supported ways to keep muscle and strength while you lose weight, so your plan puts both first. With coaching, I check you're eating enough. Your prescriber stays in charge of the medicine.</p>
+          <h3>Training sessions</h3>
+          <p>One-to-one coaching on your lifts and your plan. £50 at my garage gym, or £60 at your home gym or a gym near you, because I travel.</p>
         </div>
-        <a class="btn btn-ghost" href="blog-glp1.html">Read the GLP-1 guide</a>
+        <a class="btn btn-ghost" href="personal-training-edinburgh.html">Personal training in Edinburgh</a>
       </div>
+      <p class="local-line">Home visits cover Edinburgh and nearby, and I bring the massage couch. Please give at least 24 hours' notice to move or cancel a session.</p>
     </div>
   </section>
 
-  <section class="section section-alt" id="about" aria-labelledby="about-title">
+  <section class="section" id="about" aria-labelledby="about-title">
     <div class="container about-grid">
       <div data-reveal>
         <p class="eyebrow">About</p>
         <h2 id="about-title" class="display h2">Hi, I'm Balazs</h2>
-        <p>I'm a personal trainer and sports massage therapist based in Edinburgh. I have a BSc (Hons) in Physical Activity and Health and more than 10 years in the industry.</p>
-        <p>I coach people with full lives: careers, families, travel. My job is to give you a plan you can keep doing, and change it when your life changes. Most of my coaching is online. If you're near Edinburgh, <a class="text-link" href="personal-training-edinburgh.html">I also train people in person</a>.</p>
+        <p>I'm a sports massage therapist and personal trainer in Edinburgh, with a BSc (Hons) in Physical Activity and Health and more than 10 years in the industry.</p>
+        <p>I put massage and exercise in one session because they do different jobs. Massage helps you feel looser and less sore. Exercises are what you can keep doing in the weeks between sessions, and they're what I know best: I coach strength training in person and online.</p>
         <ul class="badges">
           <li>Physical Activity &amp; Health BSc (Hons)</li>
           <li>Sports massage qualified</li>
           <li>10+ years in the industry</li>
-          <li>Online · Based in Edinburgh</li>
+          <li>Home visits in Edinburgh</li>
         </ul>
       </div>
       <picture class="about-photo" data-reveal>
-        <source type="image/avif" srcset="images/portrait-700.avif 700w, images/portrait-1066.avif 1066w" sizes="(min-width: 861px) 460px, 90vw" />
-        <img src="images/portrait-700.jpg" srcset="images/portrait-700.jpg 700w, images/portrait-1066.jpg 1066w" sizes="(min-width: 861px) 460px, 90vw" width="700" height="1050" alt="Balazs Morvay, personal trainer and online coach" loading="lazy" decoding="async" />
+        <img src="images/strength-mirror.jpg" width="838" height="628" alt="Balazs Morvay standing at the top of a sumo deadlift in a gym" loading="lazy" decoding="async" />
       </picture>
+    </div>
+  </section>
+
+  <section class="section section-dark on-dark" id="after" aria-labelledby="after-title">
+    <div class="container">
+      <p class="eyebrow">After your session</p>
+      <h2 id="after-title" class="display h2">Want a full training plan?</h2>
+      <p class="lead">Your session plan is a few exercises. If you'd like a whole plan built around your week, there are two ways to carry on, in Edinburgh or wherever you train.</p>
+      <div class="next-grid">
+        <div class="next-card">
+          <h3>Programme Block</h3>
+          <p class="next-price">£100 <span>one-off</span></p>
+          <p>A personal 4 to 12 week training plan with daily calorie and protein targets, to follow on your own.</p>
+        </div>
+        <div class="next-card">
+          <h3>Coaching</h3>
+          <p class="next-price">£200 <span>a month</span></p>
+          <p>Your plan, check-ins and messages, with the plan changed as your weeks change. No minimum term.</p>
+        </div>
+      </div>
+      <a class="btn btn-gold" href="online-coaching.html">How online coaching works</a>
     </div>
   </section>
 
@@ -447,73 +439,105 @@
       <h2 id="faq-title" class="display h2 center">Good to know</h2>
       <div class="faq-list">
         <details class="faq-item">
-          <summary>Do I need a gym?</summary>
-          <div class="faq-answer"><p>No. Your plan is built around the equipment you have, at a gym or at home. Planning a home gym? I can help you choose what to buy.</p></div>
+          <summary>Do I need an injury to book?</summary>
+          <div class="faq-answer"><p>No. Most people come with tight spots, soreness from training or aches from sitting. If you have a recent injury, mention it when you book. I don't diagnose injuries, and if something needs a physio or a GP, I'll tell you.</p></div>
         </details>
         <details class="faq-item">
-          <summary>What if I miss a session or a week?</summary>
-          <div class="faq-answer"><p>Do the next session in order. There's no catching up. If you miss a week, carry on where you stopped and your dates move back a week. If your weeks are hard to predict, tell me and I'll plan fewer days or shorter sessions.</p></div>
+          <summary>How firm is the massage?</summary>
+          <div class="faq-answer"><p>As firm as you're comfortable with. Sports massage can feel strong in places. Tell me if it's too much and I'll ease off straight away.</p></div>
         </details>
         <details class="faq-item">
-          <summary>I'm new to the gym. Is that OK?</summary>
-          <div class="faq-answer"><p>Yes. Coaching is for adults (18 and over) at any level. Beginners start with a small amount of work at an easy effort, and we choose your starting weights together on the walkthrough call.</p></div>
+          <summary>What should I wear?</summary>
+          <div class="faq-answer"><p>Shorts and a loose top you can move in, for the movement check and the exercises. During the massage, only the area I'm working on is uncovered, and the rest of you stays under a towel.</p></div>
         </details>
         <details class="faq-item">
-          <summary>I have an injury or a health condition. Can you still coach me?</summary>
-          <div class="faq-answer"><p>Usually, yes. The questionnaire asks about your health and injuries. Your plan works around current pain, and some conditions need a doctor's OK before we start. I'll tell you if that applies to you. Coaching doesn't replace medical care or physiotherapy.</p></div>
+          <summary>Where do sessions happen?</summary>
+          <div class="faq-answer"><p>At your home, in Edinburgh and nearby. I bring the massage couch and need a clear space about the size of a single bed, with room to walk around it. Or at my private garage gym in Edinburgh, where we can use weights for the exercises. I share the exact address when you book.</p></div>
         </details>
         <details class="faq-item">
-          <summary>How do I cancel?</summary>
-          <div class="faq-answer"><p>Email or message me before your next payment date. There's no minimum term and no cancellation fee, and your coaching carries on until the end of the month you've paid for. If you're not happy within your first 14 days, you get a full refund.</p></div>
+          <summary>Is there any reason I shouldn't have a massage?</summary>
+          <div class="faq-answer"><p>Sometimes. A fever, a recent injury or operation, a blood clot, blood-thinning medicine, some skin conditions and pregnancy can each mean waiting, changing the massage or checking with your doctor first. Once we've agreed a time, I send you a short private health form that asks about these.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How do payment and cancelling work?</summary>
+          <div class="faq-answer"><p>You pay for each session, as agreed when you book. There are no packages and no subscription. Please give at least 24 hours' notice to move or cancel. With less notice, I may charge up to the price of the session.</p></div>
         </details>
       </div>
       <p class="center faq-more"><a class="text-link" href="faq.html">More questions and answers</a></p>
     </div>
   </section>
 
-  <section class="section section-alt" id="consultation" aria-labelledby="consult-title">
+  <section class="section section-alt" id="book" aria-labelledby="book-title">
     <div class="container">
-      <p class="eyebrow center">Get started</p>
-      <h2 id="consult-title" class="display h2 center">Request a free consultation</h2>
-      <p class="lead center">Tell me what you'd like help with. I'll reply within one working day to arrange a 30-minute call. No obligation.</p>
+      <p class="eyebrow center">Book</p>
+      <h2 id="book-title" class="display h2 center">Book a session</h2>
+      <p class="lead center">Tell me which session and when suits you. I'll reply within one working day with times.</p>
       <div class="consult-grid">
         <div class="consult-box" data-reveal>
-          <form id="enquiry-form" name="consultation" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="consultation" />
+          <form name="booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-enquiry="Booking request">
+            <input type="hidden" name="form-name" value="booking" />
             <input type="hidden" name="source" value="" />
             <p class="visually-hidden" aria-hidden="true"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+            <fieldset class="field">
+              <legend>Which session?</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="session" value="Massage and Plan" required /><span>Massage and Plan<small>75 minutes, £75</small></span></label>
+                <label class="choice"><input type="radio" name="session" value="Sports massage" /><span>Sports massage<small>45 minutes, £50</small></span></label>
+                <label class="choice"><input type="radio" name="session" value="Training session" /><span>Training session<small>£50 at my gym, £60 at yours</small></span></label>
+                <label class="choice"><input type="radio" name="session" value="Not sure yet" /><span>Not sure yet</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="field">
+              <legend>Where?</legend>
+              <div class="choices three">
+                <label class="choice"><input type="radio" name="where" value="At my home" required /><span>At my home</span></label>
+                <label class="choice"><input type="radio" name="where" value="At your garage gym" /><span>At your garage gym</span></label>
+                <label class="choice"><input type="radio" name="where" value="Not sure yet" /><span>Not sure yet</span></label>
+              </div>
+            </fieldset>
             <div class="field">
-              <label for="f-name">Name</label>
-              <input type="text" id="f-name" name="name" autocomplete="name" maxlength="100" required />
+              <label for="b-area">Your area or postcode <span class="optional">(for home visits)</span></label>
+              <input type="text" id="b-area" name="area" autocomplete="postal-code" maxlength="60" aria-describedby="b-area-hint" />
+              <p id="b-area-hint" class="hint">For example, Leith or EH6.</p>
             </div>
             <div class="field">
-              <label for="f-email">Email</label>
-              <input type="email" id="f-email" name="email" autocomplete="email" maxlength="200" required />
+              <label for="b-when">When suits you? <span class="optional">(optional)</span></label>
+              <input type="text" id="b-when" name="when" maxlength="200" aria-describedby="b-when-hint" />
+              <p id="b-when-hint" class="hint">For example, weekday evenings or Saturday morning.</p>
             </div>
             <div class="field">
-              <label for="f-phone">Phone <span class="optional">(optional)</span></label>
-              <input type="tel" id="f-phone" name="phone" autocomplete="tel" maxlength="40" />
+              <label for="b-name">Name</label>
+              <input type="text" id="b-name" name="name" autocomplete="name" maxlength="100" required />
             </div>
             <div class="field">
-              <label for="f-message">What would you like help with? <span class="optional">(optional)</span></label>
-              <textarea id="f-message" name="message" rows="4" maxlength="2000" aria-describedby="f-message-hint"></textarea>
-              <p id="f-message-hint" class="hint">A sentence or two is plenty. Please don't include medical details here. We'll cover your health privately if we work together.</p>
+              <label for="b-email">Email</label>
+              <input type="email" id="b-email" name="email" autocomplete="email" maxlength="200" required />
             </div>
-            <button type="submit" class="btn btn-block">Request my consultation</button>
-            <p class="form-privacy">I'll only use your details to reply to your request. <a class="text-link" href="privacy.html">Privacy notice</a></p>
+            <div class="field">
+              <label for="b-phone">Phone <span class="optional">(optional)</span></label>
+              <input type="tel" id="b-phone" name="phone" autocomplete="tel" maxlength="40" aria-describedby="b-phone-hint" />
+              <p id="b-phone-hint" class="hint">Handy for confirming a time by text.</p>
+            </div>
+            <div class="field">
+              <label for="b-message">Anything else I should know? <span class="optional">(optional)</span></label>
+              <textarea id="b-message" name="message" rows="3" maxlength="2000" aria-describedby="b-message-hint"></textarea>
+              <p id="b-message-hint" class="hint">Please don't include medical details here. Once we've agreed a time, I'll send you a short private health form.</p>
+            </div>
+            <button type="submit" class="btn btn-block">Send my booking request</button>
+            <p class="form-privacy">I'll only use your details to arrange your session. <a class="text-link" href="privacy.html">Privacy notice</a></p>
           </form>
-          <div id="form-error" class="form-error" role="alert" tabindex="-1" hidden>
+          <div class="form-error" role="alert" tabindex="-1" hidden>
             <p><strong>Sorry, your request didn't send.</strong> What you typed is still in the form.</p>
             <p>Please try again, or send it to me directly.</p>
             <div class="form-error-actions">
-              <button type="button" id="form-retry" class="btn">Try again</button>
-              <a id="form-email-link" class="btn btn-ghost" href="mailto:morvaybalazs@gmail.com">Email your request</a>
+              <button type="button" class="btn" data-retry>Try again</button>
+              <a class="btn btn-ghost" data-email-link href="mailto:morvaybalazs@gmail.com">Email your request</a>
             </div>
             <p>Or text me on <a class="text-link" href="sms:+447914390913">07914 390913</a>.</p>
           </div>
-          <div id="form-success" class="form-success" role="status" tabindex="-1" hidden>
-            <h3>Thanks<span id="form-success-name"></span>. Your request has been sent.</h3>
-            <p>I'll reply within one working day to arrange a time for your call. Nothing is booked until we agree a time.</p>
+          <div class="form-success" role="status" tabindex="-1" hidden>
+            <h3>Thanks<span data-greet></span>. Your request has been sent.</h3>
+            <p>I'll reply within one working day with times. Nothing is booked until we agree a time.</p>
             <p>My reply comes from morvaybalazs@gmail.com, so check your junk folder if you don't see it. Need me sooner? Text <a class="text-link" href="sms:+447914390913">07914 390913</a>.</p>
           </div>
         </div>
@@ -527,25 +551,13 @@
           </ul>
           <h3>What happens next</h3>
           <ol class="next-steps">
-            <li>I reply within one working day with times for a call.</li>
-            <li>We talk for 30 minutes, and if it's a fit I send your agreement. The private questionnaire comes after you've signed up.</li>
+            <li>I reply within one working day with times.</li>
+            <li>Once we've agreed a time, I send you a short private health form, so I know the massage is safe for you.</li>
+            <li>On the day, we start with a talk, so bring any questions.</li>
           </ol>
-          <p style="margin-top:1.5rem">Based in Edinburgh, coaching online wherever you train. <a class="text-link" href="https://share.google/cJ5u14vFF04bbxpgY">Find me on Google</a></p>
+          <p>Based in Edinburgh. <a class="text-link" href="https://share.google/cJ5u14vFF04bbxpgY">Find me on Google</a></p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="guides" aria-labelledby="guides-title">
-    <div class="container">
-      <h2 id="guides-title">Free guides</h2>
-      <ul class="guide-links">
-        <li><a href="training-plan.html">3-day full-body programme</a></li>
-        <li><a href="protein-guide.html">Protein without the faff</a></li>
-        <li><a href="home-gym-guide.html">The home gym that gets used</a></li>
-        <li><a href="blog-glp1.html">GLP-1 medicines and keeping the weight off</a></li>
-        <li><a href="library.html">All free guides</a></li>
-      </ul>
     </div>
   </section>
 
@@ -556,23 +568,22 @@
     <div class="footer-grid">
       <div>
         <p class="footer-logo">B<span>.</span>Morvay</p>
-        <p class="footer-tagline">Online coaching for busy professionals. Based in Edinburgh, Scotland.</p>
+        <p class="footer-tagline">Sports massage and personal training in Edinburgh. Online coaching wherever you train.</p>
       </div>
       <nav aria-label="Footer">
         <p class="footer-h">Explore</p>
         <ul class="footer-links">
-          <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="#session">Sports massage in Edinburgh</a></li>
           <li><a href="personal-training-edinburgh.html">Personal training in Edinburgh</a></li>
+          <li><a href="online-coaching.html">Online coaching</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="library.html">Free guides</a></li>
         </ul>
       </nav>
       <div>
         <p class="footer-h">Contact</p>
         <ul class="footer-links">
-          <li><a href="#consultation">Request a consultation</a></li>
+          <li><a href="#book">Book a session</a></li>
           <li><a href="mailto:morvaybalazs@gmail.com">morvaybalazs@gmail.com</a></li>
           <li><a href="tel:+447914390913">07914 390913</a></li>
           <li>Edinburgh, Scotland</li>

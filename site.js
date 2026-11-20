@@ -130,16 +130,20 @@
     }
   }
 
-  // Consultation request form (Netlify Forms). Shows sending, error and success states on the page,
-  // keeps what the visitor typed if sending fails, and never opens an email app by itself.
-  var form = document.getElementById('enquiry-form');
-  if (form) {
+  // Request forms (Netlify Forms): the booking request on the homepage and the coaching
+  // consultation request. Each form is marked data-enquiry="<email subject>", and its error and
+  // success boxes sit next to it. Shows sending, error and success states on the page, keeps
+  // what the visitor typed if sending fails, and never opens an email app by itself.
+  document.querySelectorAll('form[data-enquiry]').forEach(function (form) {
+    var box = form.parentElement;
     var submit = form.querySelector('[type="submit"]');
     var submitLabel = submit.textContent;
-    var errorBox = document.getElementById('form-error');
-    var success = document.getElementById('form-success');
-    var retry = document.getElementById('form-retry');
-    var emailLink = document.getElementById('form-email-link');
+    var errorBox = box.querySelector('.form-error');
+    var success = box.querySelector('.form-success');
+    var retry = box.querySelector('[data-retry]');
+    var emailLink = box.querySelector('[data-email-link]');
+    var greet = box.querySelector('[data-greet]');
+    var subject = form.getAttribute('data-enquiry');
     var sending = false;
 
     // Where the visitor came from, sent only with their request: campaign tags on the address
@@ -158,12 +162,24 @@
       sourceField.value = parts.join('; ').slice(0, 300);
     }
 
+    // The email fallback carries every answer, each under the question it answers
+    var questionFor = function (field) {
+      var set = field.type === 'radio' && field.closest('fieldset');
+      var label = set ? set.querySelector('legend') : form.querySelector('label[for="' + field.id + '"]');
+      var optional = label && label.querySelector('.optional');
+      var text = label ? label.textContent.replace(optional ? optional.textContent : '', '') : field.name;
+      return text.trim();
+    };
     var mailtoFor = function () {
-      var data = new FormData(form);
-      var body = 'Name: ' + (data.get('name') || '') + '\nEmail: ' + (data.get('email') || '') +
-        '\nPhone: ' + (data.get('phone') || '') + '\n\nWhat I would like help with:\n' + (data.get('message') || '');
-      return 'mailto:morvaybalazs@gmail.com?subject=' + encodeURIComponent('Consultation request') +
-        '&body=' + encodeURIComponent(body);
+      var lines = [];
+      Array.prototype.forEach.call(form.elements, function (field) {
+        if (!field.name || field.type === 'hidden' || field.name === 'bot-field' || field.type === 'submit') return;
+        if (field.type === 'radio' && !field.checked) return;
+        var value = String(field.value || '').trim();
+        if (value) lines.push(questionFor(field) + '\n' + value);
+      });
+      return 'mailto:morvaybalazs@gmail.com?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(lines.join('\n\n'));
     };
 
     var finish = function () {
@@ -201,7 +217,6 @@
         clearTimeout(timer);
         if (!response.ok) throw new Error('HTTP ' + response.status);
         var name = String(new FormData(form).get('name') || '').trim().split(/\s+/)[0];
-        var greet = document.getElementById('form-success-name');
         if (greet && name) greet.textContent = ', ' + name;
         form.hidden = true;
         success.hidden = false;
@@ -215,7 +230,18 @@
     if (retry) retry.addEventListener('click', function () {
       if (form.requestSubmit) form.requestSubmit(); else submit.click();
     });
-  }
+  });
+
+  // "Book Massage and Plan" and similar buttons tick that session in the booking form,
+  // so nobody has to choose it twice
+  document.querySelectorAll('[data-pick]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var pick = link.getAttribute('data-pick');
+      document.querySelectorAll('input[name="session"]').forEach(function (choice) {
+        if (choice.value === pick) choice.checked = true;
+      });
+    });
+  });
 
   // Print buttons (check-in template)
   document.querySelectorAll('[data-print]').forEach(function (b) {

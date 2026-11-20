@@ -47,6 +47,9 @@ BANNED = [
     (r"06:00|21:00", "seven-day opening hours are not real"),
     (r"book (a )?free consultation|book consultation", "the form sends a request, so say 'request'"),
     (r"messaging or (a )?nutrition plan", "the Programme Block includes the nutrition plan (October 2026)"),
+    (r"\bsports therapist", "'sports therapist' suggests a sports therapy degree; say 'sports massage therapist' (November 2026)"),
+    (r"\btoxins?\b|lactic acid", "massage does not flush out toxins or lactic acid"),
+    (r"\b(we|I) (treat|fix|cure) (your )?injur", "massage here does not treat injuries; say what it does, and refer on"),
 ]
 # 2. Code-level defects the review found
 CODE_BANNED = [
@@ -59,27 +62,40 @@ CODE_BANNED = [
     (r"history\.back\(\)", "a 'Back' link that guesses; name the destination"),
     (r'target="_blank"', "internal links should open in the same tab"),
 ]
-PRICES_OK = {"200", "100", "60", "50"}
+PRICES_OK = {"200", "100", "75", "60", "50"}
 EQUIPMENT_PRICES = {"150", "400", "800"}  # the home gym budgets
 PRICE_FREE = {"home-gym-guide.html"}      # equipment prices live here
 
 # 3. Facts that must be stated (page, regex, what it is)
 REQUIRED = [
-    ("index.html", r"£200", "the coaching price"),
-    ("index.html", r"after your first week, then every two weeks", "the check-in rhythm"),
-    ("index.html", r"within two working days", "the reply time for clients"),
-    ("index.html", r"within one working day", "the reply time for enquiries"),
-    ("index.html", r"No minimum term|no minimum term", "the cancellation wording"),
-    ("index.html", r"videos of your lifts, up to 2 a week", "the video feedback limit"),
+    # The homepage sells sports massage (November 2026)
+    ("index.html", r"£75</strong> for 75 minutes", "the Massage and Plan price and length"),
+    ("index.html", r"£50</strong> for 45 minutes", "the 45-minute massage price"),
+    ("index.html", r"I don't diagnose injuries", "the massage scope line"),
+    ("index.html", r"within one working day", "the reply time for booking requests"),
+    ("index.html", r"24 hours' notice", "the notice to move or cancel a session"),
+    ("index.html", r"don't include medical details", "no health details in the booking form"),
+    ("faq.html", r"I don't diagnose injuries", "the massage scope line"),
+    ("terms.html", r"Massage and Plan \(£75 for 75 minutes\)", "the Massage and Plan in the terms"),
+    ("terms.html", r"I don't diagnose injuries", "the massage scope line"),
+    ("privacy.html", r"massage health form", "the massage health form and its lawful basis"),
+    ("privacy.html", r"Massage records", "how long massage records are kept"),
+    # Online coaching has its own page
+    ("online-coaching.html", r"£200", "the coaching price"),
+    ("online-coaching.html", r"after your first week, then every two weeks", "the check-in rhythm"),
+    ("online-coaching.html", r"within two working days", "the reply time for clients"),
+    ("online-coaching.html", r"within one working day", "the reply time for enquiries"),
+    ("online-coaching.html", r"No minimum term|no minimum term", "the cancellation wording"),
+    ("online-coaching.html", r"videos of your lifts, up to 2 a week", "the video feedback limit"),
     ("faq.html", r"videos of your lifts, up to 2 a week", "the video feedback limit"),
     ("terms.html", r"videos of your lifts, up to 2 a week", "the video feedback limit"),
-    ("index.html", r"prescriber stays in charge", "the GLP-1 safety line"),
+    ("online-coaching.html", r"prescriber stays in charge", "the GLP-1 safety line"),
     ("faq.html", r"18 and over|aged 18 or over", "coaching is for adults"),
     ("faq.html", r"after your first week, then every two weeks", "the check-in rhythm"),
     ("terms.html", r"death or personal injury caused by negligence", "the liability wording the law requires"),
     ("terms.html", r"after your first week, then every two weeks", "the check-in rhythm"),
-    ("index.html", r"within 14 days of getting your plan", "the Programme Block money-back promise"),
-    ("index.html", r"agree before you pay", "the sign-up order: agreement and payment before health questions"),
+    ("online-coaching.html", r"within 14 days of getting your plan", "the Programme Block money-back promise"),
+    ("online-coaching.html", r"agree before you pay", "the sign-up order: agreement and payment before health questions"),
     ("terms.html", r"can't start, I'll refund you in full", "the refund when health answers stop a start"),
     ("terms.html", r"history of disordered eating", "who the Programme Block has no food targets for"),
     ("terms.html", r"within 14 days of getting your programme", "the Programme Block money-back promise"),
@@ -124,10 +140,12 @@ for page in PAGES:
     for must in ["privacy.html", "terms.html", "faq.html", "library.html"]:
         if must not in html:
             fail(name, f"footer or header link to {must} is missing")
-    if "#consultation" not in html:
-        fail(name, "no route to the consultation form")
-    if 'href="index.html#how-it-works"' not in html and name != "index.html":
-        fail(name, "header is missing the How it works link")
+    if "#book" not in html:
+        fail(name, "no route to the booking form")
+    if 'href="online-coaching.html"' not in html:
+        fail(name, "header or footer is missing the Online coaching link")
+    if "data-netlify" in html and "data-enquiry=" not in html:
+        fail(name, "a form without data-enquiry, so site.js will not send it or show its error and success states")
 
     # A table that scrolls sideways must be reachable with a keyboard
     for hit in re.findall(r'<div class="table-wrap"(?! tabindex="0")', html):
