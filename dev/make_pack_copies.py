@@ -8,7 +8,7 @@ fails when a copy is older than its page. So after changing either page, run:
     python3 dev/make_pack_copies.py
 
 It prints with Google Chrome and installs nothing. The copies go to the New client pack folder in
-Google Drive on this Mac, or to the folder given with --out.
+Balazs Morvay Coaching/Business on this Mac, or to the folder given with --out.
 """
 import argparse
 import pathlib
@@ -21,7 +21,7 @@ import tempfile
 SITE = pathlib.Path(__file__).resolve().parent.parent
 ADDRESS = "https://bmorvay.com/"
 COPIES = {"terms.html": "Coaching terms", "privacy.html": "Privacy notice"}
-PACK = "Library/CloudStorage/GoogleDrive-*/My Drive/Program Builder Forms/Business/New client pack"
+PACK = "Coding Projects/Balazs Morvay Coaching/Business/New client pack"  # beside the Plan Builder
 CHROME = ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "google-chrome", "chromium"]
 
 STYLE = """
@@ -56,7 +56,7 @@ def copy_name(label, date):
 
 
 def pack_folders():
-    """The New client pack in Google Drive, where this Mac has one."""
+    """The New client pack in Balazs Morvay Coaching/Business, where this Mac has one."""
     return sorted(p for p in pathlib.Path.home().glob(PACK) if p.is_dir())
 
 
@@ -89,7 +89,7 @@ def main():
     args = parser.parse_args()
     folders = [args.out] if args.out else pack_folders()
     if not folders:
-        sys.exit("The New client pack folder was not found in Google Drive. Use --out FOLDER.")
+        sys.exit("The New client pack folder was not found in Balazs Morvay Coaching/Business. Use --out FOLDER.")
     browser = chrome()
     with tempfile.TemporaryDirectory() as work:
         work = pathlib.Path(work)

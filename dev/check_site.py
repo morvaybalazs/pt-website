@@ -284,7 +284,7 @@ for fg, bg, least, label in [
         if got < least:
             fail("styles.css", f"{label} is {got:.2f}:1, needs {least}:1")
 
-# 5. The PDF copies in the New client pack (Google Drive, on the owner's Mac). The pages here are
+# 5. The PDF copies in the New client pack (Balazs Morvay Coaching/Business, on the owner's Mac). The pages here are
 # the master. A copy made before a page changed is an out-of-date notice in a client's inbox, so
 # each copy carries its page's "Last updated" date in its name and must match it. Where the Drive
 # folder is not present (Netlify, another machine) there is nothing to check.

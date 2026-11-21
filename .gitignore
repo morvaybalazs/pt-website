@@ -4,3 +4,4 @@ videos/IMG_*.mov
 
 # Local editor settings are not part of the site
 .claude/
+__pycache__/
