@@ -53,6 +53,7 @@ BANNED = [
     (r"sports massage qualified|a sports massage qualification", "name the qualification: HNC Soft Tissue Therapy (SQA)"),
     (r"\btoxins?\b|lactic acid", "massage does not flush out toxins or lactic acid"),
     (r"\b(we|I) (treat|fix|cure) (your )?injur", "massage here does not treat injuries; say what it does, and refer on"),
+    (r"visiting trainers|a gym near you|45-minute massage", "no sessions at other gyms and no 45-minute massage (owner, November 2026)"),
 ]
 # 2. Code-level defects the review found
 CODE_BANNED = [
@@ -65,21 +66,22 @@ CODE_BANNED = [
     (r"history\.back\(\)", "a 'Back' link that guesses; name the destination"),
     (r'target="_blank"', "internal links should open in the same tab"),
 ]
-PRICES_OK = {"200", "100", "75", "60", "50"}
+PRICES_OK = {"200", "100", "95", "85", "75", "65", "60", "50", "10"}  # 10: home visits cost £10 more
 EQUIPMENT_PRICES = {"150", "400", "800"}  # the home gym budgets
 PRICE_FREE = {"home-gym-guide.html"}      # equipment prices live here
 
 # 3. Facts that must be stated (page, regex, what it is)
 REQUIRED = [
     # The homepage sells sports massage (November 2026)
-    ("index.html", r"£75</strong> for 75 minutes", "the Massage and Plan price and length"),
-    ("index.html", r"£50</strong> for 45 minutes", "the 45-minute massage price"),
+    ("index.html", r"£85</strong> for 75 minutes", "the Massage and Plan price and length"),
+    ("index.html", r"£65</strong> for 60 minutes", "the 60-minute massage price"),
+    ("index.html", r"£10 more", "home visits cost £10 more"),
     ("index.html", r"I don't diagnose injuries", "the massage scope line"),
     ("index.html", r"within one working day", "the reply time for booking requests"),
     ("index.html", r"24 hours' notice", "the notice to move or cancel a session"),
     ("index.html", r"don't include medical details", "no health details in the booking form"),
     ("faq.html", r"I don't diagnose injuries", "the massage scope line"),
-    ("terms.html", r"Massage and Plan \(£75 for 75 minutes\)", "the Massage and Plan in the terms"),
+    ("terms.html", r"Massage and Plan \(£85 for 75 minutes, or £95 at your home\)", "the Massage and Plan in the terms"),
     ("terms.html", r"I don't diagnose injuries", "the massage scope line"),
     ("privacy.html", r"massage health form", "the massage health form and its lawful basis"),
     ("privacy.html", r"Massage records", "how long massage records are kept"),
