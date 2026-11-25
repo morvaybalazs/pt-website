@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- The picture shown when someone shares bmorvay.com/online-coaching.html and the Edinburgh page (images/og-coaching.jpg, 1200 x 630).
+     It leaves the price off on purpose: a price in a picture goes stale when the price changes.
+     To remake it: serve the site folder (python3 -m http.server 8765), open
+     http://127.0.0.1:8765/dev/og-coaching.html at 1200 x 630 and save a JPEG screenshot. -->
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<title>Share image: online coaching</title>
+<style>
+  @font-face{font-family:'DM Sans';font-weight:300 600;src:url(../fonts/dm-sans.woff2) format('woff2')}
+  @font-face{font-family:'Barlow Condensed';font-weight:800;src:url(../fonts/barlow-condensed-800.woff2) format('woff2')}
+  @font-face{font-family:'Barlow Condensed';font-style:italic;font-weight:700;src:url(../fonts/barlow-condensed-700-italic.woff2) format('woff2')}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1200px;height:630px;overflow:hidden;background:#0d0e10;font-family:'DM Sans',sans-serif}
+  .card{display:grid;grid-template-columns:1fr 430px;height:630px}
+  .words{display:flex;flex-direction:column;justify-content:center;padding:0 64px 0 72px}
+  .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:26px;font-size:21px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#c48a3f}
+  .eyebrow::before{content:'';width:30px;height:3px;background:#c48a3f}
+  h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:80px;line-height:.95;text-transform:uppercase;color:#fff}
+  h1 em{font-style:italic;font-weight:700;color:#e6bd82}
+  .sub{margin-top:28px;font-size:25px;font-weight:300;line-height:1.45;color:rgba(255,255,255,.86)}
+  .brand{margin-top:34px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:30px;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+  .brand span{color:#c48a3f}
+  .photo{position:relative;overflow:hidden}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="words">
+      <p class="eyebrow">Online coaching · Based near Edinburgh</p>
+      <h1>Strength training that fits <em>your working week.</em></h1>
+      <p class="sub">Online coaching for busy professionals. A plan built around the time you really have.</p>
+      <p class="brand">B<span>.</span>Morvay</p>
+    </div>
+    <div class="photo"><img src="../images/portrait-1066.jpg" alt="" /></div>
+  </div>
+</body>
+</html>

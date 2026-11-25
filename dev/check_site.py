@@ -53,6 +53,8 @@ BANNED = [
     (r"sports massage qualified|a sports massage qualification", "name the qualification: HNC Soft Tissue Therapy (SQA)"),
     (r"\btoxins?\b|lactic acid", "massage does not flush out toxins or lactic acid"),
     (r"\b(we|I) (treat|fix|cure) (your )?injur", "massage here does not treat injuries; say what it does, and refer on"),
+    (r"travel (is )?included(?! in West Lothian)|includes travel|price includes travel",
+     "travel is included in West Lothian and west Edinburgh only; the rest of Edinburgh is £10 extra (owner, 25 November 2026)"),
     (r"visiting trainers|a gym near you|45-minute massage", "no sessions at other gyms and no 45-minute massage (owner, November 2026)"),
     (r"Balazs Morvay Coaching|Online Personal Training|B\. Morvay Coaching(?!\s*&(amp;)?\s*Sports Massage)",
      "the business name is B. Morvay Coaching & Sports Massage, as on the Google Business Profile (owner, November 2026)"),
@@ -69,27 +71,30 @@ CODE_BANNED = [
     (r"history\.back\(\)", "a 'Back' link that guesses; name the destination"),
     (r'target="_blank"', "internal links should open in the same tab"),
 ]
-PRICES_OK = {"200", "100", "70", "60", "50"}  # massage £70/£60, training £50/£60, coaching £200, Programme Block £100
+PRICES_OK = {"150", "100", "70", "60", "50", "10"}  # massage £60/£50, training £50/£60 (£70 further in), coaching £150, Programme Block £100, travel £10 (owner, 25 November 2026)
 EQUIPMENT_PRICES = {"150", "400", "800"}  # the home gym budgets
 PRICE_FREE = {"home-gym-guide.html"}      # equipment prices live here
 
 # 3. Facts that must be stated (page, regex, what it is)
 REQUIRED = [
     # The homepage sells sports massage (November 2026)
-    ("index.html", r"£70</strong> for 60 minutes", "the 60-minute massage price"),
-    ("index.html", r"£60</strong> for 45 minutes", "the 45-minute massage price"),
-    ("index.html", r"includes travel", "massage prices include travel (owner, November 2026)"),
+    ("index.html", r"£60</strong> for 60 minutes", "the 60-minute massage price"),
+    ("index.html", r"£50</strong> for 45 minutes", "the 45-minute massage price"),
+    ("index.html", r"Travel is included in West Lothian and west Edinburgh, and the rest of Edinburgh is £10 extra", "the travel rule (owner, 25 November 2026)"),
+    ("faq.html", r"the rest of Edinburgh is £10 extra", "the travel rule (owner, 25 November 2026)"),
+    ("terms.html", r"For the rest of Edinburgh, a visit to your home, for massage or training, is £10 extra", "the travel rule (owner, 25 November 2026)"),
     ("index.html", r"I don't diagnose injuries", "the massage scope line"),
     ("index.html", r"within one working day", "the reply time for booking requests"),
     ("index.html", r"24 hours' notice", "the notice to move or cancel a session"),
     ("index.html", r"don't include medical details", "no health details in the booking form"),
     ("faq.html", r"I don't diagnose injuries", "the massage scope line"),
-    ("terms.html", r"Sports massage \(£70 for 60 minutes, or £60 for 45 minutes\)", "the massage prices in the terms"),
+    ("terms.html", r"Sports massage \(£60 for 60 minutes, or £50 for 45 minutes\)", "the massage prices in the terms"),
     ("terms.html", r"I don't diagnose injuries", "the massage scope line"),
     ("privacy.html", r"massage health form", "the massage health form and its lawful basis"),
     ("privacy.html", r"Massage records", "how long massage records are kept"),
     # Online coaching has its own page
-    ("online-coaching.html", r"£200", "the coaching price"),
+    ("online-coaching.html", r"£150</strong> a month", "the coaching price (owner, 25 November 2026)"),
+    ("terms.html", r"Coaching is £150 a month", "the coaching price (owner, 25 November 2026)"),
     ("online-coaching.html", r"after your first week, then every two weeks", "the check-in rhythm"),
     ("online-coaching.html", r"within two working days", "the reply time for clients"),
     ("online-coaching.html", r"within one working day", "the reply time for enquiries"),
