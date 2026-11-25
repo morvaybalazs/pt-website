@@ -141,16 +141,35 @@
     .steps h3{font-size:1.15rem;font-weight:600;color:var(--black);margin:.45rem 0 .4rem}
     .steps h3 .time{margin-left:.4rem;font-size:.92rem;font-weight:500;color:var(--muted)}
     .steps p{font-size:1rem;line-height:1.75;color:var(--mid)}
-    .plan-card{position:sticky;top:calc(var(--header-h) + 1.5rem);padding:1.5rem 1.5rem 1.25rem;background:var(--white);border-radius:var(--radius);box-shadow:0 1px 3px rgba(13,14,16,.08),0 14px 36px rgba(13,14,16,.08)}
-    .plan-tag{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-    .plan-card h3{font-size:1.1rem;font-weight:600;line-height:1.4;color:var(--black);margin:.35rem 0 .9rem}
-    .plan-list li{display:grid;grid-template-columns:auto 1fr;column-gap:.85rem;padding:.85rem 0;border-top:1px solid var(--rule)}
-    .plan-list .n{grid-row:span 2;width:1.9rem;height:1.9rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--surface);font-size:.85rem;font-weight:700;color:var(--ink)}
-    .plan-list strong{font-size:.98rem;color:var(--ink)}
-    .plan-list .dose{font-size:.92rem;color:var(--mid)}
-    .plan-foot{padding-top:.85rem;border-top:1px solid var(--rule);font-size:.9rem;line-height:1.55;color:var(--muted)}
+    .plan-card{width:100%;max-width:370px;justify-self:center}
+    .plan-tag{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:.9rem}
+    .phone{background:var(--black);border-radius:34px;padding:9px;box-shadow:0 1px 3px rgba(13,14,16,.12),0 18px 44px rgba(13,14,16,.16)}
+    .phone-screen{background:var(--white);border-radius:26px;padding:.65rem 1.1rem 1.2rem}
+    .phone-notch{display:block;width:80px;height:6px;margin:0 auto .85rem;border-radius:3px;background:var(--rule)}
+    .phone-from{display:flex;align-items:center;gap:.6rem;padding-bottom:.75rem;border-bottom:1px solid var(--rule);font-size:.82rem;color:var(--muted)}
+    .phone-from .av{flex-shrink:0;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:1rem}
+    .phone-from strong{display:block;color:var(--ink);font-size:.9rem;line-height:1.2}
+    .phone-from .when{margin-left:auto;white-space:nowrap}
+    .plan-card h3{font-size:1.05rem;font-weight:700;line-height:1.35;color:var(--black);margin:.9rem 0 .7rem}
+    .plan-meta{display:grid;gap:.6rem;margin-bottom:.5rem}
+    .plan-meta dt{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dim)}
+    .plan-meta dd{font-size:.9rem;line-height:1.5;color:var(--ink)}
+    .plan-meta .goal{font-style:italic}
+    .plan-list li{display:grid;grid-template-columns:auto 1fr;column-gap:.75rem;padding:.75rem 0;border-top:1px solid var(--rule)}
+    .plan-list .n{grid-row:span 3;width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--surface);font-size:.8rem;font-weight:700;color:var(--ink)}
+    .plan-list strong{font-size:.92rem;line-height:1.35;color:var(--ink)}
+    .plan-list .dose{font-size:.85rem;color:var(--mid)}
+    .plan-list .cue{margin-top:.25rem;padding-left:.55rem;border-left:2px solid var(--accent);font-size:.82rem;line-height:1.45;color:var(--muted)}
+    .plan-week{padding:.65rem .7rem .7rem;background:var(--surface);border-radius:12px}
+    .plan-week .head{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+    .plan-week .wk{display:grid;grid-template-columns:1.3rem repeat(7,1fr);align-items:center;justify-items:center;row-gap:.3rem;font-size:.7rem;color:var(--muted)}
+    .plan-week .wk+.wk{margin-top:.3rem}
+    .plan-week .x{width:.55rem;height:.55rem;border-radius:50%;background:var(--accent)}
+    .plan-week .o{width:.55rem;height:.55rem;border-radius:50%;border:1px solid #c9ced5}
+    .plan-next{margin-top:.8rem;padding:.65rem .8rem;background:var(--surface);border-radius:14px 14px 14px 4px;font-size:.85rem;line-height:1.5;color:var(--ink)}
+    .plan-foot{margin-top:.9rem;text-align:center;font-size:.9rem;line-height:1.55;color:var(--muted)}
     .scope-note{max-width:640px;margin-top:2.25rem;padding:1rem 1.25rem;background:var(--white);border-left:4px solid var(--accent);border-radius:var(--radius-sm);font-size:.98rem;line-height:1.65;color:var(--mid)}
-    @media (max-width:900px){.session-grid{grid-template-columns:1fr}.plan-card{position:static;max-width:520px}}
+    @media (max-width:900px){.session-grid{grid-template-columns:1fr}.plan-card{justify-self:start}}
 
     /* Who it's for: three cards across on a wide screen, one swipeable row on a phone,
        with the next card showing at the edge so it is clear there is more */
@@ -334,13 +353,31 @@
           <p class="scope-note">I don't diagnose injuries, but if anything we find needs a physio or a GP to look at it, I'll tell you straight away and suggest where to go.</p>
         </div>
         <aside class="plan-card" aria-labelledby="plan-title" data-reveal>
-          <p class="plan-tag">Example plan</p>
-          <h3 id="plan-title">Tight calves and hips, training for a half marathon</h3>
-          <ol class="plan-list">
-            <li><span class="n" aria-hidden="true">1</span><strong>Calf raise, slow on the way down</strong><span class="dose">3 sets of 15, every other day</span></li>
-            <li><span class="n" aria-hidden="true">2</span><strong>Kneeling hip flexor stretch</strong><span class="dose">2 x 45 seconds each side, daily</span></li>
-            <li><span class="n" aria-hidden="true">3</span><strong>Side plank</strong><span class="dose">3 x 30 seconds each side, 3 times a week</span></li>
-          </ol>
+          <p class="plan-tag">Example: what lands on your phone</p>
+          <div class="phone">
+            <div class="phone-screen">
+              <span class="phone-notch" aria-hidden="true"></span>
+              <div class="phone-from"><span class="av" aria-hidden="true">B</span><span><strong>Balazs</strong>Your plan from today</span><span class="when">7:42 pm</span></div>
+              <h3 id="plan-title">Calves and hips, before your half marathon</h3>
+              <dl class="plan-meta">
+                <div><dt>Your goal</dt><dd class="goal">“Get through the long runs without my calves tightening up.”</dd></div>
+                <div><dt>Your marker</dt><dd>Knee to wall: 6 cm on the left, 9 cm on the right. We'll check it again next visit.</dd></div>
+              </dl>
+              <ol class="plan-list">
+                <li><span class="n" aria-hidden="true">1</span><strong>Calf raise, slow on the way down</strong><span class="dose">3 sets of 15, every other day</span><span class="cue">Three seconds down, heel just below the step</span></li>
+                <li><span class="n" aria-hidden="true">2</span><strong>Kneeling hip flexor stretch</strong><span class="dose">2 x 45 seconds each side, daily</span><span class="cue">Squeeze your back glute before you lean in</span></li>
+                <li><span class="n" aria-hidden="true">3</span><strong>Side plank</strong><span class="dose">3 x 30 seconds each side, 3 times a week</span><span class="cue">One long line from your head to your heels</span></li>
+              </ol>
+              <div class="plan-week" aria-hidden="true">
+                <p class="head">Your week</p>
+                <div class="wk"><span></span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+                <div class="wk"><span>1</span><span class="x"></span><span class="o"></span><span class="x"></span><span class="o"></span><span class="x"></span><span class="o"></span><span class="x"></span></div>
+                <div class="wk"><span>2</span><span class="x"></span><span class="x"></span><span class="x"></span><span class="x"></span><span class="x"></span><span class="x"></span><span class="x"></span></div>
+                <div class="wk"><span>3</span><span class="o"></span><span class="x"></span><span class="o"></span><span class="x"></span><span class="o"></span><span class="x"></span><span class="o"></span></div>
+              </div>
+              <p class="plan-next">Your videos from today are on your phone. I'll check in on Thursday to see how you're getting on.</p>
+            </div>
+          </div>
           <p class="plan-foot">Yours is built from what we find in your session and sent to your phone the same day.</p>
         </aside>
       </div>
