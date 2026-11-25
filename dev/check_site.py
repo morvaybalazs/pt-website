@@ -56,6 +56,7 @@ BANNED = [
     (r"visiting trainers|a gym near you|45-minute massage", "no sessions at other gyms and no 45-minute massage (owner, November 2026)"),
     (r"Balazs Morvay Coaching|Online Personal Training|B\. Morvay Coaching(?!\s*&(amp;)?\s*Sports Massage)",
      "the business name is B. Morvay Coaching & Sports Massage, as on the Google Business Profile (owner, November 2026)"),
+    (r"Massage and Plan|75[- ]minutes?", "the 75-minute Massage and Plan was retired: every first visit is the 60-minute massage (owner, November 2026)"),
 ]
 # 2. Code-level defects the review found
 CODE_BANNED = [
@@ -68,22 +69,22 @@ CODE_BANNED = [
     (r"history\.back\(\)", "a 'Back' link that guesses; name the destination"),
     (r'target="_blank"', "internal links should open in the same tab"),
 ]
-PRICES_OK = {"200", "100", "95", "85", "75", "65", "60", "50", "10"}  # 10: home visits cost £10 more
+PRICES_OK = {"200", "100", "70", "60", "50"}  # massage £70/£60, training £50/£60, coaching £200, Programme Block £100
 EQUIPMENT_PRICES = {"150", "400", "800"}  # the home gym budgets
 PRICE_FREE = {"home-gym-guide.html"}      # equipment prices live here
 
 # 3. Facts that must be stated (page, regex, what it is)
 REQUIRED = [
     # The homepage sells sports massage (November 2026)
-    ("index.html", r"£85</strong> for 75 minutes", "the Massage and Plan price and length"),
-    ("index.html", r"£65</strong> for 60 minutes", "the 60-minute massage price"),
-    ("index.html", r"£10 more", "home visits cost £10 more"),
+    ("index.html", r"£70</strong> for 60 minutes", "the 60-minute massage price"),
+    ("index.html", r"£60</strong> for 45 minutes", "the 45-minute massage price"),
+    ("index.html", r"includes travel", "massage prices include travel (owner, November 2026)"),
     ("index.html", r"I don't diagnose injuries", "the massage scope line"),
     ("index.html", r"within one working day", "the reply time for booking requests"),
     ("index.html", r"24 hours' notice", "the notice to move or cancel a session"),
     ("index.html", r"don't include medical details", "no health details in the booking form"),
     ("faq.html", r"I don't diagnose injuries", "the massage scope line"),
-    ("terms.html", r"Massage and Plan \(£85 for 75 minutes, or £95 at your home\)", "the Massage and Plan in the terms"),
+    ("terms.html", r"Sports massage \(£70 for 60 minutes, or £60 for 45 minutes\)", "the massage prices in the terms"),
     ("terms.html", r"I don't diagnose injuries", "the massage scope line"),
     ("privacy.html", r"massage health form", "the massage health form and its lawful basis"),
     ("privacy.html", r"Massage records", "how long massage records are kept"),
@@ -101,7 +102,7 @@ REQUIRED = [
     ("faq.html", r"after your first week, then every two weeks", "the check-in rhythm"),
     ("terms.html", r"death or personal injury caused by negligence", "the liability wording the law requires"),
     ("terms.html", r"after your first week, then every two weeks", "the check-in rhythm"),
-    ("online-coaching.html", r"within 14 days of getting your plan", "the Programme Block money-back promise"),
+    ("faq.html", r"within 14 days of getting your plan", "the Programme Block money-back promise"),
     ("online-coaching.html", r"agree before you pay", "the sign-up order: agreement and payment before health questions"),
     ("terms.html", r"can't start, I'll refund you in full", "the refund when health answers stop a start"),
     ("terms.html", r"history of disordered eating", "who the Programme Block has no food targets for"),
@@ -127,7 +128,8 @@ for page in PAGES:
 
     # Prices must be ones we actually charge
     if name not in PRICE_FREE:
-        for amount in re.findall(r"£\s?([\d,]+)", visible):
+        described = " ".join(re.findall(r'<meta[^>]+content="([^"]*)"', html))  # search and share descriptions
+        for amount in re.findall(r"£\s?([\d,]+)", visible + " " + described):
             if amount.replace(",", "") not in PRICES_OK | EQUIPMENT_PRICES:
                 fail(name, f"price £{amount} is not one of the real prices")
 
@@ -301,6 +303,23 @@ for folder in pack.pack_folders():
         elif list(folder.glob(pack.copy_name(label, "*"))) and not (folder / pack.copy_name(label, date)).is_file():
             fail(page_name, f"the copy in the New client pack is older than this page ({date}): "
                             "run python3 dev/make_pack_copies.py")
+
+# 6. One request form. The homepage booking form and the coaching page form ask the same questions
+# with the same choices (owner, November 2026: simple and clean), and every button that ticks a
+# choice names one that exists.
+def form_choices(page_name):
+    return re.findall(r'name="session" value="([^"]+)"', (SITE / page_name).read_text())
+
+
+home_choices = form_choices("index.html")
+if not home_choices:
+    fail("index.html", "the request form has no choices")
+if form_choices("online-coaching.html") != home_choices:
+    fail("online-coaching.html", "the request form's choices differ from the homepage form's: keep one form")
+for page in PAGES:
+    for pick in re.findall(r'data-pick="([^"]+)"', page.read_text()):
+        if pick not in home_choices:
+            fail(page.name, f'a button ticks "{pick}", which is not a choice in the request form')
 
 print("Checked %d pages." % len(PAGES))
 for note in notes:

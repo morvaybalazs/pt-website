@@ -146,6 +146,28 @@
     var subject = form.getAttribute('data-enquiry');
     var sending = false;
 
+    // Questions that only matter for some answers (progressive disclosure). A block marked
+    // data-show-if="home" shows while a checked, enabled answer carries data-kind="home". A hidden
+    // block's fields are disabled, so they are neither required nor sent. Blocks are settled in
+    // page order, so the postcode sees the "where" answer above it already shown or hidden.
+    // Without JavaScript every question shows and none of these is required.
+    var conditional = form.querySelectorAll('[data-show-if]');
+    var reveal = function () {
+      conditional.forEach(function (block) {
+        var kind = ' ' + block.getAttribute('data-show-if') + ' ';
+        var on = Array.prototype.some.call(form.querySelectorAll('input:checked'), function (input) {
+          return !input.disabled && (' ' + (input.getAttribute('data-kind') || '') + ' ').indexOf(kind) !== -1;
+        });
+        block.hidden = !on;
+        block.querySelectorAll('input, textarea, select').forEach(function (field) {
+          field.disabled = !on;
+          if (field.hasAttribute('data-required')) field.required = on;
+        });
+      });
+    };
+    form.addEventListener('change', reveal);
+    reveal();
+
     // Where the visitor came from, sent only with their request: campaign tags on the address
     // and the site that linked here. Nothing is stored on the device.
     var sourceField = form.elements.namedItem('source');
@@ -173,7 +195,7 @@
     var mailtoFor = function () {
       var lines = [];
       Array.prototype.forEach.call(form.elements, function (field) {
-        if (!field.name || field.type === 'hidden' || field.name === 'bot-field' || field.type === 'submit') return;
+        if (!field.name || field.disabled || field.type === 'hidden' || field.name === 'bot-field' || field.type === 'submit') return;
         if (field.type === 'radio' && !field.checked) return;
         var value = String(field.value || '').trim();
         if (value) lines.push(questionFor(field) + '\n' + value);
@@ -232,13 +254,16 @@
     });
   });
 
-  // "Book Massage and Plan" and similar buttons tick that session in the booking form,
+  // "Book a massage" and similar buttons tick that choice in the request form,
   // so nobody has to choose it twice
   document.querySelectorAll('[data-pick]').forEach(function (link) {
     link.addEventListener('click', function () {
       var pick = link.getAttribute('data-pick');
       document.querySelectorAll('input[name="session"]').forEach(function (choice) {
-        if (choice.value === pick) choice.checked = true;
+        if (choice.value === pick && !choice.checked) {
+          choice.checked = true;
+          choice.dispatchEvent(new Event('change', { bubbles: true }));
+        }
       });
     });
   });

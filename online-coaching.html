@@ -144,6 +144,7 @@
 
     /* Pricing */
     .price-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:1.5rem;max-width:1000px;margin:2.5rem auto 0;align-items:start}
+    .price-grid.single{grid-template-columns:1fr;max-width:620px}
     .price-card{display:flex;flex-direction:column;padding:clamp(1.5rem,4vw,2.25rem);background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
     .price-card.featured{border:2px solid var(--accent);box-shadow:0 12px 40px rgba(196,138,63,.12)}
     .price-card:nth-child(2){transition-delay:.09s}
@@ -180,11 +181,18 @@
     .consult-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,3.5rem);max-width:1040px;margin:2.5rem auto 0;align-items:start}
     .consult-box{padding:clamp(1.5rem,4vw,2.25rem);background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
     .field{margin-bottom:1.25rem}
-    .field label{display:block;margin-bottom:.45rem;font-size:.95rem;font-weight:600;color:var(--ink)}
+    .field>label,.field>legend{display:block;margin-bottom:.45rem;padding:0;font-size:.95rem;font-weight:600;color:var(--ink)}
+    fieldset.field{border:0;padding:0;min-width:0}
     .optional{font-weight:400;color:var(--muted)}
-    .field input,.field textarea{width:100%;padding:.75rem .9rem;font-family:var(--body);font-size:1rem;line-height:1.5;color:var(--ink);background:var(--white);border:1.5px solid #7d848e;border-radius:var(--radius-sm)}
+    .field input[type="text"],.field input[type="email"],.field input[type="tel"],.field textarea{width:100%;padding:.75rem .9rem;font-family:var(--body);font-size:1rem;line-height:1.5;color:var(--ink);background:var(--white);border:1.5px solid #7d848e;border-radius:var(--radius-sm)}
     .field input:focus,.field textarea:focus{border-color:var(--black)}
     .field textarea{min-height:120px;resize:vertical}
+    .choices{display:grid;gap:.5rem}
+    .choice{display:flex;align-items:flex-start;gap:.7rem;min-height:48px;padding:.75rem .9rem;border:1.5px solid #c9ced5;border-radius:var(--radius-sm);cursor:pointer;line-height:1.4;font-size:.98rem;color:var(--ink)}
+    .choice:hover{border-color:var(--mid)}
+    .choice input{flex-shrink:0;width:1.15rem;height:1.15rem;margin-top:.12rem;accent-color:var(--black)}
+    .choice:has(input:checked){border-color:var(--black);background:var(--surface)}
+    .choice small{display:block;margin-top:.1rem;font-size:.88rem;color:var(--muted)}
     .hint{margin-top:.45rem;font-size:.9rem;line-height:1.55;color:var(--muted)}
     .form-privacy{margin-top:.9rem;font-size:.9rem;color:var(--muted)}
     .form-error{margin-top:1.25rem;padding:1.25rem;border:1.5px solid #b3261e;border-radius:var(--radius-sm);background:#fdecec;color:#5c1010}
@@ -235,7 +243,7 @@
         <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
-    <a href="#consultation" class="btn header-cta">Free consultation</a>
+    <a href="#consultation" data-pick="Online coaching" class="btn header-cta">Free consultation</a>
   </div>
 </header>
 
@@ -248,7 +256,7 @@
       <p class="hero-lead">Online coaching for busy professionals who want to get stronger and stop starting over. I build your plan around the time you really have, and change it when work gets busy.</p>
       <p class="hero-price"><strong>£200 a month</strong><span class="facts">No minimum term <span class="dot" aria-hidden="true">·</span> Free first call</span></p>
       <div class="hero-actions">
-        <a class="btn" href="#consultation">Request a free consultation</a>
+        <a class="btn" href="#consultation" data-pick="Online coaching">Request a free consultation</a>
         <a class="btn btn-ghost" href="#pricing">See what's included</a>
       </div>
       <p class="hero-creds">BSc (Hons) Physical Activity and Health · CIMSPA-recognised personal trainer · 10+ years in the industry</p>
@@ -341,8 +349,8 @@
     <div class="container">
       <p class="eyebrow center">Pricing</p>
       <h2 id="pricing-title" class="display h2 center">What you get</h2>
-      <p class="lead center">Coaching is the main service. If you'd rather train on your own, there's a one-off programme.</p>
-      <div class="price-grid">
+      <p class="lead center">Your plan, your check-ins and messages with me, all in one monthly price.</p>
+      <div class="price-grid single">
         <article class="price-card featured" aria-labelledby="coaching-title" data-reveal>
           <p class="price-tag">Ongoing coaching</p>
           <h3 id="coaching-title">Coaching</h3>
@@ -361,25 +369,11 @@
             <li>A review at the end of each block, and your next block built from it</li>
           </ul>
           <p class="price-terms">Paid monthly in advance. No minimum term: cancel before your next payment date. Full refund if you're not happy within your first 14 days.</p>
-          <a class="btn btn-block" href="#consultation">Request a free consultation</a>
-        </article>
-        <article class="price-card" aria-labelledby="block-title" data-reveal>
-          <p class="price-tag plain">Plan only</p>
-          <h3 id="block-title">Programme Block</h3>
-          <p class="price"><strong>£100</strong> one-off</p>
-          <p class="price-desc">For people who want a plan to follow on their own.</p>
-          <ul class="ticks">
-            <li>A personal 4 to 12 week training plan</li>
-            <li>Daily calorie and protein targets, set for the whole block (not a meal plan)</li>
-            <li>In a Google Sheet you log on your phone</li>
-            <li>One round of changes within 14 days if something doesn't fit</li>
-            <li>No check-ins or messaging</li>
-          </ul>
-          <p class="price-terms">Paid once. Full refund if you're not happy within 14 days of getting your plan.</p>
-          <a class="btn btn-ghost btn-block" href="#consultation">Ask about a Programme Block</a>
+          <a class="btn btn-block" href="#consultation" data-pick="Online coaching">Request a free consultation</a>
         </article>
       </div>
-      <p class="local-line">In Edinburgh, I also offer <a class="text-link" href="index.html">sports massage with a plan to take home</a> (from £85 for 75 minutes, or £65 for a 60-minute massage) and <a class="text-link" href="personal-training-edinburgh.html">in-person training</a> (£50 at my gym, £60 at yours).</p>
+      <p class="local-line">Prefer a plan to follow on your own, without check-ins? Ask me about a one-off Programme Block (£100) on your free call.</p>
+      <p class="local-line">In Edinburgh and West Lothian, I also offer <a class="text-link" href="index.html">sports massage at your home</a> (£70 for 60 minutes, travel included) and <a class="text-link" href="personal-training-edinburgh.html">in-person training</a> (£50 at my gym, £60 at yours).</p>
       <div class="glp1-band" data-reveal>
         <div>
           <h3>On a weight-loss medicine like a GLP-1? You're welcome here.</h3>
@@ -452,6 +446,32 @@
             <input type="hidden" name="form-name" value="consultation" />
             <input type="hidden" name="source" value="" />
             <p class="visually-hidden" aria-hidden="true"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+            <fieldset class="field">
+              <legend>What would you like?</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="session" value="Sports massage" data-kind="home" required /><span>Sports massage<small>At your home, 45 or 60 minutes, from £60</small></span></label>
+                <label class="choice"><input type="radio" name="session" value="Personal training" data-kind="training" /><span>Personal training<small>One-to-one, from £50</small></span></label>
+                <label class="choice"><input type="radio" name="session" value="Online coaching" /><span>Online coaching<small>£200 a month, starting with a free call</small></span></label>
+                <label class="choice"><input type="radio" name="session" value="Not sure yet" /><span>Not sure yet<small>Tell me a little below and I'll suggest what fits</small></span></label>
+              </div>
+            </fieldset>
+            <fieldset class="field" data-show-if="training">
+              <legend>Where would you like to train?</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="where" value="At my home gym" data-kind="home" data-required /><span>At my home gym<small>£60, anywhere in Edinburgh and West Lothian</small></span></label>
+                <label class="choice"><input type="radio" name="where" value="At your private gym" /><span>At your private gym<small>£50, in East Calder</small></span></label>
+              </div>
+            </fieldset>
+            <div class="field" data-show-if="home">
+              <label for="f-area">Your area or postcode</label>
+              <input type="text" id="f-area" name="area" autocomplete="postal-code" maxlength="60" aria-describedby="f-area-hint" data-required />
+              <p id="f-area-hint" class="hint">So I know where I'm coming to. For example, Livingston or EH6.</p>
+            </div>
+            <div class="field">
+              <label for="f-when">When suits you? <span class="optional">(optional)</span></label>
+              <input type="text" id="f-when" name="when" maxlength="200" aria-describedby="f-when-hint" />
+              <p id="f-when-hint" class="hint">For example, weekday evenings or Saturday morning.</p>
+            </div>
             <div class="field">
               <label for="f-name">Name</label>
               <input type="text" id="f-name" name="name" autocomplete="name" maxlength="100" required />
@@ -462,14 +482,15 @@
             </div>
             <div class="field">
               <label for="f-phone">Phone <span class="optional">(optional)</span></label>
-              <input type="tel" id="f-phone" name="phone" autocomplete="tel" maxlength="40" />
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" maxlength="40" aria-describedby="f-phone-hint" />
+              <p id="f-phone-hint" class="hint">Handy for confirming a time by text.</p>
             </div>
             <div class="field">
-              <label for="f-message">What would you like help with? <span class="optional">(optional)</span></label>
-              <textarea id="f-message" name="message" rows="4" maxlength="2000" aria-describedby="f-message-hint"></textarea>
-              <p id="f-message-hint" class="hint">A sentence or two is plenty. Please don't include medical details here. We'll cover your health privately if we work together.</p>
+              <label for="f-message">Anything else I should know? <span class="optional">(optional)</span></label>
+              <textarea id="f-message" name="message" rows="3" maxlength="2000" aria-describedby="f-message-hint"></textarea>
+              <p id="f-message-hint" class="hint">For example, what you'd like help with. Please don't include medical details here. I'll ask about your health privately before we start.</p>
             </div>
-            <button type="submit" class="btn btn-block">Request my consultation</button>
+            <button type="submit" class="btn btn-block">Send my request</button>
             <p class="form-privacy">I'll only use your details to reply to your request. <a class="text-link" href="privacy.html">Privacy notice</a></p>
           </form>
           <div class="form-error" role="alert" tabindex="-1" hidden>
@@ -483,7 +504,7 @@
           </div>
           <div class="form-success" role="status" tabindex="-1" hidden>
             <h3>Thanks<span data-greet></span>. Your request has been sent.</h3>
-            <p>I'll reply within one working day to arrange a time for your call. Nothing is booked until we agree a time.</p>
+            <p>I'll reply within one working day. Nothing is booked until we agree a time.</p>
             <p>My reply comes from morvaybalazs@gmail.com, so check your junk folder if you don't see it. Need me sooner? Text <a class="text-link" href="sms:+447914390913">07914 390913</a>.</p>
           </div>
         </div>
