@@ -200,6 +200,19 @@ strong,b,th{font-weight:600}
 .footer-legal a{display:inline-block;padding:.3rem 0}
 @media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
 
+/* A phone frame for real examples (the massage plan PDF, the coaching sheet recording), drawn like
+   a recent iPhone: titanium edge with side buttons, black bezel, Dynamic Island and home bar. Sizes
+   follow the width of the box holding the phone (.phone-host, cqw), so it keeps its shape at any size. */
+.phone-host{container-type:inline-size}
+.phone{position:relative;padding:1.4cqw;border-radius:17cqw;background:linear-gradient(145deg,#62656c 0%,#2b2d32 18%,#16171a 50%,#373a40 80%,#121316 100%);box-shadow:inset 0 0 0 .3cqw rgba(255,255,255,.07),0 2px 4px rgba(13,14,16,.18),0 26px 52px rgba(13,14,16,.22)}
+.phone::before,.phone::after{content:'';position:absolute;width:1.1cqw;background:linear-gradient(90deg,#1d1f23,#4c4f55 60%,#2a2c31)}
+.phone::before{left:-1cqw;top:18%;height:28%;border-radius:1cqw 0 0 1cqw;-webkit-mask:linear-gradient(#000 0 18%,transparent 18% 30%,#000 30% 62%,transparent 62% 70%,#000 70% 100%);mask:linear-gradient(#000 0 18%,transparent 18% 30%,#000 30% 62%,transparent 62% 70%,#000 70% 100%)}
+.phone::after{right:-1cqw;top:27%;height:13%;border-radius:0 1cqw 1cqw 0}
+.phone-screen{position:relative;overflow:hidden;border:2.6cqw solid #050506;border-radius:15.6cqw;background:#1c1c1e;padding:12cqw 0 5cqw}
+.phone-screen::before{content:'';position:absolute;z-index:2;top:2.6cqw;left:50%;width:31cqw;height:9cqw;margin-left:-15.5cqw;border-radius:4.5cqw;background:#000}
+.phone-screen::after{content:'';position:absolute;z-index:2;bottom:1.7cqw;left:50%;width:34cqw;height:1.3cqw;margin-left:-17cqw;border-radius:1cqw;background:rgba(255,255,255,.72)}
+.phone-screen img,.phone-screen video{display:block;width:100%;height:auto}
+
 /* Blocks rise into place as you scroll. The starting state is only applied once the script
    has an observer running (.reveal-on), so without JavaScript, or if anything fails,
    everything is simply visible. */

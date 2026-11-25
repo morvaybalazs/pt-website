@@ -254,6 +254,24 @@
     });
   });
 
+  // Silent demo videos (the coaching sheet recording) play only while on screen, and never for
+  // people who ask their device for less motion: they see the still frame instead.
+  var demos = document.querySelectorAll('video[data-demo]');
+  if (demos.length && 'IntersectionObserver' in window &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var onScreen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var playing = entry.target.play();
+          if (playing && playing.catch) playing.catch(function () { /* autoplay refused: the still frame stays */ });
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+    demos.forEach(function (video) { onScreen.observe(video); });
+  }
+
   // "Book a massage" and similar buttons tick that choice in the request form,
   // so nobody has to choose it twice
   document.querySelectorAll('[data-pick]').forEach(function (link) {

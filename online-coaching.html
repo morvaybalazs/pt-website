@@ -115,6 +115,11 @@
 
     /* How it works */
     .steps{counter-reset:step;max-width:820px;margin-top:2.25rem}
+    .how-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(2rem,5vw,4rem);align-items:start;margin-top:2.25rem}
+    .how-grid .steps{margin-top:0}
+    .sheet-demo{width:100%;max-width:320px;justify-self:center}
+    .sheet-demo figcaption{margin-top:.9rem;text-align:center;font-size:.9rem;line-height:1.55;color:var(--muted)}
+    @media (max-width:900px){.how-grid{grid-template-columns:1fr}.sheet-demo{justify-self:start}}
     .steps li{counter-increment:step;position:relative;padding:0 0 1.75rem 4.25rem;min-height:3.5rem}
     .steps li::before{content:counter(step);position:absolute;left:0;top:0;width:2.9rem;height:2.9rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--black);color:var(--white);font-family:var(--display);font-size:1.35rem;font-weight:800}
     .steps li::after{content:'';position:absolute;left:1.4rem;top:3.2rem;bottom:.3rem;width:2px;background:var(--rule)}
@@ -297,6 +302,7 @@
     <div class="container">
       <p class="eyebrow">How it works</p>
       <h2 id="how-title" class="display h2">What working together looks like</h2>
+      <div class="how-grid">
       <ol class="steps">
         <li data-reveal>
           <h3>A free call</h3>
@@ -323,6 +329,17 @@
           <p>Each block of training ends with an easier week and a short review. I build your next block from what you logged.</p>
         </li>
       </ol>
+        <figure class="sheet-demo phone-host" data-reveal>
+          <div class="phone">
+            <div class="phone-screen">
+              <video data-demo muted loop playsinline preload="none" poster="images/coaching-sheet-poster.jpg" width="640" height="1242" aria-label="A screen recording of a training plan in Google Sheets on a phone: the tabs, a week of logged sets, and a day of exercises up close.">
+                <source src="videos/coaching-sheet.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <figcaption>My own plan in Google Sheets, on my phone. Yours is built the same way.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 

@@ -141,14 +141,14 @@
     .steps h3{font-size:1.15rem;font-weight:600;color:var(--black);margin:.45rem 0 .4rem}
     .steps h3 .time{margin-left:.4rem;font-size:.92rem;font-weight:500;color:var(--muted)}
     .steps p{font-size:1rem;line-height:1.75;color:var(--mid)}
-    .plan-card{width:100%;max-width:400px;justify-self:center}
-    .plan-tag{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
-    .msg-from{font-size:.82rem;font-weight:600;color:var(--mid);margin:0 0 .35rem .9rem}
-    .msg{background:var(--white);border-radius:18px 18px 18px 4px;padding:1rem 1.15rem;box-shadow:0 1px 2px rgba(13,14,16,.06),0 8px 24px rgba(13,14,16,.07);font-size:.95rem;line-height:1.6;color:var(--ink)}
-    .msg p{margin:0 0 .75rem}
-    .msg p:last-child{margin-bottom:0}
-    .msg strong{font-weight:600}
-    .plan-foot{margin-top:1rem;font-size:.9rem;line-height:1.55;color:var(--muted)}
+    .plan-card{width:100%;max-width:360px;justify-self:center}
+    .plan-tag{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:.9rem}
+    .pdf-view{aspect-ratio:9/19;display:flex;align-items:center}
+    .pdf-view picture{display:block;width:100%}
+    .pdf-view img{transform-origin:0 50%}
+    @media (prefers-reduced-motion:no-preference){.pdf-view img{animation:pdf-look 16s ease-in-out infinite}}
+    @keyframes pdf-look{0%,14%{transform:translateX(0) scale(1)}28%,46%{transform:translateX(0) scale(1.6)}60%,74%{transform:translateX(-60%) scale(1.6)}88%,100%{transform:translateX(0) scale(1)}}
+    .plan-foot{margin-top:1rem;text-align:center;font-size:.9rem;line-height:1.55;color:var(--muted)}
     .scope-note{max-width:640px;margin-top:2.25rem;padding:1rem 1.25rem;background:var(--white);border-left:4px solid var(--accent);border-radius:var(--radius-sm);font-size:.98rem;line-height:1.65;color:var(--mid)}
     @media (max-width:900px){.session-grid{grid-template-columns:1fr}.plan-card{justify-self:start}}
 
@@ -324,7 +324,7 @@
             </li>
             <li data-reveal>
               <h3>Your plan on your phone, the same day</h3>
-              <p>Each exercise written up with sets, reps and how often to do it, so you never have to remember what I showed you.</p>
+              <p>A one-page plan with each exercise, how often to do it and how to step it up over the next four weeks, so you never have to remember what I showed you.</p>
             </li>
             <li data-reveal>
               <h3>A check-in a few days later</h3>
@@ -333,18 +333,17 @@
           </ol>
           <p class="scope-note">I don't diagnose injuries, but if anything we find needs a physio or a GP to look at it, I'll tell you straight away and suggest where to go.</p>
         </div>
-        <aside class="plan-card" aria-labelledby="plan-title" data-reveal>
-          <p class="plan-tag" id="plan-title">Example: the message you get that evening</p>
-          <p class="msg-from">Balazs</p>
-          <div class="msg">
-            <p>Hi, thanks for today. Here's your plan.</p>
-            <p>Your goal, in your words: “Get through the long runs without my calves tightening up.”<br>Today we measured knee to wall: 6 cm on the left, 9 cm on the right. We'll check it again next time.</p>
-            <p><strong>1. Calf raise, slow on the way down.</strong> 3 sets of 15, every other day. Three seconds down, heel just below the step.</p>
-            <p><strong>2. Kneeling hip flexor stretch.</strong> 2 x 45 seconds each side, daily. Squeeze your back glute before you lean in.</p>
-            <p><strong>3. Side plank.</strong> 3 x 30 seconds each side, 3 times a week. One long line from your head to your heels.</p>
-            <p>Your videos from today are on your phone. You might feel a bit sore for a day or two, which is normal. I'll check in on Thursday.</p>
+        <aside class="plan-card phone-host" aria-labelledby="plan-title" data-reveal>
+          <p class="plan-tag" id="plan-title">Example: your plan, as it arrives</p>
+          <div class="phone">
+            <div class="phone-screen pdf-view">
+              <picture>
+                <source type="image/avif" srcset="images/plan-example-1100.avif">
+                <img src="images/plan-example-1100.jpg" width="1100" height="1557" alt="An example one-page exercise plan: the client's goal in their own words, a knee to wall marker to check again next visit, and three exercises (calf raise, kneeling hip flexor stretch and side plank), each with weeks 1 and 2, weeks 3 and 4, how often and one thing to remember." loading="lazy" decoding="async">
+              </picture>
+            </div>
           </div>
-          <p class="plan-foot">Yours is built from what we find in your session and sent to your phone the same day.</p>
+          <p class="plan-foot">A one-page plan with your goal, today's marker and your exercises for the next four weeks, sent to your phone the same day.</p>
         </aside>
       </div>
     </div>
