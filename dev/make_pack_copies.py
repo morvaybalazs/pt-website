@@ -70,7 +70,7 @@ def printable(name):
     body = re.sub(r'href="(?!https?:|mailto:|tel:|#)([^"]+)"', lambda m: f'href="{ADDRESS}{m.group(1)}"',
                   main.group(1))
     title = COPIES[name]
-    source = f"B. Morvay Coaching. A copy of {ADDRESS}{name}, as last updated on {date}."
+    source = f"B. Morvay Coaching & Sports Massage. A copy of {ADDRESS}{name}, as last updated on {date}."
     return (f'<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>{title}</title>'
             f"<style>{STYLE}</style></head><body><p class=\"source\">{source}</p>{body}</body></html>"), date
 

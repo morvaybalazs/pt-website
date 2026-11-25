@@ -1,4 +1,4 @@
-/* B. Morvay Coaching: the one script every page loads (with defer).
+/* B. Morvay Coaching & Sports Massage: the one script every page loads (with defer).
    Each part checks that its element exists, so pages only run what they use.
    Nothing here stores data on the visitor's device and nothing loads from other sites. */
 (function () {

@@ -54,6 +54,8 @@ BANNED = [
     (r"\btoxins?\b|lactic acid", "massage does not flush out toxins or lactic acid"),
     (r"\b(we|I) (treat|fix|cure) (your )?injur", "massage here does not treat injuries; say what it does, and refer on"),
     (r"visiting trainers|a gym near you|45-minute massage", "no sessions at other gyms and no 45-minute massage (owner, November 2026)"),
+    (r"Balazs Morvay Coaching|Online Personal Training|B\. Morvay Coaching(?!\s*&(amp;)?\s*Sports Massage)",
+     "the business name is B. Morvay Coaching & Sports Massage, as on the Google Business Profile (owner, November 2026)"),
 ]
 # 2. Code-level defects the review found
 CODE_BANNED = [
