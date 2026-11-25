@@ -182,10 +182,10 @@
     .ticks li{position:relative;padding-left:1.7rem;font-size:.98rem;line-height:1.6;color:var(--mid)}
     .ticks li::before{content:'';position:absolute;left:.1rem;top:.38rem;width:.9rem;height:.5rem;border-left:2.5px solid var(--accent-dim);border-bottom:2.5px solid var(--accent-dim);transform:rotate(-45deg)}
     .price-card .btn{margin-top:auto}
-    .extra-band{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem 2rem;max-width:1000px;margin:1.5rem auto 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:var(--radius)}
+    .extra-band{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem 2rem;max-width:1000px;margin:1.5rem auto 0;padding:1.25rem 1.5rem;background:var(--white);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:var(--radius)}
     .extra-band h3{font-size:1.1rem;font-weight:700;line-height:1.35;color:var(--ink);margin-bottom:.35rem}
     .extra-band p{font-size:.97rem;line-height:1.7;color:var(--mid);max-width:680px}
-    .local-line{max-width:760px;margin:1.75rem auto 0;text-align:center;font-size:1rem;line-height:1.7;color:var(--mid)}
+    .btn-note{margin-top:.75rem;text-align:center;font-size:.85rem;line-height:1.5;color:var(--muted);text-wrap:balance}
     @media (max-width:860px){.price-grid{grid-template-columns:1fr;max-width:560px}.extra-band{grid-template-columns:1fr;max-width:560px}.extra-band .btn{justify-self:start}}
 
     /* About */
@@ -239,13 +239,6 @@
     .form-error .btn-ghost{background:var(--white)}
     .form-success h3{font-family:var(--display);font-size:1.9rem;font-weight:800;line-height:1.05;text-transform:uppercase;color:var(--black);margin-bottom:.9rem}
     .form-success p{margin-bottom:.8rem;line-height:1.7;color:var(--mid)}
-    .consult-side h3{font-size:1.1rem;font-weight:600;color:var(--black);margin-bottom:.6rem}
-    .contact-list{margin-bottom:1.5rem}
-    .contact-list a{display:inline-block;padding:.45rem 0;font-weight:600;color:var(--ink);text-decoration:underline;text-decoration-color:var(--subtle);text-underline-offset:.2em}
-    .contact-list a:hover{color:var(--accent-dim)}
-    .consult-side p{font-size:1rem;line-height:1.7;color:var(--mid)}
-    .next-steps{list-style:decimal;padding-left:1.25rem;margin-bottom:1.5rem}
-    .next-steps li{padding:.2rem 0;line-height:1.65;color:var(--mid)}
     @media (max-width:860px){.consult-grid{grid-template-columns:1fr;max-width:620px}}
 
     /* Back to top */
@@ -391,6 +384,7 @@
             <li>A check-in message a few days later to see how you're getting on</li>
           </ul>
           <a class="btn btn-block" href="#book" data-pick="Sports massage">Book a massage</a>
+          <p class="btn-note">No charge to move or cancel with 24 hours' notice.</p>
         </article>
         <article class="price-card" aria-labelledby="massage45-title" data-reveal>
           <p class="price-tag plain">Return visits</p>
@@ -404,6 +398,7 @@
             <li>Your exercises checked, with any changes sent to your phone</li>
           </ul>
           <a class="btn btn-ghost btn-block" href="#book" data-pick="Sports massage">Book a massage</a>
+          <p class="btn-note">No charge to move or cancel with 24 hours' notice.</p>
         </article>
       </div>
       <div class="extra-band" data-reveal>
@@ -413,7 +408,6 @@
         </div>
         <a class="btn btn-ghost" href="personal-training-edinburgh.html">Personal training in Edinburgh</a>
       </div>
-      <p class="local-line">I cover Edinburgh and West Lothian and bring the massage couch with me. If you need to move or cancel, please give at least 24 hours' notice.</p>
     </div>
   </section>
 
@@ -570,20 +564,24 @@
           </div>
         </div>
         <div class="consult-side">
-          <h3>Prefer to get in touch directly?</h3>
-          <ul class="contact-list">
-            <li><a href="tel:+447914390913">Call 07914 390913</a></li>
-            <li><a href="sms:+447914390913">Text 07914 390913</a></li>
-            <li><a href="https://wa.me/447914390913">WhatsApp 07914 390913</a></li>
-            <li><a href="mailto:morvaybalazs@gmail.com">morvaybalazs@gmail.com</a></li>
-          </ul>
-          <h3>What happens next</h3>
-          <ol class="next-steps">
-            <li>I reply within one working day with times.</li>
-            <li>At the start of your first visit, you fill in a short private health form with me, so I know the massage is safe for you.</li>
-            <li>On the day, we start with a chat, so bring any questions you have.</li>
-          </ol>
-          <p>Based in East Calder, just west of Edinburgh. <a class="text-link" href="https://share.google/cJ5u14vFF04bbxpgY">Find me on Google</a></p>
+          <div class="side-card">
+            <h3>Prefer to get in touch directly?</h3>
+            <ul class="contact-list">
+              <li><a href="tel:+447914390913"><span class="side-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="contact-text"><small>Call</small> 07914 390913</span></a></li>
+              <li><a href="sms:+447914390913"><span class="side-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="contact-text"><small>Text</small> 07914 390913</span></a></li>
+              <li><a href="https://wa.me/447914390913"><span class="side-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg></span><span class="contact-text"><small>WhatsApp</small> 07914 390913</span></a></li>
+              <li><a href="mailto:morvaybalazs@gmail.com"><span class="side-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span class="contact-text"><small>Email</small> morvaybalazs@gmail.com</span></a></li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h3>What happens next</h3>
+            <ol class="next-steps">
+              <li>I reply within one working day with times.</li>
+              <li>At the start of your first visit, you fill in a short private health form with me, so I know the massage is safe for you.</li>
+              <li>On the day, we start with a chat, so bring any questions you have.</li>
+            </ol>
+            <p class="side-foot"><span class="side-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span><span>Based in East Calder, just west of Edinburgh. <a class="text-link" href="https://share.google/cJ5u14vFF04bbxpgY">Find me on Google</a></span></p>
+          </div>
         </div>
       </div>
     </div>

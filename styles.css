@@ -241,3 +241,21 @@ strong,b,th{font-weight:600}
   body{color:#000;background:#fff}
   .prose p,.prose li{color:#000}
 }
+
+/* Booking side column (homepage and coaching page): contact options and next steps,
+   in white cards that match the form card beside them. */
+.consult-side{display:grid;gap:1rem}
+.side-card{padding:clamp(1.25rem,3.5vw,1.75rem);background:var(--white);border:1px solid var(--rule);border-radius:var(--radius)}
+.side-card h3{font-size:1.1rem;font-weight:600;line-height:1.35;color:var(--black);margin-bottom:.5rem}
+.contact-list li+li{border-top:1px solid var(--rule)}
+.contact-list a{display:flex;align-items:center;gap:.9rem;padding:.75rem 0;font-weight:600;color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
+.contact-list a:hover .contact-text{color:var(--accent-dim);text-decoration:underline;text-underline-offset:.2em}
+.contact-list small{display:block;font-size:.8rem;font-weight:500;color:var(--muted)}
+.side-icon{flex:none;display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--surface);color:var(--ink)}
+.side-icon svg{width:1.15rem;height:1.15rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.next-steps{display:grid;gap:.9rem;margin-top:1rem;counter-reset:next}
+.next-steps li{position:relative;padding-left:2.6rem;line-height:1.65;color:var(--mid);counter-increment:next}
+.next-steps li::before{content:counter(next);position:absolute;left:0;top:0;display:grid;place-items:center;width:1.75rem;height:1.75rem;border-radius:50%;background:var(--black);color:var(--white);font-family:var(--display);font-weight:800;font-size:.95rem;line-height:1}
+.side-foot{display:flex;align-items:flex-start;gap:.9rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:.95rem;line-height:1.65;color:var(--mid)}
+.side-foot .side-icon{width:2.1rem;height:2.1rem}
+.side-foot .side-icon svg{width:1rem;height:1rem}
