@@ -59,6 +59,7 @@ BANNED = [
     (r"Balazs Morvay Coaching|Online Personal Training|B\. Morvay Coaching(?!\s*&(amp;)?\s*Sports Massage)",
      "the business name is B. Morvay Coaching & Sports Massage, as on the Google Business Profile (owner, November 2026)"),
     (r"Massage and Plan|75[- ]minutes?", "the 75-minute Massage and Plan was retired: every first visit is the 60-minute massage (owner, November 2026)"),
+    (r"may charge up to|charge (up )?to the (full )?price of the session", "no charge for cancelling late (owner, 26 November 2026, until there are clients and it becomes a problem)"),
 ]
 # 2. Code-level defects the review found
 CODE_BANNED = [
